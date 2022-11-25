@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
+            {{ __('Dashboard') }} {{ Auth::guard('web')->user()->name }} - ({{ Auth::guard('web')->user()->email }})
         </h2>
     </x-slot>
 
@@ -10,6 +10,13 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                     You're logged in!
+
+                    @if(Auth::guard('web')->user()->status == 1)
+                    <h2>you are in</h2>
+                    @else
+                    <h2></h2>
+                    @endif
+
                 </div>
             </div>
         </div>

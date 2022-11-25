@@ -1,6 +1,9 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
+
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,8 +27,19 @@ Route::get('/dashboard', function () {
 require __DIR__.'/auth.php';
 
 
+// Admin
+
 Route::get('/admin/dashboard', function () {
     return view('admin.dashboard');
 })->middleware(['auth:admin', 'verified'])->name('admin.dashboard');
+
+// Admin Dashboard
+Route::prefix('admin')->group(function(){
+    Route::get('/view', [UserController::class, 'index'])->middleware(['auth:admin', 'verified'])->name('all.users');
+
+    Route::get('/view/status/{status}/{id}', [UserController::class, 'UserStatus'])->middleware(['auth:admin', 'verified']);
+
+    
+});
 
 require __DIR__.'/adminauth.php';
