@@ -1,24 +1,34 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }} {{ Auth::guard('web')->user()->name }} - ({{ Auth::guard('web')->user()->email }})
-        </h2>
-    </x-slot>
+@extends('master')
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-white border-b border-gray-200">
-                    You're logged in!
+
+<body class="background">
+<section class="registration">
+        <div class="backtopage"><a href="{{ route('main.home') }}"><i class="fas fa-chevron-left"></i>Go to homepage</a></div>
+        
+        <div class="title">Registration Done!</div>
+
+        <div class="backtopage"> <h4> hello! {{ Auth::guard('web')->user()->name }} </h4></div>
+
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 .reg-box mx-auto">
+                    
 
                     @if(Auth::guard('web')->user()->status == 1)
-                    <h2>you are in</h2>
+                    <h4 class="fw-bold text-center">Your account is approved. More function will come soon!</h4>
                     @else
-                    <h2></h2>
+                    <h4 class="fw-bold text-center">Soon your request will be approved.</h4>
                     @endif
 
+                    <form method="POST" action="{{ route('logout') }}"   style="display: flex; justify-content: center;">
+                            @csrf      
+                            
+                            <button type="submit" class="btn btn-danger text-center">Logout</button>
+                    </form>
+                    
+                     
                 </div>
             </div>
         </div>
-    </div>
-</x-app-layout>
+    </section>

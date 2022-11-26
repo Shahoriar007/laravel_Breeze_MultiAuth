@@ -1,57 +1,43 @@
-<x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
+@extends('master')
 
-        <!-- Session Status -->
-        <x-auth-session-status class="mb-4" :status="session('status')" />
+<body class="background">
+    <section class="registration">
+    <div class="backtopage"><a href="{{ route('main.home') }}"><i class="fas fa-chevron-left"></i>Go to homepage</a></div>
+        <div class="title">Login Here</div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 .reg-box mx-auto">
 
-        <form method="POST" action="{{ route('login') }}">
-            @csrf
+                <form method="POST" action="{{ route('login') }}">
+                        @csrf
 
-            <!-- Email Address -->
-            <div>
-                <x-input-label for="email" :value="__('Email')" />
+                        <div class="user__details">
+                            <div class="row">
 
-                <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
+                                <div class="input__box col-md-12">
+                                    <span class="details">Phone Number</span>
+                                    <input id="login" type="text" name="login" placeholder="01353456789" required>
+                                </div>
 
-                <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                                <div class="input__box col-md-12">
+                                    <span class="details">Password</span>
+                                    <input id="password" type="password" name="password" placeholder="********" required>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="button text-center">
+                            <input type="submit" class="fire mb-2">
+                            <div>Doesn't have account? <a href="{{ route('register') }}" style="color: #fbc72a;">Registration</a>
+                            </div>
+                        </div>
+
+                  
+                    </form>
+                    
+                </div>
             </div>
+        </div>
+    </section>
+            
 
-            <!-- Password -->
-            <div class="mt-4">
-                <x-input-label for="password" :value="__('Password')" />
-
-                <x-text-input id="password" class="block mt-1 w-full"
-                                type="password"
-                                name="password"
-                                required autocomplete="current-password" />
-
-                <x-input-error :messages="$errors->get('password')" class="mt-2" />
-            </div>
-
-            <!-- Remember Me -->
-            <div class="block mt-4">
-                <label for="remember_me" class="inline-flex items-center">
-                    <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="remember">
-                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-                </label>
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
-                    </a>
-                @endif
-
-                <x-primary-button class="ml-3">
-                    {{ __('Log in') }}
-                </x-primary-button>
-            </div>
-        </form>
-    </x-auth-card>
-</x-guest-layout>

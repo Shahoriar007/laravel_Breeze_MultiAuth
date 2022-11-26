@@ -35,14 +35,42 @@ class RegisteredUserController extends Controller
     {
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'email' => ['string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
+
+            'phone' => ['required','unique:'.User::class],
+            'photo' => ['file', 'mimes:jpg,png,gif'],
         ]);
+
+        $path = null;
+        if ($request->hasFile('photo')) {
+            $path = $request->file('photo')->storePublicly('photos');
+        }
 
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+
+            // personal info
+            'phone' => $request->phone,
+            'nid' => $request->nid,
+            'gender' => $request->gender,
+            'birthDate' => $request->birthDate,
+            'bloodGroup' => $request->bloodGroup,
+            'photo' => $path,
+
+            // Vehicle Info
+            'city' => $request->city,
+            'vehicle' => $request->vehicle,
+            'drivingLicense' => $request->drivingLicense,
+
+            'cityName' => $request->cityName,
+            'category' => $request->category,
+            'number' => $request->number,
+
+            'transactionId' => $request->transactionId,
+            'refCode' => $request->refCode,
         ]);
 
         event(new Registered($user));

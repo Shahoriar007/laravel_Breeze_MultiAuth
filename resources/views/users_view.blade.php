@@ -31,7 +31,8 @@ tr:nth-child(even) {
   <tr>
     <th>Id</th>
     <th>Name</th>
-    <th>Email</th>
+    <th>Phone</th>
+    <th>Bkash TransactionID</th>
     <th>Status</th>
   </tr>
 
@@ -39,7 +40,8 @@ tr:nth-child(even) {
     <tr>
         <td>{{ $item->id }}</td>
         <td>{{ $item->name }}</td>
-        <td>{{ $item->email }}</td>
+        <td>{{ $item->phone }}</td>
+        <td>{{ $item->transactionId }}</td>
 
         @if($item->status==1)
 

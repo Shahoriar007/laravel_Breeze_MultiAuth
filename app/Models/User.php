@@ -21,6 +21,23 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+
+        'phone',
+        'nid',
+        'gender',
+        'birthDate',
+        'bloodGroup',
+        'photo',
+
+        'city',
+        'vehicle',
+        'drivingLicense',
+
+        'cityName',
+        'category',
+        'number',
+        'transactionId',
+        'refCode'
     ];
 
     /**
