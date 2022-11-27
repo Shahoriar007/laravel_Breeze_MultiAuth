@@ -8,7 +8,6 @@
         <div class="title">Registration Done!</div>
 
         <div class="backtopage"> <h4> Hello! {{ Auth::guard('web')->user()->name }}</h4></div>
-        <div class="backtopage"> <h4> You can share this Ref Code - {{ Auth::guard('web')->user()->shareableRefcode }}  </h4></div>
 
 
         <div class="container">
@@ -18,6 +17,7 @@
 
                     @if(Auth::guard('web')->user()->status == 1)
                     <h4 class="fw-bold text-center">Your account is approved. More function will come soon!</h4>
+                    <div class="backtopage"> <h4> You can share this Ref Code - {{ Auth::guard('web')->user()->shareableRefcode }}  </h4></div>
                     @else
                     <h4 class="fw-bold text-center">Soon your request will be approved.</h4>
                     @endif

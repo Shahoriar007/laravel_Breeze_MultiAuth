@@ -52,15 +52,15 @@ class RegisteredUserController extends Controller
         // if null insert admin refCode
         // else insert given refcode
 
-        if($request->refCode == null){
-            $givenRefcode = "admin007";
-        }
-        else{
-            $givenRefcode = $request->refCode;
-        }
+        // if($request->refCode == null){
+        //     $givenRefcode = "NCadmin1000";
+        // }
+        // else{
+        //     $givenRefcode = $request->refCode;
+        // }
 
         // generate randdom ref code
-        $generatedRefcode = Str::random(7);
+        // $generatedRefcode = Str::random(8);
 
 
         $user = User::create([
@@ -87,8 +87,8 @@ class RegisteredUserController extends Controller
 
             'transactionId' => $request->transactionId,
 
-            'refCode' => $givenRefcode,
-            'shareableRefcode' => $generatedRefcode,
+            'refCode' => $request->refCode,
+            //'shareableRefcode' => $request->shareableRefcode,
         
         ]);
 

@@ -19,17 +19,22 @@ class UserController extends Controller
         $model=User::find($id);
         $model->status=$status;
 
+        // if null insert admin refCode after activate
+        // else insert given refcode 
+
+        if($model->refCode == null && $model->status == "1"){
+            $model->refCode ="NCadmin1000";
+        }
+
+        if ($model->status == "1"){
+            $model->shareableRefcode = "NCuser" . "1000" + "$id";
+        }
+
+
+
         $model->save();
         // $request->session()->flash('message','Category Status Updated');
         return redirect('admin/view');
-
-        // if($model->refCode == null && $model->status == "1"){
-        //     $model->refCode="00000";
-        // }
-        // else
-        // {
-        //     $model->refCode = null;
-        // }
     }
 
     public function dashboardView(){
