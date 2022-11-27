@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 
+use Illuminate\Support\Str;
+
 class RegisteredUserController extends Controller
 {
     /**
@@ -35,7 +37,6 @@ class RegisteredUserController extends Controller
     {
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
 
             'phone' => ['required','unique:'.User::class],
@@ -46,6 +47,21 @@ class RegisteredUserController extends Controller
         if ($request->hasFile('photo')) {
             $path = $request->file('photo')->storePublicly('photos');
         }
+
+
+        // if null insert admin refCode
+        // else insert given refcode
+
+        if($request->refCode == null){
+            $givenRefcode = "admin007";
+        }
+        else{
+            $givenRefcode = $request->refCode;
+        }
+
+        // generate randdom ref code
+        $generatedRefcode = Str::random(7);
+
 
         $user = User::create([
             'name' => $request->name,
@@ -70,8 +86,12 @@ class RegisteredUserController extends Controller
             'number' => $request->number,
 
             'transactionId' => $request->transactionId,
-            'refCode' => $request->refCode,
+
+            'refCode' => $givenRefcode,
+            'shareableRefcode' => $generatedRefcode,
+        
         ]);
+
 
         event(new Registered($user));
 

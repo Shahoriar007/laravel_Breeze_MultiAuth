@@ -22,10 +22,10 @@
                                 </div>
 
                                 <!-- email -->
-                                <!-- <div class="input__box col-md-6">
+                                <div class="input__box col-md-6">
                                     <span class="details" >Email</span>
-                                    <input id="email" type="email" name="email"  >
-                                </div> -->
+                                    <input id="email" type="email" name="email">
+                                </div>
 
                                 <div class="input__box col-md-6">
                                     <span class="details">Full Name*</span>

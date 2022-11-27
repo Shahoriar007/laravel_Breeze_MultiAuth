@@ -14,6 +14,7 @@
                     <form method="POST" action="{{ route('admin.logout') }}">
                             @csrf      
                             <button type="submit" >Logout</button>
+                            
                     </form>
 
                     <a href="{{ route('all.users') }}">All users</a>
@@ -22,3 +23,4 @@
         </div>
     </div>
 </x-admin-layout>
+

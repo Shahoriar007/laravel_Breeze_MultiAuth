@@ -7,7 +7,8 @@
         
         <div class="title">Registration Done!</div>
 
-        <div class="backtopage"> <h4> hello! {{ Auth::guard('web')->user()->name }} </h4></div>
+        <div class="backtopage"> <h4> Hello! {{ Auth::guard('web')->user()->name }}</h4></div>
+        <div class="backtopage"> <h4> You can share this Ref Code - {{ Auth::guard('web')->user()->shareableRefcode }}  </h4></div>
 
 
         <div class="container">

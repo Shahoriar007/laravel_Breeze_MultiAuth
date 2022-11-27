@@ -37,7 +37,8 @@ class User extends Authenticatable
         'category',
         'number',
         'transactionId',
-        'refCode'
+        'refCode',
+        'shareableRefcode'
     ];
 
     /**
