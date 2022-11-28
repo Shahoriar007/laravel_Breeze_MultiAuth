@@ -3,7 +3,7 @@
 <body class="background">
     <section class="registration">
     <div class="backtopage"><a href="{{ route('main.home') }}"><i class="fas fa-chevron-left"></i>Go to homepage</a></div>
-        <div class="title">Login Here</div>
+        <div class="title">Sign Here</div>
         <div class="container">
             <div class="row">
                 <div class="col-md-4 .reg-box mx-auto">

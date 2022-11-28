@@ -23,11 +23,11 @@ class UserController extends Controller
         // else insert given refcode 
 
         if($model->refCode == null && $model->status == "1"){
-            $model->refCode ="NCadmin1000";
+            $model->refCode ="nca1000";
         }
 
         if ($model->status == "1"){
-            $model->shareableRefcode = "NCuser" . "1000" + "$id";
+            $model->shareableRefcode = "ncu" . "1000" + "$id";
         }
 
 

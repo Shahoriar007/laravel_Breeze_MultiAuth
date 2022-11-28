@@ -57,6 +57,7 @@ tr:nth-child(even){background-color: #f2f2f2}
     <th>Category</th>
     <th>Number</th>
     <th>Ref Code</th>
+    <th>Shareable Ref Code</th>
     <th>Bkash TransactionID</th>
     <th>Status</th>
   </tr>
@@ -77,6 +78,7 @@ tr:nth-child(even){background-color: #f2f2f2}
         <td>{{ $item->category }}</td>
         <td>{{ $item->number }}</td>
         <td>{{ $item->refCode }}</td>
+        <td>{{ $item->shareableRefcode }}</td>
         <td>{{ $item->transactionId }}</td>
 
         @if($item->status==1)

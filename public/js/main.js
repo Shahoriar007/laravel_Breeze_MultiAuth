@@ -1,3 +1,18 @@
+/*-----------------------------------------
+	  7. Sticky Header ------------------------
+	  -----------------------------------------*/
+window.onscroll = function() { myFunction() };
+
+function myFunction() {
+    if ($(window).width() > 1199) {
+        if ($(window).scrollTop() > 145) {
+            $('.header-wrap').addClass("stickyNav animated fadeInDown");
+        } else {
+            $('.header-wrap').removeClass("stickyNav fadeInDown");
+        }
+    }
+}
+
 function readURL(input) {
     if (input.files && input.files[0]) {
         var reader = new FileReader();
@@ -9,7 +24,7 @@ function readURL(input) {
         reader.readAsDataURL(input.files[0]);
     }
 }
-$("#photo").change(function() {
+$("#imageUpload").change(function() {
     readURL(this);
 });
 
