@@ -20,11 +20,9 @@
 
 
 
-
-
-
-
-
+@yield('home')
+@yield('login')
+@yield('register')
 
 
 

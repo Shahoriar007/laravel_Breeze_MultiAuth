@@ -1,4 +1,5 @@
 @extends('master')
+@section('home')
 
 <body>
 
@@ -245,3 +246,5 @@
     </div>
 
     <!-- footer end -->
+
+@endsection

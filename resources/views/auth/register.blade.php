@@ -1,4 +1,5 @@
 @extends('master')
+@section('register')
 
 <body class="background">
 <section class="registration">
@@ -220,3 +221,5 @@
             </div>
         </div>
     </section>
+
+    @endsection
