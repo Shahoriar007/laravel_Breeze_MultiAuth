@@ -53,9 +53,9 @@ Route::prefix('admin')->group(function(){
     Route::get('/viewusers/edit/{id}', [UserController::class, 'adminUserProfileEditView'])->middleware(['auth:admin', 'verified'])->name('userProfileEditviewbyadmin');
     // edit
     Route::post('/viewusers/update/{id}', [UserController::class, 'adminUserUpdate'])->middleware(['auth:admin', 'verified'])->name('userProfileUpdatebyadmin');
-    
+
     // Admin User Delete
-    Route::get('/viewusers/{id}', [UserController::class, 'deleteUsers'])->middleware(['auth:admin', 'verified']);
+    Route::get('/viewusers/delete/{id}', [UserController::class, 'deleteUsers'])->middleware(['auth:admin', 'verified']);
 
 
     // Approve/inapprove 
