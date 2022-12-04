@@ -121,7 +121,7 @@ class RegisteredUserController extends Controller
             User::findOrFail($id)->update([
                 'name' => $request->name,
                 'email' => $request->email,
-                'phone' => $request->phone,
+                
                 'nid' => $request->nid,
                 'birthDate' => $request->birthDate,
                 'bloodGroup' => $request->bloodGroup,

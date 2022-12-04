@@ -19,11 +19,6 @@
                             <h5 class="v-info">Personal Information</h5>
                             <div class="row">
 
-                                <div class="input__box col-md-6">
-                                    <span class="details">Phone Number*</span>
-                                    <input type="tel" id="phone" name="phone" value="{{ $usersProfile->phone }}">
-                                </div>
-
                                 <!-- email -->
                                 <div class="input__box col-md-6">
                                     <span class="details" >Email</span>

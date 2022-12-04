@@ -45,7 +45,11 @@ Route::get('/dashboard', [UserController::class, 'dashboardView'])->middleware([
 // Admin view
 Route::prefix('admin')->group(function(){
 
+    // All Users view
     Route::get('/viewusers', [UserController::class, 'usersView'])->middleware(['auth:admin', 'verified'])->name('showUsers');
+
+    // Users details view
+    Route::get('/viewusers/{id}', [UserController::class, 'usersDetails'])->middleware(['auth:admin', 'verified']);
 
     // Approve/inapprove 
     Route::get('/view/status/{status}/{id}', [UserController::class, 'UserStatus'])->middleware(['auth:admin', 'verified']);
@@ -53,6 +57,7 @@ Route::prefix('admin')->group(function(){
     // All cases view
     Route::get('/viewcases', [UserCaseController::class, 'showAllcases'])->middleware(['auth:admin', 'verified'])->name('all.cases');
 
+    // Case Details View
     Route::get('/viewcases/{id}', [UserCaseController::class, 'caseDetails'])->middleware(['auth:admin', 'verified']);
 
     

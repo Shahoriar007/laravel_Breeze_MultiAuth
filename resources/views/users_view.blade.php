@@ -252,6 +252,12 @@ tr:nth-child(even){background-color: #f2f2f2}
 
         @endif
 
+        <!-- Details Button -->
+        <td>
+            <a href="{{url('admin/viewusers')}}/{{$item->id}}">
+                <button type="button" class="btn btn-primary">Details</button>
+            </a>
+        </td>
 
     </tr>
 @endforeach

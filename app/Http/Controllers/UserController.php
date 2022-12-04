@@ -9,10 +9,19 @@ use App\Models\Account;
 class UserController extends Controller
 {
 
+    // all users view classes
     public function usersView(){
 
         $users = User::all();
         return view('users_view',compact('users'));
+    }
+
+    // users details view classes
+    public function usersDetails( $id ){
+
+        $userDetails = User::find($id);
+        return view('users_details', compact('userDetails'));
+
     }
 
     
@@ -64,5 +73,7 @@ class UserController extends Controller
         // $request->session()->flash('message','Category Status Updated');
         return redirect('admin/viewusers');
     }
+
+
     
 }
