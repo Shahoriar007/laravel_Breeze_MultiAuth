@@ -64,6 +64,14 @@ class UserController extends Controller
         return redirect()->route('showUsers');
     }
 
+    // delete users
+    public function deleteUsers( $id ){
+
+        User::findOrFail($id)->delete();
+
+        return redirect()->back();
+    }
+
     
     // User Dashboard
     public function dashboardView(){

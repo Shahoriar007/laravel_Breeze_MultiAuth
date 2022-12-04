@@ -259,6 +259,13 @@ tr:nth-child(even){background-color: #f2f2f2}
             </a>
         </td>
 
+        <!-- Delete Button -->
+        <td>
+            <a href="{{url('admin/viewusers')}}/{{$item->id}}">
+                <button type="button" class="btn btn-danger">Delete</button>
+            </a>
+        </td>
+
     </tr>
 @endforeach
 
