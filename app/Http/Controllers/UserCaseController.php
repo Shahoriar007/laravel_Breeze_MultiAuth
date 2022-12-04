@@ -19,7 +19,6 @@ class UserCaseController extends Controller
             'caseId' => 'required',
             'caseCode' => 'required',
             'fineAmmount' => 'required',
-            
 
         ]);
 

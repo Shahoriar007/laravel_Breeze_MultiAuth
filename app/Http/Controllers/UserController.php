@@ -24,6 +24,46 @@ class UserController extends Controller
 
     }
 
+    // User Information Edit View
+    public function adminUserProfileEditView($id ){
+        
+        $usersInfo = User::findOrFail($id);
+        return view('adminUserProfileEdit',compact('usersInfo'));
+    }
+
+    // User Information Edit Form
+    public function adminUserUpdate(Request $request ){
+
+        $path = null;
+        if ($request->file('photo')) {
+            $path = $request->file('photo')->storePublicly('photos');
+        }
+
+        $id = $request->id;
+
+        User::findOrFail($id)->update([
+            'name' => $request->name,
+            'email' => $request->email,
+            
+            'nid' => $request->nid,
+            'birthDate' => $request->birthDate,
+            'bloodGroup' => $request->bloodGroup,
+
+            'photo' => $path,
+
+            'city' => $request->city,
+            'vehicle' => $request->vehicle,
+            'drivingLicense' => $request->drivingLicense,
+            'cityName' => $request->cityName,
+            'category' => $request->category,
+            'number' => $request->number,
+
+            
+        ]);
+
+        return redirect()->route('showUsers');
+    }
+
     
     // User Dashboard
     public function dashboardView(){

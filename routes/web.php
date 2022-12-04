@@ -47,16 +47,22 @@ Route::prefix('admin')->group(function(){
 
     // All Users view
     Route::get('/viewusers', [UserController::class, 'usersView'])->middleware(['auth:admin', 'verified'])->name('showUsers');
-
     // Users details view
     Route::get('/viewusers/{id}', [UserController::class, 'usersDetails'])->middleware(['auth:admin', 'verified']);
+    // edit page view
+    Route::get('/viewusers/edit/{id}', [UserController::class, 'adminUserProfileEditView'])->middleware(['auth:admin', 'verified'])->name('userProfileEditviewbyadmin');
+    // edit
+    Route::post('/viewusers/update/{id}', [UserController::class, 'adminUserUpdate'])->middleware(['auth:admin', 'verified'])->name('userProfileUpdatebyadmin');
+
+
 
     // Approve/inapprove 
     Route::get('/view/status/{status}/{id}', [UserController::class, 'UserStatus'])->middleware(['auth:admin', 'verified']);
 
+
+
     // All cases view
     Route::get('/viewcases', [UserCaseController::class, 'showAllcases'])->middleware(['auth:admin', 'verified'])->name('all.cases');
-
     // Case Details View
     Route::get('/viewcases/{id}', [UserCaseController::class, 'caseDetails'])->middleware(['auth:admin', 'verified']);
 

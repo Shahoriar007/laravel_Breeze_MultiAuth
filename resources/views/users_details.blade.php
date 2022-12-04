@@ -62,7 +62,7 @@ tr:nth-child(even){background-color: #f2f2f2}
 <!-- User image -->
 <img src="{{ (!empty($userDetails->photo))? url($userDetails->photo):url('upload/no_image.jpg') }}" width="140" height="150">
 
-
+<a class="btn btn-primary text-center" href="{{ route('userProfileEditviewbyadmin', $userDetails->id ) }}">Edit</a>
 
 </div>
 
