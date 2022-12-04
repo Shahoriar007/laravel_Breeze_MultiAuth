@@ -75,6 +75,7 @@ class RegisteredUserController extends Controller
             'birthDate' => $request->birthDate,
             'bloodGroup' => $request->bloodGroup,
             'photo' => $path,
+            
 
             // Vehicle Info
             'city' => $request->city,
@@ -99,4 +100,46 @@ class RegisteredUserController extends Controller
 
         return redirect(RouteServiceProvider::HOME);
     }
+
+        // User Information Edit View
+        public function userEdit($id ){
+        
+            $usersProfile = User::findOrFail($id);
+            return view('userProfileEdit',compact('usersProfile'));
+        }
+    
+        // User Information Edit Form
+        public function userUpdate(Request $request ){
+    
+            $path = null;
+            if ($request->file('photo')) {
+                $path = $request->file('photo')->storePublicly('photos');
+            }
+    
+            $id = $request->id;
+    
+            User::findOrFail($id)->update([
+                'name' => $request->name,
+                'email' => $request->email,
+                'phone' => $request->phone,
+                'nid' => $request->nid,
+                'birthDate' => $request->birthDate,
+                'bloodGroup' => $request->bloodGroup,
+    
+                'photo' => $path,
+    
+                'city' => $request->city,
+                'vehicle' => $request->vehicle,
+                'drivingLicense' => $request->drivingLicense,
+                'cityName' => $request->cityName,
+                'category' => $request->category,
+                'number' => $request->number,
+    
+                
+            ]);
+    
+           
+    
+            return redirect()->route('dashboard');
+        }
 }

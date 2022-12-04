@@ -19,7 +19,7 @@
     </section>
 
     <nav class="header-wrap animated navbar navbar-expand-md navbar-dark bg-dark">
-        <a class="navbar-brand logo" href="index.html"><img src="img/logo1.png" alt=""></a>
+        <a class="navbar-brand logo" href="index.html"><img src="{{ asset('userFrontend/img/logo1.png')}}" alt=""></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -82,14 +82,14 @@
             <div class="row ">
                 <div class="col-md-3 col-6">
                     <div class="single-service mb-5">
-                        <img class="img-responsive" src="img/services/bike.png" alt="bike">
+                        <img class="img-responsive" src="{{ asset('userFrontend/img/services/bike.png')}}" alt="bike">
                         <h4 class="my-3">Motorcycle</h4>
                     </div>
                     <!-- <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p> -->
                 </div>
                 <div class="col-md-3 col-6">
                     <div class="single-service mb-5">
-                        <img class="img-responsive" src="img/services/car.png" alt="car">
+                        <img class="img-responsive" src="{{ asset('userFrontend/img/services/car.png')}}" alt="car">
                         <h4 class="my-3">Car</h4>
                     </div>
 
@@ -97,7 +97,7 @@
                 </div>
                 <div class="col-md-3 col-6">
                     <div class="single-service mb-5">
-                        <img class="img-responsive" src="img/services/truck.png" alt="truck">
+                        <img class="img-responsive" src="{{ asset('userFrontend/img/services/truck.png')}}" alt="truck">
                         <h4 class="my-3">Giant Vehicle</h4>
                     </div>
 
@@ -105,7 +105,7 @@
                 </div>
                 <div class="col-md-3 col-6">
                     <div class="single-service mb-5">
-                        <img class="img-responsive" src="img/services/cng.png" alt="cng">
+                        <img class="img-responsive" src="{{ asset('userFrontend/img/services/cng.png')}}" alt="cng">
                         <h4 class="my-3">Auto Rickshaw</h4>
                     </div>
 
@@ -121,7 +121,7 @@
             <div class="title">REGISTRATION PROCESS</div>
             <ul class="timeline">
                 <li>
-                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="img/services/login.jpg" alt="..." /></div>
+                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{ asset('userFrontend/img/services/login.jpg')}}" alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
                             <h4>login</h4>
@@ -132,7 +132,7 @@
                     </div>
                 </li>
                 <li class="timeline-inverted">
-                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="img/services/reg.jpg" alt="..." /></div>
+                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{ asset('userFrontend/img/services/reg.jpg')}}" alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
                             <h4>Registration</h4>
@@ -144,7 +144,7 @@
                     </div>
                 </li>
                 <li>
-                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="img/services/refcode.jpg" alt="..." /></div>
+                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{ asset('userFrontend/img/services/refcode.jpg')}}" alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
                             <h4>Referral code</h4>
@@ -156,7 +156,7 @@
                     </div>
                 </li>
                 <li class="timeline-inverted">
-                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="img/services/payment.jpg" alt="..." /></div>
+                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{ asset('userFrontend/img/services/payment.jpg')}}" alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
                             <h4>Pay Your registration Fee</h4>
@@ -206,7 +206,7 @@
                 <div class="row">
                     <div class="col-6 col-md-6 mb-3">
                         <div class="bottom-logo">
-                            <img src="img/logo1.png" class="img-responsive" alt="">
+                            <img src="{{ asset('userFrontend/img/logo1.png')}}" class="img-responsive" alt="">
                             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo assumenda explicabo, vero aspernatur consequuntur odio.</p>
                         </div>
                     </div>

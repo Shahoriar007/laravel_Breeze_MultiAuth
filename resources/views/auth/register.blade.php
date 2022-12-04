@@ -50,7 +50,7 @@
 
                                 <div class="input__box  col-md-6" >
                                     <span class="details">Date of Birth*</span>
-                                    <input id="birthDate" type="text" name="birthDate" placeholder="dd-mm-yyyy" required>
+                                    <input id="birthDate" type="date" name="birthDate" placeholder="dd-mm-yyyy" required>
                                 </div>
 
                                 <div class="input__box col-md-6">
