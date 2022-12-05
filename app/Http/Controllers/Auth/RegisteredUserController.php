@@ -98,8 +98,22 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        return redirect(RouteServiceProvider::HOME);
+        return view('inputTransactionid');
     }
+
+    public function transactionid(Request $request){
+
+        $id = $request->id;
+
+        User::findOrFail($id)->update([
+            'transactionId' => $request->transactionId,
+        ]);
+
+        //return redirect(RouteServiceProvider::HOME);
+        return view('dashboard');
+    }
+
+    
 
         // User Information Edit View
         public function userEdit($id ){

@@ -18,6 +18,8 @@ Route::get('/', function () {
 
 Route::get('/dashboard', [UserController::class, 'dashboardView'])->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::post('/', [RegisteredUserController::class, 'transactionid'])->middleware(['auth', 'verified'])->name('tranlogin');
+
 // profile page view
 Route::get('/dashboard/profile', [UserController::class, 'profileView'])->middleware(['auth', 'verified'])->name('profilePage');
 // edit page view

@@ -25,7 +25,7 @@
                                 <!-- email -->
                                 <div class="input__box col-md-6">
                                     <span class="details" >Email</span>
-                                    <input id="email" type="email" name="email">
+                                    <input id="email" type="email" name="email" placeholder="not mandatory">
                                 </div>
 
                                 <div class="input__box col-md-6">
@@ -33,12 +33,12 @@
                                     <input id="name" type="text" name="name" placeholder="same as NID/License" required>
                                 </div>
 
-                                <div class="input__box col-md-6">
+                                <!-- <div class="input__box col-md-6">
                                     <span class="details">NID Number</span>
                                     <input id="nid" type="text" name="nid">
-                                </div>
+                                </div> -->
 
-                                <div class="input__box col-md-6">
+                                <!-- <div class="input__box col-md-6">
                                     <span class="details">Gender</span>
                                     <select name="gender" id="gender">
                                         <option data-display="Select">Nothing</option>
@@ -46,14 +46,14 @@
                                         <option value="female">Female</option>
                                         <option value="other">Other</option>
                                     </select>
-                                </div>
+                                </div> -->
 
-                                <div class="input__box  col-md-6" >
+                                <!-- <div class="input__box  col-md-6" >
                                     <span class="details">Date of Birth*</span>
                                     <input id="birthDate" type="date" name="birthDate" placeholder="dd-mm-yyyy" required>
-                                </div>
+                                </div> -->
 
-                                <div class="input__box col-md-6">
+                                <!-- <div class="input__box col-md-6">
 
                                     <span class="details">Blood Group</span>
 
@@ -69,19 +69,19 @@
                                         <option value="O-">O-</option>
                                     </select>
                                     
-                                </div>
+                                </div> -->
 
                                 <!-- Password -->
                                 <div class="input__box col-md-6">
                                     <span class="details" >Password*</span>
-                                    <input id="password" type="password" name="password" placeholder="********" required>
+                                    <input id="password" type="password" name="password" placeholder="Minimum 8 digit" required>
                                 </div>
                                 <div class="input__box col-md-6" >
                                     <span class="details" >Confirm Password*</span>
-                                    <input id="password_confirmation" type="password" name="password_confirmation" placeholder="********" required>
+                                    <input id="password_confirmation" type="password" name="password_confirmation" placeholder="same as password" required>
                                 </div>
 
-                                <div class="input__box col-md-6">
+                                <!-- <div class="input__box col-md-6">
                                     <span class="details">Upload your profile pic</span>
                                     <div class="avatar-upload">
                                         <div class="avatar-edit">
@@ -93,12 +93,12 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                                 
                             </div>
 
 
-                            <h5 class="v-info">Vehicle Information</h5>
+                            <!-- <h5 class="v-info">Vehicle Information</h5>
                             <div class="row">
                                 <div class="input__box col-md-6">
                                     <span class="details">Select City*</span>
@@ -122,7 +122,7 @@
                                         <option value="Pickup">Pickup</option>
                                         <option value="Truck">Truck</option>
                                     </select>
-                                    <!-- <input id="vehicle" type="text" name="vehicle"  required> -->
+                                    
                                 </div>
 
                                 <div class="input__box col-md-6">
@@ -130,9 +130,9 @@
                                     <input id="drivingLicense" type="text" name="drivingLicense" required>
                                 </div>
 
-                            </div>
+                            </div> -->
 
-                            <h5 class="v-info">Vehicle Registration</h5>
+                            <!-- <h5 class="v-info">Vehicle Registration</h5>
                             <div class="row">
                                 <div class="input__box col-md-4" >
                                     <span class="details" >City Name*</span>
@@ -143,7 +143,7 @@
                                         <option value="3">SYL METRO</option>
                                         <option value="4">KHL METRO</option>
                                     </select>
-                                    <!-- <input id="cityName" type="text" name="cityName" required> -->
+                                    
                                 </div>
 
                                 <div class="input__box col-md-3">
@@ -180,29 +180,29 @@
                                     <span class="details">Vehicle Number*</span>
                                     <input id="number" type="text" name="number" placeholder="00-0000" required>
                                 </div>
-                            </div>
+                            </div> -->
 
 
                             <h5 class="v-info"> User Ref Code</h5>
                             <div class="row text-center">
                             <div class="input__box col-md-12">
                                 <span class="details">User Ref Code</span>
-                                <input id="refCode" type="text" name="refCode"  >
+                                <input id="refCode" type="text" name="refCode" placeholder="not mandatory" >
                             </div>
 
 
                             </div>
 
-                            <h5 class="v-info"> Bkash TransactionID</h5>
+                            <!-- <h5 class="v-info"> Bkash TransactionID</h5> -->
                             
                             <div class="row text-center">
-                            <div class="input__box col-md-12">
+                            <!-- <div class="input__box col-md-12">
                                 <span class="details">TransactionID*</span>
                                 <p>Please Pay 100 tk to this Bkash Merchant no for registration and enter the Transaction id.
                                             <br> Bkash Merchant No: <span class="text-danger">01712322027</span></p>
                                 <input id="transactionId" type="text" name="transactionId"   >
 
-                            </div>
+                            </div> -->
 
 
                             </div>

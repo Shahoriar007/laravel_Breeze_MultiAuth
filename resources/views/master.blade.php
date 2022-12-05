@@ -23,6 +23,8 @@
 @yield('home')
 @yield('login')
 @yield('register')
+@yield('registerTrn')
+
 @yield('registeredit')
 @yield('dashboard')
 @yield('profile')
