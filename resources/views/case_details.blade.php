@@ -1,5 +1,20 @@
-<!DOCTYPE html>
-<html>
+@extends('masterAdmin')
+@section('adminViewcasesDetais')
+
+
+
+
+
+
+
+
+
+
+                
+
+@endsection
+
+
 <head>
 <style>
 /* table {
@@ -55,9 +70,3 @@ tr:nth-child(even){background-color: #f2f2f2}
 
 
 </div>
-
-
-
-
-</body>
-</html>

@@ -16,10 +16,17 @@
     <link id="skin-default" rel="stylesheet" href="{{ asset('adminFrontend/assets/css/theme.css?ver=3.1.1')}}">
 </head>
 
-@yield('adminDashboard')
-@yield('adminCaseView')
-@yield('adminUserView')
-@yield('adminLogin')
+@include('admin.adminNavbar')
+
+    @yield('adminDashboard')
+    @yield('adminCaseView')
+    @yield('adminUserView')
+    @yield('adminLogin')
+
+    @yield('adminViewcasesDetais')
+    @yield('adminUserDetaisView')
+
+@include('admin.adminFooter')
 
 
     <!-- JavaScript -->
