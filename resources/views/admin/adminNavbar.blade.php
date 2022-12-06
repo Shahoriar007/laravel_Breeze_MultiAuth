@@ -1,5 +1,4 @@
                 
-
 <body class="nk-body bg-lighter npc-general has-sidebar ">
     <div class="nk-app-root">
         <!-- main @s -->
@@ -68,9 +67,6 @@
             <!-- sidebar @e -->
             <!-- wrap @s -->
             <div class="nk-wrap ">
-
-            
-
 
 
 

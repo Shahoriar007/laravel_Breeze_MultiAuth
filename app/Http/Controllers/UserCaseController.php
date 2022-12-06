@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Casefine;
 
+
 use Image;
 
 class UserCaseController extends Controller
@@ -52,6 +53,7 @@ class UserCaseController extends Controller
     public function caseDetails( $id ){
 
         $caseDetails = Casefine::find($id);
+
         return view('case_details', compact('caseDetails'));
 
     }

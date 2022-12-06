@@ -21,7 +21,7 @@
     @yield('adminDashboard')
     @yield('adminCaseView')
     @yield('adminUserView')
-    @yield('adminLogin')
+    
 
     @yield('adminViewcasesDetais')
     @yield('adminUserDetaisView')

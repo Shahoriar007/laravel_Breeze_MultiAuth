@@ -60,53 +60,210 @@
         </div>
     </nav>
 
-<section class="registration">
-        <div class="backtopage"><a href="{{ route('main.home') }}"><i class="fas fa-chevron-left"></i>Go to homepage</a></div>
-        
-        <div class="title">Registration Done!</div>
-
-        <div class="backtopage"> 
-            @if(Auth::user()->photo)
-            <img src="{{ asset(Auth::user()->photo) }}" width="193" height="130" alt="">
-            @endif
-
-            
-
-            <h4> Name: {{ Auth::guard('web')->user()->name }}</h4>
-            <h4> Phone: {{ Auth::guard('web')->user()->phone }}</h4>
-            <h4> Email: {{ Auth::guard('web')->user()->email }}</h4>
-            <h4> Gender: {{ Auth::guard('web')->user()->gender }}</h4>
-            <h4> Birthdate: {{ Auth::guard('web')->user()->birthDate }}</h4>
-            <h4> BloodGroup: {{ Auth::guard('web')->user()->name }}</h4>
-
-           
-            
-        </div>
 
 
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 .reg-box mx-auto">
-                    
-
-                    @if(Auth::guard('web')->user()->status == 1)
-                    <h4 class="fw-bold text-center">Your account is approved.</h4>
-                    <div class="backtopage"> <h4> You can share this Ref Code - {{ Auth::guard('web')->user()->shareableRefcode }}  </h4></div>
-                    @else
-                    <h4 class="fw-bold text-center">Soon your request will be approved.</h4>
-                    @endif
-
-                    
-                    
-
-                    <a class="btn btn-primary text-center" href="{{ route('userProfileEdit', Auth::guard('web')->user()->id) }}">Edit</a>
-                     
+    <div class="container">
+    <div class="main-body">
+    
+    <br><br>
+    
+          <div class="row gutters-sm">
+            <div class="col-md-4 mb-3">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex flex-column align-items-center text-center">
+                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
+                    <div class="mt-3">
+                      <h4>{{ Auth::guard('web')->user()->name }}</h4>
+                      
+                      <a class="btn btn-primary text-center" href="{{ route('userProfileEdit', Auth::guard('web')->user()->id) }}">Edit</a>
+                      
+                    </div>
+                  </div>
                 </div>
+              </div>
+              
             </div>
+
+            <div class="col-md-8">
+              <div class="card mb-3">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Full Name</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                    {{ Auth::guard('web')->user()->name }}
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Email</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                    {{ Auth::guard('web')->user()->email }}
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Phone</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                    {{ Auth::guard('web')->user()->phone }}
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Gender</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                    <h4> {{ Auth::guard('web')->user()->gender }}</h4>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Date of Birth</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                    {{ Auth::guard('web')->user()->birthDate }}
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Blood Group</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                    {{ Auth::guard('web')->user()->bloodGroup }}
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">City</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                    {{ Auth::guard('web')->user()->city }}
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Nid No</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                    {{ Auth::guard('web')->user()->nid }}
+                    </div>
+                  </div>
+                  <hr>
+                  
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="card mb-3">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Submitted Referance Code</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                    {{ Auth::guard('web')->user()->refCode }}
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Shareable Referance Code</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                    {{ Auth::guard('web')->user()->shareableRefcode }}
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Transaction Id</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                    {{ Auth::guard('web')->user()->transactionId }}
+                    </div>
+                  </div>
+                 
+                  <hr>
+                  
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="card mb-3">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Vehicle</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                    {{ Auth::guard('web')->user()->vehicle }}
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Driving license</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                    {{ Auth::guard('web')->user()->drivingLicense }}
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">City Name</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                    {{ Auth::guard('web')->user()->cityName }}
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Category</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                    <h4> {{ Auth::guard('web')->user()->category }}</h4>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Number</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                    {{ Auth::guard('web')->user()->number }}
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+
         </div>
-    </section>
+    </div>
 
-        
-    </body>
 
-    @endsection
+
+@endsection
+
+
+            <!-- @if(Auth::user()->photo)
+            <img src="{{ asset(Auth::user()->photo) }}" width="193" height="130" alt="">
+            @endif -->
