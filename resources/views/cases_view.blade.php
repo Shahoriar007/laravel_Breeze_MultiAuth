@@ -74,6 +74,18 @@ tr:nth-child(even){background-color: #f2f2f2}
 @endforeach
 
 </table>
+
+<!-- Pagination -->
+<br>
+<br>
+<div class="row justify-content-md-center">
+  <div class="col-md-auto">
+  {{ $cases->links() }}
+  </div> 
+</div>
+<br>
+<br>
+
 </div>
 
 

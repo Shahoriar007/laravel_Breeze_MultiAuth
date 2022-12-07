@@ -3,7 +3,7 @@
 
 <body class="background">
 <section class="registration">
-<div class="backtopage"><a href="{{ route('main.home') }}"><i class="fas fa-chevron-left"></i>Go to homepage</a></div>
+<div class="backtopage"><a href="{{ url()->previous() }}"><i class="fas fa-chevron-left"></i>Go Back</a></div>
         <div class="title">Edit User Information By Admin</div>
         <div class="container">
             <div class="row">
@@ -81,14 +81,18 @@
                                 <div class="input__box col-md-6">
                                     <span class="details">Upload your profile pic</span>
                                     <div class="avatar-upload">
+                                    
                                         <div class="avatar-edit">
-                                            <input id="photo" type="file" name="photo" accept=".png, .jpg, .jpeg" />
-                                            <label for="photo"></label>
-                                        </div>
-                                        <div class="avatar-preview">
-                                            <div id="imagePreview" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9YhceWoUKbK2wMeimcB0NgVEqYlpd6ccl411nf7jlx4sV5e8y5b8CdsEjPFtmbHoKhb0&usqp=CAU');">
-                                            </div>
                                             
+                                            <input class="form-control" type="file" id="photo" name="photo" accept=".png, .jpg, .jpeg" >
+                                            <label for="photo"></label>
+
+                                        </div>
+
+                                        <div class="form-group">
+                                            <!-- case image -->
+                                            <img class="rounded-circle" height="200" width="200" id="showcasePhoto" src="{{ (!empty($usersProfile->photo))? url($usersProfile->photo):url('upload/no_image.jpg') }}" width="100" height="100">
+
                                         </div>
                                     </div>
                                 </div>

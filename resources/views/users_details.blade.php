@@ -6,14 +6,21 @@
   <div class="nk-content ">
                     <div class="container-fluid">
                         <div class="nk-content-inner">
+                            
+                        <a href="{{ route('showUsers') }}" class="btn btn-outline-light bg-white d-none d-sm-inline-flex"><em class="icon ni ni-arrow-left"></em><span>Back</span></a>
+                                                        
+                        
                             <div class="nk-content-body">
                                 <div class="nk-block">
+                                    
                                     <div class="card card-bordered">
                                         <div class="card-aside-wrap">
                                             <div class="card-inner card-inner-lg">
                                                 <div class="nk-block-head nk-block-head-lg">
+                                                    
                                                     <div class="nk-block-between">
                                                         <div class="nk-block-head-content">
+
                                                             <h4 class="nk-block-title">Personal Information</h4>
                                                             <div class="nk-block-des">
                                                                 <p>Basic info, like your name and address, that you use on Nio Platform.</p>

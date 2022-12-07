@@ -72,7 +72,14 @@
               <div class="card">
                 <div class="card-body">
                   <div class="d-flex flex-column align-items-center text-center">
+                    
+
+                    @if(Auth::user()->photo)
+                    <img src="{{ asset(Auth::user()->photo) }}" class="rounded-circle" width="150" alt="">
+                    @else
                     <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
+                    @endif
+
                     <div class="mt-3">
                       <h4>{{ Auth::guard('web')->user()->name }}</h4>
                       
@@ -264,6 +271,4 @@
 @endsection
 
 
-            <!-- @if(Auth::user()->photo)
-            <img src="{{ asset(Auth::user()->photo) }}" width="193" height="130" alt="">
-            @endif -->
+            

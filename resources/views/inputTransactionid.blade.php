@@ -22,7 +22,7 @@
                                     <span class="details text-white">TransactionID*</span>
                                     <p class="text-white">Please Pay 100 tk to this Bkash Merchant no for registration and enter the Transaction id.
                                                 <br> Bkash Merchant No: <span class="text-danger">01712322027</span></p>
-                                    <input id="transactionId" type="text" name="transactionId"   >
+                                    <input id="transactionId" type="text" name="transactionId" required>
 
                                 </div>
                             </div>

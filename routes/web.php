@@ -49,13 +49,16 @@ Route::prefix('admin')->group(function(){
 
     // All Users view
     Route::get('/viewusers', [UserController::class, 'usersView'])->middleware(['auth:admin', 'verified'])->name('showUsers');
+    // Admin add user page view
+    Route::get('/adduser', [RegisteredUserController::class, 'usersAddByAdminView'])->middleware(['auth:admin', 'verified'])->name('adminAddUser');
+    // Admin add user page view
+    Route::post('/adduser', [RegisteredUserController::class, 'usersAddByAdminForm'])->middleware(['auth:admin', 'verified'])->name('adminAddUserForm');
     // Users details view
     Route::get('/viewusers/{id}', [UserController::class, 'usersDetails'])->middleware(['auth:admin', 'verified']);
     // edit page view
     Route::get('/viewusers/edit/{id}', [UserController::class, 'adminUserProfileEditView'])->middleware(['auth:admin', 'verified'])->name('userProfileEditviewbyadmin');
     // edit
     Route::post('/viewusers/update/{id}', [UserController::class, 'adminUserUpdate'])->middleware(['auth:admin', 'verified'])->name('userProfileUpdatebyadmin');
-
     // Admin User Delete
     Route::get('/viewusers/delete/{id}', [UserController::class, 'deleteUsers'])->middleware(['auth:admin', 'verified']);
 

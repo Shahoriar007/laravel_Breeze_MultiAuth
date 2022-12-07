@@ -12,9 +12,11 @@ class UserController extends Controller
     // all users view classes
     public function usersView(){
 
-        $users = User::all();
+        $users = User::paginate(10);
         return view('users_view',compact('users'));
     }
+
+   
 
     // users details view classes
     public function usersDetails( $id ){

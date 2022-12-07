@@ -44,7 +44,7 @@ tr:nth-child(even){background-color: #f2f2f2}
 <h2>HTML Table</h2>
 
 <div style="overflow-x:auto;">
-<table>
+<table >
   <tr>
     <th>Id</th>
     <th>Name</th>
@@ -120,6 +120,18 @@ tr:nth-child(even){background-color: #f2f2f2}
 @endforeach
 
 </table>
+
+<!-- Pagination -->
+<br>
+<br>
+<div class="row justify-content-md-center">
+  <div class="col-md-auto">
+  {{ $users->links() }}
+  </div> 
+</div>
+<br>
+<br>
+
 </div>
 
 </body>

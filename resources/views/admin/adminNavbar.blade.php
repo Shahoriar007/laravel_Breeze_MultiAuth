@@ -26,11 +26,21 @@
                                     <h6 class="overline-title text-primary-alt">Use-Case Preview</h6>
 
                                 </li><!-- .nk-menu-item -->
-                                <li class="nk-menu-item">
-                                    <a href="{{ route('showUsers') }}" class="nk-menu-link">
-                                        <span class="nk-menu-icon"><em class="icon ni ni-user-list"></em></span>
-                                        <span class="nk-menu-text">All Users</span>
+                                
+
+                                <li class="nk-menu-item has-sub">
+                                    <a href="#" class="nk-menu-link nk-menu-toggle">
+                                        <span class="nk-menu-icon"><em class="icon ni ni-tile-thumb"></em></span>
+                                        <span class="nk-menu-text">Users</span>
                                     </a>
+                                    <ul class="nk-menu-sub">
+                                        <li class="nk-menu-item">
+                                            <a href="{{ route('showUsers') }}" class="nk-menu-link"><span class="nk-menu-text">All Users</span></a>
+                                        </li>
+                                        <li class="nk-menu-item">
+                                            <a href="{{ route('adminAddUser') }}" class="nk-menu-link"><span class="nk-menu-text">Add User</span></a>
+                                        </li>
+                                    </ul><!-- .nk-menu-sub -->
                                 </li><!-- .nk-menu-item -->
 
                                 <li class="nk-menu-item">

@@ -48,21 +48,6 @@ class RegisteredUserController extends Controller
             $path = $request->file('photo')->storePublicly('photos');
         }
 
-
-        // if null insert admin refCode
-        // else insert given refcode
-
-        // if($request->refCode == null){
-        //     $givenRefcode = "NCadmin1000";
-        // }
-        // else{
-        //     $givenRefcode = $request->refCode;
-        // }
-
-        // generate randdom ref code
-        // $generatedRefcode = Str::random(8);
-
-
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
@@ -156,4 +141,77 @@ class RegisteredUserController extends Controller
     
             return redirect()->route('dashboard');
         }
+
+         // admin can add new users (viewPage)
+    public function usersAddByAdminView(){
+
+        return view('adminUserProfileAdd');
+
+    }
+    // admin can add new users form
+    public function usersAddByAdminForm(Request $request){
+
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+
+            'phone' => ['required','unique:'.User::class],
+            'photo' => ['file', 'mimes:jpg,png,gif'],
+        ]);
+
+        $path = null;
+        if ($request->hasFile('photo')) {
+            $path = $request->file('photo')->storePublicly('photos');
+        }
+
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+
+            // personal info
+            'phone' => $request->phone,
+            'nid' => $request->nid,
+            'gender' => $request->gender,
+            'birthDate' => $request->birthDate,
+            'bloodGroup' => $request->bloodGroup,
+            'photo' => $path,
+            
+
+            // Vehicle Info
+            'city' => $request->city,
+            'vehicle' => $request->vehicle,
+            'drivingLicense' => $request->drivingLicense,
+
+            'cityName' => $request->cityName,
+            'category' => $request->category,
+            'number' => $request->number,
+
+            'transactionId' => $request->transactionId,
+
+            'refCode' => $request->refCode,
+            //'shareableRefcode' => $request->shareableRefcode,
+        
+        ]);
+
+        event(new Registered($user));
+
+        return view('users_view');
+
+    }
 }
+
+
+// if null insert admin refCode
+        // else insert given refcode
+
+        // if($request->refCode == null){
+        //     $givenRefcode = "NCadmin1000";
+        // }
+        // else{
+        //     $givenRefcode = $request->refCode;
+        // }
+
+        // generate randdom ref code
+        // $generatedRefcode = Str::random(8);
+
