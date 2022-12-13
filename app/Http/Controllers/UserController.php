@@ -12,7 +12,7 @@ class UserController extends Controller
     // all users view classes
     public function usersView(){
 
-        $users = User::paginate(10);
+        $users = User::latest()->paginate(10);
         return view('users_view',compact('users'));
     }
 

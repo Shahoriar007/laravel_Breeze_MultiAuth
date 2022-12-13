@@ -19,7 +19,10 @@
 
                                 <div class="input__box col-md-6">
                                     <span class="details">Phone Number*</span>
-                                    <input type="tel" id="phone" name="phone" pattern="[0-9]{11}" placeholder="01353456789" required>
+                                    <input type="tel" id="phone" name="phone" pattern="[0-9]{11}" placeholder="01353456789" >
+                                    @error('phone')
+                                    <span class="text-danger">{{ $message }}</span>
+                                    @enderror
                                 </div>
 
                                 <!-- email -->
@@ -30,7 +33,10 @@
 
                                 <div class="input__box col-md-6">
                                     <span class="details">Full Name*</span>
-                                    <input id="name" type="text" name="name" placeholder="same as NID/License" required>
+                                    <input id="name" type="text" name="name" placeholder="same as NID/License" >
+                                    @error('name')
+                                    <span class="text-danger">{{ $message }}</span>
+                                    @enderror
                                 </div>
 
                                 <!-- <div class="input__box col-md-6">
@@ -74,11 +80,17 @@
                                 <!-- Password -->
                                 <div class="input__box col-md-6">
                                     <span class="details" >Password*</span>
-                                    <input id="password" type="password" name="password" placeholder="Minimum 8 digit" required>
+                                    <input id="password" type="password" name="password" placeholder="Minimum 8 digit" >
+                                    @error('password')
+                                    <span class="text-danger">{{ $message }}</span>
+                                    @enderror
                                 </div>
                                 <div class="input__box col-md-6" >
-                                    <span class="details" >Confirm Password*</span>
-                                    <input id="password_confirmation" type="password" name="password_confirmation" placeholder="same as password" required>
+                                    <span class="details" >Confirm Password</span>
+                                    <input id="password_confirmation" type="password" name="password_confirmation" placeholder="same as password" >
+                                    @error('password_confirmation')
+                                    <span class="text-danger">{{ $message }}</span>
+                                    @enderror
                                 </div>
 
                                 <!-- <div class="input__box col-md-6">
@@ -183,10 +195,10 @@
                             </div> -->
 
 
-                            <h5 class="v-info"> User Ref Code</h5>
+                            <h5 class="v-info"> User Referral Number</h5>
                             <div class="row text-center">
                             <div class="input__box col-md-12">
-                                <span class="details">User Ref Code</span>
+                                <span class="details">User Referral Number</span>
                                 <input id="refCode" type="text" name="refCode" placeholder="not mandatory" >
                             </div>
 

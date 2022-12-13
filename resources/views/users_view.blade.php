@@ -59,8 +59,8 @@ tr:nth-child(even){background-color: #f2f2f2}
     <th>City Name</th>
     <th>Category</th>
     <th>Number</th>
-    <th>Ref Code</th>
-    <th>Shareable Ref Code</th>
+    <th>Referral Number</th>
+    <th>Shareable Referral Number</th>
     <th>Bkash TransactionID</th>
     <th>Status</th>
   </tr>

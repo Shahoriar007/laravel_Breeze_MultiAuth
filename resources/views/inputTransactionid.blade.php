@@ -10,7 +10,7 @@
                 <div class="col-md-8 .reg-box mx-auto">
 
 
-                <form method="POST" action="{{ route('tranlogin') }}">
+                <form name="trform" method="POST" action="{{ route('tranlogin') }}">
                         @csrf
 
                         <input type="hidden" name="id" value="{{ Auth::guard('web')->user()->id }}">
@@ -22,7 +22,13 @@
                                     <span class="details text-white">TransactionID*</span>
                                     <p class="text-white">Please Pay 100 tk to this Bkash Merchant no for registration and enter the Transaction id.
                                                 <br> Bkash Merchant No: <span class="text-danger">01712322027</span></p>
+
+
+                                                <span id="trid" class="text-danger"></span>
                                     <input id="transactionId" type="text" name="transactionId" required>
+                                    
+                                    
+                                    
 
                                 </div>
                             </div>
@@ -40,3 +46,14 @@
     </section>
 
     @endsection
+
+<!-- <script>
+function validateForm() {
+  let x = document.forms["trform"]["transactionId"].value;
+  if (x == "") {
+    document.getElementById("trid").innerHTML="Please input Bkash transaction id";
+    return false;
+  }
+}
+</script> -->
+

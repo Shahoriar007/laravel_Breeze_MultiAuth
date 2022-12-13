@@ -29,6 +29,7 @@
                                 <div class="input__box col-md-6">
                                     <span class="details">Full Name*</span>
                                     <input id="name" type="text" name="name" value="{{ $usersProfile->name }}">
+                                    
                                 </div>
 
                                 <div class="input__box col-md-6">

@@ -1,5 +1,6 @@
 @extends('master')
 @section('register')
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 
 <body class="background">
 <section class="registration">
@@ -19,7 +20,10 @@
 
                                 <div class="input__box col-md-6">
                                     <span class="details">Phone Number*</span>
-                                    <input type="tel" id="phone" name="phone" pattern="[0-9]{11}" placeholder="01353456789" required>
+                                    <input type="tel" id="phone" name="phone" pattern="[0-9]{11}" placeholder="01353456789" >
+                                    @error('phone')
+                                    <span class="text-danger">{{ $message }}</span>
+                                    @enderror
                                 </div>
 
                                 <!-- email -->
@@ -30,7 +34,10 @@
 
                                 <div class="input__box col-md-6">
                                     <span class="details">Full Name*</span>
-                                    <input id="name" type="text" name="name" placeholder="same as NID/License" required>
+                                    <input id="name" type="text" name="name" placeholder="same as NID/License" >
+                                    @error('name')
+                                    <span class="text-danger">{{ $message }}</span>
+                                    @enderror
                                 </div>
 
                                 <div class="input__box col-md-6">
@@ -74,14 +81,20 @@
                                 <!-- Password -->
                                 <div class="input__box col-md-6">
                                     <span class="details" >Password*</span>
-                                    <input id="password" type="password" name="password" placeholder="Minimum 8 digit" required>
+                                    <input id="password" type="password" name="password" placeholder="Minimum 8 digit" >
+                                    @error('password')
+                                    <span class="text-danger">{{ $message }}</span>
+                                    @enderror
                                 </div>
                                 <div class="input__box col-md-6" >
                                     <span class="details" >Confirm Password*</span>
-                                    <input id="password_confirmation" type="password" name="password_confirmation" placeholder="same as password" required>
+                                    <input id="password_confirmation" type="password" name="password_confirmation" placeholder="same as password" >
+                                    @error('password_confirmation')
+                                    <span class="text-danger">{{ $message }}</span>
+                                    @enderror
                                 </div>
 
-                                <div class="input__box col-md-6">
+                                <!-- <div class="input__box col-md-6">
                                     <span class="details">Upload your profile pic</span>
                                     <div class="avatar-upload">
                                         <div class="avatar-edit">
@@ -92,6 +105,27 @@
                                             <div id="imagePreview" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9YhceWoUKbK2wMeimcB0NgVEqYlpd6ccl411nf7jlx4sV5e8y5b8CdsEjPFtmbHoKhb0&usqp=CAU');">
                                             </div>
                                         </div>
+                                    </div>
+                                </div> -->
+
+                                <div class="input__box col-md-6">
+                                    <span class="details">Upload your profile pic</span>
+                                    <div class="avatar-upload">
+                
+
+                                        <div class="avatar-edit">
+                                            
+                                            <input class="form-control" type="file" id="photo" name="photo" accept=".png, .jpg, .jpeg" >
+                                            <label for="photo"></label>
+
+                                        </div>
+
+                                        <div class="form-group">
+                                            <!-- case image -->
+                                            <img class="rounded-circle" height="200" width="200" id="showcasePhoto" src="{{ (!empty($usersProfile->photo))? url($usersProfile->photo):url('upload/no_image.jpg') }}" width="100" height="100">
+
+                                        </div>
+
                                     </div>
                                 </div>
                                 
@@ -221,5 +255,17 @@
             </div>
         </div>
     </section>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#photo').change(function(e){
+                var reader = new FileReader();
+                reader.onload = function(e){
+                    $('#showcasePhoto').attr('src',e.target.result);
+                }
+                reader.readAsDataURL(e.target.files['0']);
+            });
+        });
+    </script>
 
     @endsection

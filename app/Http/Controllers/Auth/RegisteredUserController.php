@@ -40,7 +40,12 @@ class RegisteredUserController extends Controller
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
 
             'phone' => ['required','unique:'.User::class],
+            'password' => 'required',
+            'password_confirmation' => 'required',
             'photo' => ['file', 'mimes:jpg,png,gif'],
+        ],[
+            'name.required' => 'Input your name same as your NID',
+            'phone.required' => 'Input your active phone number',
         ]);
 
         $path = null;
@@ -94,11 +99,16 @@ class RegisteredUserController extends Controller
             'transactionId' => $request->transactionId,
         ]);
 
+        $notification = array(
+            'message' => 'Registration done succesfully',
+            'alert-type' => 'success'
+        );
+
         //return redirect(RouteServiceProvider::HOME);
-        return view('dashboard');
+        // return view('dashboard')->with($notification);
+        return redirect()->route('dashboard')->with($notification);
     }
 
-    
 
         // User Information Edit View
         public function userEdit($id ){
@@ -154,9 +164,13 @@ class RegisteredUserController extends Controller
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'password_confirmation' => ['required'],
 
             'phone' => ['required','unique:'.User::class],
             'photo' => ['file', 'mimes:jpg,png,gif'],
+        ],[
+            'name.required' => 'Input your name same as your NID',
+            'phone.required' => 'Input your active phone number',
         ]);
 
         $path = null;
