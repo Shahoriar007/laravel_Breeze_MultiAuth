@@ -146,10 +146,13 @@ class RegisteredUserController extends Controller
     
                 
             ]);
+
+            $notification = array(
+                'message' => 'User information update succesfully',
+                'alert-type' => 'success'
+            );
     
-           
-    
-            return redirect()->route('dashboard');
+            return redirect()->route('dashboard')->with($notification);
         }
 
          // admin can add new users (viewPage)
@@ -208,9 +211,16 @@ class RegisteredUserController extends Controller
         
         ]);
 
+        $notification = array(
+            'message' => 'User succesfully added!',
+            'alert-type' => 'success'
+        );
+
         event(new Registered($user));
 
-        return view('users_view');
+        $users = User::latest()->paginate(10);
+
+        return view('users_view',compact('users'))->with($notification);
 
     }
 }

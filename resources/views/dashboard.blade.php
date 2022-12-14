@@ -14,23 +14,23 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav m-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Home</a>
+                    <a class="nav-link" href="{{ route('main.home') }}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#services">Services</a>
+                    <a class="nav-link" href="{{ route('main.home') }}#services">Services</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#about">About</a>
+                    <a class="nav-link" href="{{ route('main.home') }}#about">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#contact">Contact</a>
+                    <a class="nav-link" href="{{ route('main.home') }}#contact">Contact</a>
                 </li>
 
             @if (Route::has('login'))
                 
                 @auth
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('dashboard') }}">View</a>
+                    <a class="nav-link" href="{{ route('dashboard') }}">Case Report</a>
                 </li>
                 @else
                 <li class="nav-item">
@@ -47,7 +47,7 @@
 
             @if (Route::has('dashboard'))
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('profilePage') }}">Profile</a>
+                    <a class="nav-link" href="{{ route('profilePage') }}">Profile Details</a>
                 </li>
 
                 <form method="POST" action="{{ route('logout') }}"   style="display: flex; justify-content: center;">
@@ -145,26 +145,6 @@
         });
     </script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"> </script>
 
-<script>
-    @if(Session::has('message'))
-    var type = "{{ Session::get('alert-type','info') }}"
-    switch(type){
-        case 'info':
-            toastr.info(" {{ Session::get('message') }} ");
-        break;
-        case 'success':
-            toastr.success(" {{ Session::get('message') }} ");
-        break;
-        case 'warning':
-            toastr.warning(" {{ Session::get('message') }} ");
-        break;
-        case 'error':
-            toastr.error(" {{ Session::get('message') }} ");
-        break;
-    }
-    @endif
-</script>
 
     @endsection

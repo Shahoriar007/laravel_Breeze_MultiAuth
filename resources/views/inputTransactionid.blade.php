@@ -35,7 +35,7 @@
 
 
                         <div class="button text-center">
-                            <input type="submit" class="fire mb-2" value="Register">
+                            <input type="submit" class="fire mb-2" value="Final Submit">
                             <div>Already have an account? <a href="{{ route('login') }}" style="color: #fbc72a;">Login</a></div>
                         </div>
                     </form>

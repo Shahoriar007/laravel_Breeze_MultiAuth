@@ -18,7 +18,7 @@
                             <div class="row">
 
                                 <div class="input__box col-md-6">
-                                    <span class="details">Phone Number*</span>
+                                    <span class="details">Active Phone Number*</span>
                                     <input type="tel" id="phone" name="phone" pattern="[0-9]{11}" placeholder="01353456789" >
                                     @error('phone')
                                     <span class="text-danger">{{ $message }}</span>
@@ -195,10 +195,10 @@
                             </div> -->
 
 
-                            <h5 class="v-info"> User Referral Number</h5>
+                            <h5 class="v-info"> Reference Mobile Number</h5>
                             <div class="row text-center">
                             <div class="input__box col-md-12">
-                                <span class="details">User Referral Number</span>
+                                <span class="details">User Reference Mobile Number</span>
                                 <input id="refCode" type="text" name="refCode" placeholder="not mandatory" >
                             </div>
 
@@ -223,7 +223,7 @@
 
 
                         <div class="button text-center">
-                            <input type="submit" class="fire mb-2" value="Register">
+                            <input type="submit" class="fire mb-2" value="Next >">
                             <div>Already have an account? <a href="{{ route('login') }}" style="color: #fbc72a;">Login</a></div>
                         </div>
                     </form>

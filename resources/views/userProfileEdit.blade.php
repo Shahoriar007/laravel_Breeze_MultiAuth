@@ -17,6 +17,34 @@
                         <input type="hidden" name="id" value="{{ $usersProfile->id }}">
 
                         <div class="user__details">
+
+                        <div class="input__box col-md-6">
+                                    
+                                    <div class="avatar-upload">
+                
+                                    
+                                        <div class="avatar-edit">
+                                        
+                                            <input class="form-control" type="file" id="photo" name="photo" accept=".png, .jpg, .jpeg" >
+                                            <label for="photo"></label>
+
+                                        </div>
+                                        
+                                        
+                                        <div class="form-group">
+                                            
+                                            <!-- case image -->
+                                            <img class="rounded-circle" height="200" width="200" id="showcasePhoto" src="{{ (!empty($usersProfile->photo))? url($usersProfile->photo):url('upload/no_image.jpg') }}" width="100" height="100">
+                                            
+                                        </div>
+
+                                        <span class="details text-center">Upload your profile pic</span>
+
+                                    </div>
+                               
+                                </div>
+
+
                             <h5 class="v-info">Personal Information</h5>
                             <div class="row">
 
@@ -80,26 +108,7 @@
                                     <input id="password_confirmation" type="password" name="password_confirmation" placeholder="********" required>
                                 </div> -->
 
-                                <div class="input__box col-md-6">
-                                    <span class="details">Upload your profile pic</span>
-                                    <div class="avatar-upload">
-                
-
-                                        <div class="avatar-edit">
-                                            
-                                            <input class="form-control" type="file" id="photo" name="photo" accept=".png, .jpg, .jpeg" >
-                                            <label for="photo"></label>
-
-                                        </div>
-
-                                        <div class="form-group">
-                                            <!-- case image -->
-                                            <img class="rounded-circle" height="200" width="200" id="showcasePhoto" src="{{ (!empty($usersProfile->photo))? url($usersProfile->photo):url('upload/no_image.jpg') }}" width="100" height="100">
-
-                                        </div>
-
-                                    </div>
-                                </div>
+                                
                                 
                             </div>
 

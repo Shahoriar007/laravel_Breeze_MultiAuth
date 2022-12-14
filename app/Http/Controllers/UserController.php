@@ -71,7 +71,12 @@ class UserController extends Controller
 
         User::findOrFail($id)->delete();
 
-        return redirect()->back();
+        $notification = array(
+            'message' => 'User Deleted',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification);
     }
 
     
@@ -101,15 +106,30 @@ class UserController extends Controller
         $model = User::find($id);
         $model->status=$status;
 
+        // Notification
+        if($status == 0){
+            $notification = array(
+                'message' => 'User Deactivated!',
+                'alert-type' => 'success'
+            );
+        }
+        else{
+            $notification = array(
+                'message' => 'User Activated!',
+                'alert-type' => 'success'
+            );
+        }
+
         // if null insert admin refCode after activate
         // else insert given refcode 
 
         if($model->refCode == null && $model->status == "1"){
-            $model->refCode ="nca1000";
+            $model->refCode ="01910512921";
+
         }
 
         if ($model->status == "1"){
-            $model->shareableRefcode = "ncu" . "1000" + "$id";
+            $model->shareableRefcode = $model->phone;
         }
 
         $model->save();
@@ -120,8 +140,10 @@ class UserController extends Controller
         $account->paymentAmount = '100';
         $account->save();
 
+        
+
         // $request->session()->flash('message','Category Status Updated');
-        return redirect('admin/viewusers');
+        return redirect('admin/viewusers')->with($notification);
     }
 
 

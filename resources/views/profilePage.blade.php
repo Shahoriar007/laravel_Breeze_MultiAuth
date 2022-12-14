@@ -4,7 +4,7 @@
 
 <body class="background">
 
-    <nav class="header-wrap animated navbar navbar-expand-md navbar-dark bg-dark">
+<nav class="header-wrap animated navbar navbar-expand-md navbar-dark bg-dark">
         <a class="navbar-brand logo" href="index.html"><img src="{{ asset('img/logo1.png')}}" alt=""></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -13,23 +13,23 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav m-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Home</a>
+                    <a class="nav-link" href="{{ route('main.home') }}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#services">Services</a>
+                    <a class="nav-link" href="{{ route('main.home') }}#services">Services</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#about">About</a>
+                    <a class="nav-link" href="{{ route('main.home') }}#about">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#contact">Contact</a>
+                    <a class="nav-link" href="{{ route('main.home') }}#contact">Contact</a>
                 </li>
 
             @if (Route::has('login'))
                 
                 @auth
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('dashboard') }}">View</a>
+                    <a class="nav-link" href="{{ route('dashboard') }}">Case Report</a>
                 </li>
                 @else
                 <li class="nav-item">
@@ -46,7 +46,7 @@
 
             @if (Route::has('dashboard'))
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('profilePage') }}">Profile</a>
+                    <a class="nav-link" href="{{ route('profilePage') }}">Profile Details</a>
                 </li>
 
                 <form method="POST" action="{{ route('logout') }}"   style="display: flex; justify-content: center;">
@@ -177,7 +177,7 @@
                 <div class="card-body">
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Submitted Referance Code</h6>
+                      <h6 class="mb-0">Submitted Referance Number</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
                     {{ Auth::guard('web')->user()->refCode }}
@@ -186,7 +186,7 @@
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Shareable Referance Code</h6>
+                      <h6 class="mb-0">Shareable Reference Number</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
                     {{ Auth::guard('web')->user()->shareableRefcode }}

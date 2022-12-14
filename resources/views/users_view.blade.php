@@ -34,6 +34,8 @@ th, td {
 
 tr:nth-child(even){background-color: #f2f2f2}
 </style>
+
+
 </head>
 <body>
 
@@ -63,6 +65,7 @@ tr:nth-child(even){background-color: #f2f2f2}
     <th>Shareable Referral Number</th>
     <th>Bkash TransactionID</th>
     <th>Status</th>
+    <th colspan="2" class="text-center">Action</th>
   </tr>
 
 @foreach($users as $item)

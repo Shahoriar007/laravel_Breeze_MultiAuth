@@ -45,7 +45,7 @@ class UserCaseController extends Controller
 
     // all cases view classes
     public function showAllcases(){
-        $cases = Casefine::paginate(10);
+        $cases = Casefine::latest()->paginate(10);
         return view('cases_view',compact('cases'));
     }
 
