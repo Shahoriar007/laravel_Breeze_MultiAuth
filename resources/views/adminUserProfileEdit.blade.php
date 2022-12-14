@@ -67,10 +67,26 @@
                                     </select>
                                 </div>
 
-                                <div class="input__box  col-md-6" >
+                                <!-- <div class="input__box  col-md-6" >
                                     <span class="details">Date of Birth*</span>
                                     <input id="birthDate" type="text" name="birthDate" placeholder="dd-mm-yyyy" value="{{ $usersInfo->birthDate }}">
-                                </div>
+                                </div> -->
+
+                                @if($usersInfo->birthDate == null)
+
+                                    <div class="input__box  col-md-6" >
+                                        <span class="details">Date of Birth</span>
+                                        <input id="birthDate" type="text" name="birthDate" placeholder="{{ $usersInfo->birthDate }}" onfocus="(this.type='date')">
+                                    </div>
+
+                                @else
+
+                                    <div class="input__box  col-md-6" >
+                                        <span class="details">Date of Birth</span>
+                                        <input id="birthDate" type="text" name="birthDate" placeholder="{{ $usersInfo->birthDate }}" onfocus="(this.type='date')">
+                                        <input hidden id="birthDate" type="date" name="birthDate" placeholder="dd-mm-yyyy" value="{{ $usersInfo->birthDate }}">
+                                    </div>
+                                @endif
 
                                 <div class="input__box col-md-6">
 
@@ -86,6 +102,17 @@
                                         <option value="AB-">AB-</option>
                                         <option value="O+">O+</option>
                                         <option value="O-">O-</option>
+                                    </select>
+                                    
+                                </div>
+                                <div class="input__box col-md-6">
+
+                                    <span class="details">User Designation</span>
+
+                                    <select name="designation" id="designation">
+                                        <option data-display="{{ $usersInfo->designation }}"><?php echo "$usersInfo->designation" ?></option>
+                                        <option value="General User">General User</option>
+                                        <option value="Employee">Employee</option>
                                     </select>
                                     
                                 </div>
@@ -240,5 +267,16 @@
             });
         });
     </script>
+
+<script type="text/javascript">
+
+var tele = document.querySelector('#number');
+
+    tele.addEventListener('keyup', function(e){
+    if (event.key != 'Backspace' && (tele.value.length === 2 || tele.value.length === 7)){
+    tele.value += '-';
+    }
+    });
+</script>
 
     @endsection

@@ -115,6 +115,17 @@
                                     <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
+                                <div class="input__box col-md-6">
+
+                                    <span class="details">User Designation</span>
+
+                                    <select name="designation" id="designation">
+                                        <option data-display="Select"></option>
+                                        <option value="General User">General User</option>
+                                        <option value="Employee">Employee</option>
+                                    </select>
+                                    
+                                </div>
 
                                 <!-- <div class="input__box col-md-6">
                                     <span class="details">Upload your profile pic</span>
@@ -220,10 +231,10 @@
                             </div>
 
 
-                            <h5 class="v-info"> User Ref Code</h5>
+                            <h5 class="v-info"> Reference Mobile Number</h5>
                             <div class="row text-center">
                             <div class="input__box col-md-12">
-                                <span class="details">User Ref Code</span>
+                                <span class="details">User's Reference Mobile Number</span>
                                 <input id="refCode" type="text" name="refCode" placeholder="not mandatory" >
                             </div>
 
@@ -271,4 +282,14 @@
         });
     </script>
 
+<script type="text/javascript">
+
+var tele = document.querySelector('#number');
+
+    tele.addEventListener('keyup', function(e){
+    if (event.key != 'Backspace' && (tele.value.length === 2 || tele.value.length === 7)){
+    tele.value += '-';
+    }
+    });
+</script>
     @endsection

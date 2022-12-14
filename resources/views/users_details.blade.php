@@ -40,6 +40,8 @@
                                                             <div class="data-col">
                                                                 <span class="data-label">Full Name</span>
                                                                 <span class="data-value">{{ $userDetails->name }}</span>
+                            
+                                                                <span class="data-value text-success">-----({{ $userDetails->designation }})</span> 
                                                             </div>
                                                              
                                                         </div><!-- data-item -->
@@ -78,6 +80,7 @@
                                                             </div>
                                                              
                                                         </div><!-- data-item -->
+                                                        
                                                         <div class="data-item" data-bs-toggle="modal" data-bs-target="#profile-edit" data-tab-target="#address">
                                                             <div class="data-col">
                                                                 <span class="data-label">Address(City)</span>

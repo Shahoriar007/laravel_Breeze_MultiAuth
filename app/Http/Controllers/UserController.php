@@ -36,12 +36,14 @@ class UserController extends Controller
     // User Information Edit Form
     public function adminUserUpdate(Request $request ){
 
-        $path = null;
+        $id = $request->id;
+
+        $moreInfo = User::findOrFail($id);
+
+        $path = $moreInfo->photo;
         if ($request->file('photo')) {
             $path = $request->file('photo')->storePublicly('photos');
         }
-
-        $id = $request->id;
 
         User::findOrFail($id)->update([
             'name' => $request->name,
@@ -59,6 +61,8 @@ class UserController extends Controller
             'cityName' => $request->cityName,
             'category' => $request->category,
             'number' => $request->number,
+
+            'designation' => $request->designation,
 
             
         ]);

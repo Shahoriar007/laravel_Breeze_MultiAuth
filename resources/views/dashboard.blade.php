@@ -73,6 +73,7 @@
                     
 
                     @if(Auth::guard('web')->user()->status == 1)
+                    
 
                         <h4 class="fw-bold text-center">Your account is approved.</h4>
                         <div class="backtopage"> <h4> You can share this Ref Code - {{ Auth::guard('web')->user()->shareableRefcode }}  </h4></div>
@@ -82,19 +83,26 @@
                         <form method="POST" action="{{ route('caseSubmit', Auth::guard('web')->user()->id) }}" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Case ID</label>
+                                <!-- case image -->
+                                <img  id="showcasePhoto" src="{{ (!empty($caseDetails->casePhoto))? url('upload/case_images/' . $caseDetails->casePhoto):url('upload/no_image.jpg') }}" width="100" height="100">
+
+                            </div>
+
+                            <div class="form-group">
+
+                                <label for="exampleInputEmail1">Case Number</label>
 
                                 <input class="form-control" type="text" id="caseId" name="caseId" >
                             </div>
 
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Case Code</label>
+                                <label for="exampleInputEmail1">Case Fine</label>
 
                                 <input class="form-control" type="text" id="caseCode" name="caseCode" >
                             </div>
 
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Fine Ammount</label>
+                                <label for="exampleInputEmail1">Comments(*if any) </label>
 
                                 <input class="form-control" type="text" id="fineAmmount" name="fineAmmount" >
                             </div>
@@ -105,11 +113,7 @@
                                 <input class="form-control" type="file" id="casePhoto" name="casePhoto" >
                             </div>
 
-                            <div class="form-group">
-                                <!-- case image -->
-                                <img  id="showcasePhoto" src="{{ (!empty($caseDetails->casePhoto))? url('upload/case_images/' . $caseDetails->casePhoto):url('upload/no_image.jpg') }}" width="100" height="100">
-
-                            </div>
+                            
 
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </form>

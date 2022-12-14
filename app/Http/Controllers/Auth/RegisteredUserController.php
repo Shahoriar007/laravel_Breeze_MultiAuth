@@ -80,6 +80,7 @@ class RegisteredUserController extends Controller
 
             'refCode' => $request->refCode,
             //'shareableRefcode' => $request->shareableRefcode,
+            'designation' => "General User",
         
         ]);
 
@@ -120,12 +121,14 @@ class RegisteredUserController extends Controller
         // User Information Edit Form
         public function userUpdate(Request $request ){
     
-            $path = null;
+            $id = $request->id;
+
+            $moreInfo = User::findOrFail($id);
+
+            $path = $moreInfo->photo;
             if ($request->file('photo')) {
                 $path = $request->file('photo')->storePublicly('photos');
             }
-    
-            $id = $request->id;
     
             User::findOrFail($id)->update([
                 'name' => $request->name,
@@ -134,6 +137,7 @@ class RegisteredUserController extends Controller
                 'nid' => $request->nid,
                 'birthDate' => $request->birthDate,
                 'bloodGroup' => $request->bloodGroup,
+                'gender' => $request->gender,
     
                 'photo' => $path,
     
@@ -143,8 +147,7 @@ class RegisteredUserController extends Controller
                 'cityName' => $request->cityName,
                 'category' => $request->category,
                 'number' => $request->number,
-    
-                
+ 
             ]);
 
             $notification = array(
@@ -208,6 +211,7 @@ class RegisteredUserController extends Controller
 
             'refCode' => $request->refCode,
             //'shareableRefcode' => $request->shareableRefcode,
+            'designation' => $request->designation,
         
         ]);
 

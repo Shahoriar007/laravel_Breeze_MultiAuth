@@ -55,6 +55,7 @@ tr:nth-child(even){background-color: #f2f2f2}
     <th>Gender</th>
     <th>Birth Date</th>
     <th>Blood Group</th>
+    <th>Users Designation</th>
     <th>City</th>
     <th>Vehicle</th>
     <th>Driving License</th>
@@ -77,6 +78,7 @@ tr:nth-child(even){background-color: #f2f2f2}
         <td>{{ $item->gender }}</td>
         <td>{{ $item->birthDate }}</td>
         <td>{{ $item->bloodGroup }}</td>
+        <td>{{ $item->designation }}</td>
         <td>{{ $item->city }}</td>
         <td>{{ $item->vehicle }}</td>
         <td>{{ $item->drivingLicense }}</td>

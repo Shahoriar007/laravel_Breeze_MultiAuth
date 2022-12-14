@@ -75,10 +75,26 @@
                                     </select>
                                 </div>
 
-                                <div class="input__box  col-md-6" >
+                                <!-- <div class="input__box  col-md-6" >
                                     <span class="details">Date of Birth*</span>
-                                    <input id="birthDate" type="text" name="birthDate" placeholder="dd-mm-yyyy" value="{{ $usersProfile->birthDate }}">
-                                </div>
+                                    <input id="birthDate" type="date" name="birthDate" placeholder="dd-mm-yyyy" value="{{ $usersProfile->birthDate }}">
+                                </div> -->
+
+                                @if($usersProfile->birthDate == null)
+
+                                    <div class="input__box  col-md-6" >
+                                        <span class="details">Date of Birth</span>
+                                        <input id="birthDate" type="text" name="birthDate" placeholder="{{ $usersProfile->birthDate }}" onfocus="(this.type='date')">
+                                    </div>
+
+                                @else
+
+                                    <div class="input__box  col-md-6" >
+                                        <span class="details">Date of Birth</span>
+                                        <input id="birthDate" type="text" name="birthDate" placeholder="{{ $usersProfile->birthDate }}" onfocus="(this.type='date')">
+                                        <input hidden id="birthDate" type="date" name="birthDate" placeholder="dd-mm-yyyy" value="{{ $usersProfile->birthDate }}">
+                                    </div>
+                                @endif
 
                                 <div class="input__box col-md-6">
 
@@ -248,5 +264,16 @@
             });
         });
     </script>
+
+<script type="text/javascript">
+
+var tele = document.querySelector('#number');
+
+    tele.addEventListener('keyup', function(e){
+    if (event.key != 'Backspace' && (tele.value.length === 2 || tele.value.length === 7)){
+    tele.value += '-';
+    }
+    });
+</script>
 
     @endsection
