@@ -52,7 +52,7 @@ tr:nth-child(even){background-color: #f2f2f2}
     <div class="row justify-content-md-center">
       <div class="col-md-8">
         <div class="form-group">
-          <select name="Designation" class="form-control">
+          <select name="designation" class="form-control">
             <!-- <option value="All">All</option> -->
             <option value="General User">General User</option>
             <option value="Employee">Employee</option>
