@@ -17,12 +17,18 @@
 
                                 <div class="input__box col-md-12">
                                     <span class="details">Phone Number</span>
-                                    <input id="login" type="text" name="login" placeholder="01353456789" required>
+                                    <input id="login" type="text" name="login" placeholder="01353456789" >
+                                    @error('login')
+                                    <span class="text-danger">{{ $message }}(Please input phone number) </span>
+                                    @enderror
                                 </div>
 
                                 <div class="input__box col-md-12">
                                     <span class="details">Password</span>
-                                    <input id="password" type="password" name="password" placeholder="********" required>
+                                    <input id="password" type="password" name="password" placeholder="********" >
+                                    @error('password')
+                                    <span class="text-danger">{{ $message }}</span>
+                                    @enderror
                                 </div>
 
                             </div>

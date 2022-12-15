@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Account;
+use Illuminate\Support\Facades\Input;
+
 
 class UserController extends Controller
 {
@@ -13,6 +15,7 @@ class UserController extends Controller
     public function usersView(){
 
         $users = User::latest()->paginate(10);
+        //$users = User::where('designation',Input::get('designation'))->get();
         return view('users_view',compact('users'));
     }
 
@@ -67,7 +70,12 @@ class UserController extends Controller
             
         ]);
 
-        return redirect()->route('showUsers');
+        $notification = array(
+            'message' => 'User profile succesfully updated!',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('showUsers')->with($notification);
     }
 
     // delete users

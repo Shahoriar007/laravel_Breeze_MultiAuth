@@ -29,6 +29,15 @@ class AuthenticatedSessionController extends Controller
      */
     public function store(LoginRequest $request)
     {
+        $request->validate([
+            'login' => 'required',
+            'password' => 'required',
+
+        ],[
+            'login.required' => 'Phone number please',  
+            'password.required' => 'Password please',    
+        ]);
+
         
         $request->authenticate();
 

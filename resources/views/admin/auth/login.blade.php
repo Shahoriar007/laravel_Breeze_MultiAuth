@@ -45,9 +45,13 @@
                                     <div class="form-group">
                                         <div class="form-label-group">
                                             <label class="form-label" for="default-01">Email</label>
+                                            
                                         </div>
                                         <div class="form-control-wrap">
-                                            <input type="email" class="form-control form-control-lg" id="email" name="email" placeholder="Enter your email address" required>
+                                            <input type="email" class="form-control form-control-lg" id="email" name="email" placeholder="Enter your email address">
+                                            @error('email')
+                                            <span class="text-danger">{{ $message }}</span>
+                                            @enderror
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -59,7 +63,10 @@
                                                 <em class="passcode-icon icon-show icon ni ni-eye"></em>
                                                 <em class="passcode-icon icon-hide icon ni ni-eye-off"></em>
                                             </a>
-                                            <input type="password" class="form-control form-control-lg" id="password" name="password" placeholder="Enter your password" required>
+                                            <input type="password" class="form-control form-control-lg" id="password" name="password" placeholder="Enter your password" >
+                                            @error('password')
+                                            <span class="text-danger">{{ $message }}</span>
+                                            @enderror
                                         </div>
                                     </div>
                                     <div class="form-group">

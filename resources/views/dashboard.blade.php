@@ -93,12 +93,18 @@
                                 <label for="exampleInputEmail1">Case Number</label>
 
                                 <input class="form-control" type="text" id="caseId" name="caseId" >
+                                @error('caseId')
+                                <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </div>
 
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Case Fine</label>
 
                                 <input class="form-control" type="text" id="caseCode" name="caseCode" >
+                                @error('caseCode')
+                                <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </div>
 
                             <div class="form-group">
@@ -111,6 +117,9 @@
                                 <label for="exampleInputEmail1">Case Photo</label>
 
                                 <input class="form-control" type="file" id="casePhoto" name="casePhoto" >
+                                @error('casePhoto')
+                                <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </div>
 
                             

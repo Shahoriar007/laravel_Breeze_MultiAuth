@@ -42,8 +42,31 @@ tr:nth-child(even){background-color: #f2f2f2}
 <div>
     <a href="{{route('admin.dashboard')}}"> Dashboard</a>
 </div>
+<br><br>
 
-<h2>HTML Table</h2>
+<h2 class="text-center">Users Table</h2>
+
+<br>
+<div class="col-md-6">
+  <form action="{{ route('showUsers') }}" method="GET">
+    <div class="row justify-content-md-center">
+      <div class="col-md-8">
+        <div class="form-group">
+          <select name="Designation" class="form-control">
+            <!-- <option value="All">All</option> -->
+            <option value="General User">General User</option>
+            <option value="Employee">Employee</option>
+          </select>
+        </div>
+        <div class="col-md-4">
+          <button type="submit" class="btn btn-primary">Filter</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+<br>
 
 <div style="overflow-x:auto;">
 <table >
@@ -62,8 +85,8 @@ tr:nth-child(even){background-color: #f2f2f2}
     <th>City Name</th>
     <th>Category</th>
     <th>Number</th>
-    <th>Referral Number</th>
-    <th>Shareable Referral Number</th>
+    <th>User Reference Number</th>
+    <th>Shareable Reference Number</th>
     <th>Bkash TransactionID</th>
     <th>Status</th>
     <th colspan="2" class="text-center">Action</th>
@@ -116,7 +139,7 @@ tr:nth-child(even){background-color: #f2f2f2}
 
         <!-- Delete Button -->
         <td>
-            <a href="{{url('admin/viewusers/delete')}}/{{$item->id}}">
+            <a href="{{url('admin/viewusers/delete')}}/{{$item->id}}" id="delete">
                 <button type="button" class="btn btn-danger">Delete</button>
             </a>
         </td>

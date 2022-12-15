@@ -96,18 +96,39 @@ class RegisteredUserController extends Controller
 
         $id = $request->id;
 
-        User::findOrFail($id)->update([
-            'transactionId' => $request->transactionId,
-        ]);
+    User::findOrFail($id)->update([
+                'transactionId' => $request->transactionId,
+            ]);
+    
+            $notification = array(
+                'message' => 'Registration done succesfully',
+                'alert-type' => 'success'
+            );
+    
+            //return redirect(RouteServiceProvider::HOME);
+            // return view('dashboard')->with($notification);
+            return redirect()->route('dashboard')->with($notification);
 
-        $notification = array(
-            'message' => 'Registration done succesfully',
-            'alert-type' => 'success'
-        );
+    // if($request->transactionId != null ){
 
-        //return redirect(RouteServiceProvider::HOME);
-        // return view('dashboard')->with($notification);
-        return redirect()->route('dashboard')->with($notification);
+    //     User::findOrFail($id)->update([
+    //         'transactionId' => $request->transactionId,
+    //     ]);
+
+    //     $notification = array(
+    //         'message' => 'Registration done succesfully',
+    //         'alert-type' => 'success'
+    //     );
+
+    //     //return redirect(RouteServiceProvider::HOME);
+    //     // return view('dashboard')->with($notification);
+    //     return redirect()->route('dashboard')->with($notification);
+
+    // }else{
+    //     return redirect()->route('tranlogin');
+    // }
+
+        
     }
 
 
@@ -211,7 +232,7 @@ class RegisteredUserController extends Controller
 
             'refCode' => $request->refCode,
             //'shareableRefcode' => $request->shareableRefcode,
-            'designation' => $request->designation,
+            'designation' => "General User",
         
         ]);
 
@@ -224,7 +245,7 @@ class RegisteredUserController extends Controller
 
         $users = User::latest()->paginate(10);
 
-        return view('users_view',compact('users'))->with($notification);
+        return redirect()->route('showUsers')->with($notification);
 
     }
 }

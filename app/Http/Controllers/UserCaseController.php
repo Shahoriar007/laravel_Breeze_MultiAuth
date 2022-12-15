@@ -16,11 +16,14 @@ class UserCaseController extends Controller
         $request->validate([
 
             // Validation 
-
             'caseId' => 'required',
             'caseCode' => 'required',
-            'fineAmmount' => 'required',
+            'casePhoto' => 'required',
 
+        ],[
+            'caseId.required' => 'Please fillup this field',
+            'caseCode.required' => 'Please fillup this field',
+            'casePhoto.required' => 'Please fillup this field',
         ]);
 
          //  Image name genarate, resize and save in a folder
@@ -39,7 +42,12 @@ class UserCaseController extends Controller
    
          ]);
 
-         return redirect()->route('dashboard');
+         $notification = array(
+            'message' => 'Case submitted succesfully',
+            'alert-type' => 'success'
+        );
+
+         return redirect()->route('dashboard')->with($notification);
     
     }
 

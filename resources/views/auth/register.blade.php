@@ -80,14 +80,15 @@
                                 <!-- Password -->
                                 <div class="input__box col-md-6">
                                     <span class="details" >Password*</span>
-                                    <input id="password" type="password" name="password" placeholder="Minimum 8 digit" >
+                                    <input id="password" type="password" name="password" placeholder="Minimum 8 digit" minlength="8" onkeyup='check();'>
                                     @error('password')
                                     <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
                                 <div class="input__box col-md-6" >
                                     <span class="details" >Confirm Password</span>
-                                    <input id="password_confirmation" type="password" name="password_confirmation" placeholder="same as password" >
+                                    <input id="password_confirmation" type="password" name="password_confirmation" placeholder="same as password"  onkeyup='check();'>
+                                    <span id='message'></span>
                                     @error('password_confirmation')
                                     <span class="text-danger">{{ $message }}</span>
                                     @enderror
@@ -233,5 +234,17 @@
             </div>
         </div>
     </section>
+
+    <script type="text/javascript">
+        var check = function() {
+            if (document.getElementById('password').value == document.getElementById('password_confirmation').value && document.getElementById('password').value != "") {
+                document.getElementById('message').style.color = 'green';
+                document.getElementById('message').innerHTML = 'Password matched';
+            } else {
+                document.getElementById('message').style.color = 'red';
+                document.getElementById('message').innerHTML = 'Please insert the same password';
+            }
+            }
+    </script>
 
     @endsection
