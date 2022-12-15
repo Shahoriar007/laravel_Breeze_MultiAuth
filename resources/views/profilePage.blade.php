@@ -29,7 +29,7 @@
                 
                 @auth
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('dashboard') }}">Case Report</a>
+                    <a class="nav-link" href="{{ route('dashboard') }}">Dashboard</a>
                 </li>
                 @else
                 <li class="nav-item">

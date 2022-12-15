@@ -30,7 +30,7 @@
                 
                 @auth
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('dashboard') }}">Case Report</a>
+                    <a class="nav-link" href="{{ route('dashboard') }}">Dashboard</a>
                 </li>
                 @else
                 <li class="nav-item">
@@ -66,81 +66,165 @@
         
         
 
+<!--== Page Content Wrapper Start ==-->
+<div class="main-content p-tb-100">
+    <div class="container container-xxl">
+        <div class="row">
+            <div class="col-lg-12">
+                <!-- My Account Page Start -->
+                <div class="myaccount-page-wrapper">
+                    <!-- My Account Tab Menu Start -->
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <div class="myaccount-tab-menu nav" role="tablist">
+                                <a href="#dashboad" class="active" data-toggle="tab">
+                                    Dashboard</a>
 
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 .reg-box mx-auto">
-                    
+                                <a href="#case_report" data-toggle="tab">Case Report</a>
 
-                    @if(Auth::guard('web')->user()->status == 1)
-                    
+                                <a href="#case_report_list" data-toggle="tab">Case Report List</a>
 
-                        <h4 class="fw-bold text-center">Your account is approved.</h4>
-                        <div class="backtopage"> <h4> You can share this Ref Code - {{ Auth::guard('web')->user()->shareableRefcode }}  </h4></div>
+                                <a href="{{ route('profilePage') }}" >Profile</a>
 
-                        <div class="title">Submit Cases</div>
-                        <!-- forms start -->
-                        <form method="POST" action="{{ route('caseSubmit', Auth::guard('web')->user()->id) }}" enctype="multipart/form-data">
-                            @csrf
-                            <div class="form-group">
-                                <!-- case image -->
-                                <img  id="showcasePhoto" src="{{ (!empty($caseDetails->casePhoto))? url('upload/case_images/' . $caseDetails->casePhoto):url('upload/no_image.jpg') }}" width="100" height="100">
-
+                                
                             </div>
+                        </div>
+                        <!--My Account Tab Menu End-->
 
-                            <div class="form-group">
+                        <!--My Account Tab Content Start-->
+                        <div class="col-lg-9 mt-5 mt-lg-0">
+                            <div class="tab-content" id="myaccountContent">
+                                <!-- Single Tab Content Start -->
+                                <div class="tab-pane fade show active" id="dashboad" role="tabpanel">
+                                    <div class="myaccount-content">
+                                        <h3>Dashboard</h3>
 
-                                <label for="exampleInputEmail1">Case Number</label>
+                                        <div class="row">
+                                        <div class="col-md-8 .reg-box mx-auto">
+                                            
 
-                                <input class="form-control" type="text" id="caseId" name="caseId" >
-                                @error('caseId')
-                                <span class="text-danger">{{ $message }}</span>
-                                @enderror
-                            </div>
+                                            @if(Auth::guard('web')->user()->status == 1)
+                                            
 
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Case Fine</label>
+                                                <h4 class="fw-bold text-center">Your account is approved.</h4>
+                                                <div class="backtopage"> <h4> You can share this Ref Code - {{ Auth::guard('web')->user()->shareableRefcode }}  </h4></div>
 
-                                <input class="form-control" type="text" id="caseCode" name="caseCode" >
-                                @error('caseCode')
-                                <span class="text-danger">{{ $message }}</span>
-                                @enderror
-                            </div>
+                                                
 
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Comments(*if any) </label>
+                                            @else
 
-                                <input class="form-control" type="text" id="fineAmmount" name="fineAmmount" >
-                            </div>
-
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Case Photo</label>
-
-                                <input class="form-control" type="file" id="casePhoto" name="casePhoto" >
-                                @error('casePhoto')
-                                <span class="text-danger">{{ $message }}</span>
-                                @enderror
-                            </div>
-
-                            
-
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                        </form>
-                        <!-- forms end -->
-
-                    @else
-
-                        <div class="title">Registration Done!</div>
-                        <div class="backtopage"> <h4> Hello! {{ Auth::guard('web')->user()->name }}</h4></div>
-                        <h4 class="fw-bold text-center">Soon your request will be approved.</h4>
-                    @endif
-                     
-                </div>
+                                                <div class="title">Registration Done!</div>
+                                                <div class="backtopage"> <h4> Hello! {{ Auth::guard('web')->user()->name }}</h4></div>
+                                                <h4 class="fw-bold text-center">Soon your request will be approved.</h4>
+                                            @endif
+                                            
+                                        </div>
                 
             </div>
+                                    </div>
+                                </div>
+                                <!-- Single Tab Content End -->
 
-            
+                                <!-- Single Tab Content Start -->
+                                <div class="tab-pane fade" id="case_report" role="tabpanel">
+                                    <div class="myaccount-content">
+                                        <h3>Case Report</h3>
+
+                                        
+                                        
+                                        @if(Auth::guard('web')->user()->status == 1)
+
+                                        <div class="title">Submit Cases</div>
+                                                <!-- forms start -->
+                                                <form method="POST" action="{{ route('caseSubmit', Auth::guard('web')->user()->id) }}" enctype="multipart/form-data">
+                                                    @csrf
+                                                    <div class="form-group">
+                                                        <!-- case image -->
+                                                        <img  id="showcasePhoto" src="{{ (!empty($caseDetails->casePhoto))? url('upload/case_images/' . $caseDetails->casePhoto):url('upload/no_image.jpg') }}" width="100" height="100">
+
+                                                    </div>
+
+                                                    <div class="form-group">
+
+                                                        <label for="exampleInputEmail1">Case Number</label>
+
+                                                        <input class="form-control" type="text" id="caseId" name="caseId" >
+                                                        @error('caseId')
+                                                        <span class="text-danger">{{ $message }}</span>
+                                                        @enderror
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label for="exampleInputEmail1">Case Fine</label>
+
+                                                        <input class="form-control" type="text" id="caseCode" name="caseCode" >
+                                                        @error('caseCode')
+                                                        <span class="text-danger">{{ $message }}</span>
+                                                        @enderror
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label for="exampleInputEmail1">Comments(*if any) </label>
+
+                                                        <input class="form-control" type="text" id="fineAmmount" name="fineAmmount" >
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label for="exampleInputEmail1">Case Photo</label>
+
+                                                        <input class="form-control" type="file" id="casePhoto" name="casePhoto" >
+                                                        @error('casePhoto')
+                                                        <span class="text-danger">{{ $message }}</span>
+                                                        @enderror
+                                                    </div>
+
+                                                    
+
+                                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                                </form>
+                                                <!-- forms end -->
+                                        </div>
+
+                                        @endif
+
+                                    </div>
+                                </div>
+                                <!-- Single Tab Content End -->
+
+                               
+
+                                <!-- Single Tab Content Start -->
+                                <div class="tab-pane fade" id="case_report_list" role="tabpanel">
+                                    <div class="myaccount-content">
+                                        <h3>Case Report List</h3>
+
+                                       
+                                    </div>
+                                </div>
+                                <!-- Single Tab Content End -->
+
+                                <!-- Single Tab Content Start -->
+                                <!-- <div class="tab-pane fade" id="profile" role="tabpanel">
+                                    <div class="myaccount-content">
+                                        <h3>Profile</h3>
+
+                                        
+                                    </div>
+                                </div> -->
+                                <!-- Single Tab Content End -->
+                            </div>
+                        </div>
+                        <!-- My Account Tab Content End -->
+                    </div>
+                </div>
+                <!-- My Account Page End -->
+            </div>
         </div>
+    </div>
+</div>
+<!--== Page Content Wrapper End ==-->
+
+        
     </section>
 
         

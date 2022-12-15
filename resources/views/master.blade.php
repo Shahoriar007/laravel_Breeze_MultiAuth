@@ -16,6 +16,9 @@
     <link rel="stylesheet" href="{{ asset('userFrontend/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{ asset('userFrontend/css/nice-select.css')}}">
     <link rel="stylesheet" href="{{ asset('userFrontend/css/style.css')}}">
+
+    <!-- <link rel="stylesheet" href="assets/css/style.css"> -->
+    <link rel="stylesheet" href="{{ asset('userFrontend/assets/css/asd.css')}}">
     
     <link rel="stylesheet" type="text/css" 
      href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
