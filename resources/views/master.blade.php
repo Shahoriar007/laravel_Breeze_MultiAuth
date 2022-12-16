@@ -44,6 +44,12 @@
     <script src="https://kit.fontawesome.com/30c7cd8c6d.js" crossorigin="anonymous"></script>
     <script src="{{ asset('userFrontend/js/main.js')}}"></script>
 
+    <!---=====jquery====-->
+    <script src="{{ asset('userFrontend/assets/js/jquery-3.6.0.min.js')}}"></script>
+    <!--=====popper js=====-->
+  
+    <script src="{{ asset('userFrontend/assets/js/bootstrap.min.js')}}"></script>
+
     <script>
         (document).ready(function() {
             $('select').niceSelect();

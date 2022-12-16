@@ -77,12 +77,13 @@
                     <div class="row">
                         <div class="col-lg-3">
                             <div class="myaccount-tab-menu nav" role="tablist">
+
                                 <a href="#dashboad" class="active" data-toggle="tab">
                                     Dashboard</a>
 
-                                <a href="#case_report" data-toggle="tab">Case Report</a>
+                                <a href="#case_report"  data-toggle="tab">Case Report</a>
 
-                                <a href="#case_report_list" data-toggle="tab">Case Report List</a>
+                                <!-- <a href="#case_report_list" data-toggle="tab">Case Report List</a> -->
 
                                 <a href="{{ route('profilePage') }}" >Profile</a>
 
@@ -107,7 +108,7 @@
                                             
 
                                                 <h4 class="fw-bold text-center">Your account is approved.</h4>
-                                                <div class="backtopage"> <h4> You can share this Ref Code - {{ Auth::guard('web')->user()->shareableRefcode }}  </h4></div>
+                                                <div class="backtopage"> <h4> You can share this Reference Number - {{ Auth::guard('web')->user()->shareableRefcode }}  </h4></div>
 
                                                 
 
@@ -194,20 +195,19 @@
                                
 
                                 <!-- Single Tab Content Start -->
-                                <div class="tab-pane fade" id="case_report_list" role="tabpanel">
+                                <!-- <div class="tab-pane fade" id="case_report_list" role="tabpanel">
                                     <div class="myaccount-content">
                                         <h3>Case Report List</h3>
 
                                        
                                     </div>
-                                </div>
+                                </div> -->
                                 <!-- Single Tab Content End -->
 
                                 <!-- Single Tab Content Start -->
                                 <!-- <div class="tab-pane fade" id="profile" role="tabpanel">
                                     <div class="myaccount-content">
                                         <h3>Profile</h3>
-
                                         
                                     </div>
                                 </div> -->

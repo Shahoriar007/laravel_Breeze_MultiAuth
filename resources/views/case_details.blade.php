@@ -56,7 +56,12 @@
                                                         <div class="profile-ud-list">
                                                             <div class="profile-ud-item">
                                                                 <div class="profile-ud wider">
+
+
+
                                                                     <span class="profile-ud-label">Case ID</span>
+                                                                    
+
                                                                     <span class="profile-ud-value">{{ $caseDetails->caseId }}</span>
                                                                 </div>
                                                             </div>
