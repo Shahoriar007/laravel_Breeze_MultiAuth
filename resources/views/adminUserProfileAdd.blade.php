@@ -226,7 +226,7 @@
 
                                 <div class="input__box col-md-5" >
                                     <span class="details">Vehicle Number*</span>
-                                    <input id="number" type="text" name="number" placeholder="00-0000" >
+                                    <input id="number" type="text" name="number" placeholder="00-0000" maxlength="7" >
                                 </div>
                             </div>
 
@@ -287,7 +287,7 @@
 var tele = document.querySelector('#number');
 
     tele.addEventListener('keyup', function(e){
-    if (event.key != 'Backspace' && (tele.value.length === 2 || tele.value.length === 7)){
+    if (event.key != 'Backspace' && (tele.value.length === 2 )){
     tele.value += '-';
     }
     });

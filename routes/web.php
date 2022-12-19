@@ -41,8 +41,6 @@ Route::get('/admin/dashboard', function () {
     return view('admin.dashboard');
 })->middleware(['auth:admin', 'verified'])->name('admin.dashboard');
 
-// Admin dashboard
-Route::get('/dashboard', [UserController::class, 'dashboardView'])->middleware(['auth', 'verified'])->name('dashboard');
 
 // Admin view
 Route::prefix('admin')->group(function(){
@@ -74,6 +72,12 @@ Route::prefix('admin')->group(function(){
     Route::get('/viewcases/{id}', [UserCaseController::class, 'caseDetails'])->middleware(['auth:admin', 'verified']);
 
     
+});
+
+
+// check
+Route::get('/check', function () {
+    return view('checkkkkkkk');
 });
 
 require __DIR__.'/adminauth.php';

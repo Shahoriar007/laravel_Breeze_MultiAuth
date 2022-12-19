@@ -14,7 +14,7 @@ class UserController extends Controller
     // all users view classes
     public function usersView(){
 
-        $users = User::latest()->paginate(10);
+        $users = User::all();
         //$users = User::where('designation',Input::get('designation'))->get();
         return view('users_view',compact('users'));
     }

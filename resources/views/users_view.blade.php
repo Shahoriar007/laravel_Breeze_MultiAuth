@@ -1,39 +1,7 @@
 @extends('masterAdmin')
 @section('adminUserView')
-
-
-
-<head>
-<style>
-/* table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-} */
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-  width: 100%;
-  border: 1px solid #ddd;
-}
-
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
-
-tr:nth-child(even) {
-  background-color: #dddddd;
-}
-
-th, td {
-  text-align: left;
-  padding: 8px;
-}
-
-tr:nth-child(even){background-color: #f2f2f2}
-</style>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 
 </head>
@@ -46,77 +14,66 @@ tr:nth-child(even){background-color: #f2f2f2}
 
 <h2 class="text-center">Users Table</h2>
 
-<br>
-<div class="col-md-6">
-  <form action="{{ route('showUsers') }}" method="GET">
-    <div class="row justify-content-md-center">
-      <div class="col-md-8">
-        <div class="form-group">
-          <select name="designation" class="form-control">
-            <!-- <option value="All">All</option> -->
-            <option value="General User">General User</option>
-            <option value="Employee">Employee</option>
-          </select>
-        </div>
-        <div class="col-md-4">
-          <button type="submit" class="btn btn-primary">Filter</button>
-        </div>
-      </div>
-    </div>
-  </form>
-</div>
 
-<br>
+<table id="example" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Nid</th>
+                <th>Gender</th>
+                <th>Birth Date</th>
+                <th>Blood Group</th>
+                <th>Users Designation</th>
+                <th>City</th>
+                <th>Vehicle</th>
+                <th>Driving License</th>
+                <th>City Name</th>
+                <th>Category</th>
+                <th>Number</th>
+                <th>User Reference Number</th>
+                <th>Shareable Reference Number</th>
+                <th>Bkash TransactionID</th>
+                <th>Status & Action</th>
+                
 
-<div style="overflow-x:auto;">
-<table >
-  <tr>
-    <th>Id</th>
-    <th>Name</th>
-    <th>Phone</th>
-    <th>Nid</th>
-    <th>Gender</th>
-    <th>Birth Date</th>
-    <th>Blood Group</th>
-    <th>Users Designation</th>
-    <th>City</th>
-    <th>Vehicle</th>
-    <th>Driving License</th>
-    <th>City Name</th>
-    <th>Category</th>
-    <th>Number</th>
-    <th>User Reference Number</th>
-    <th>Shareable Reference Number</th>
-    <th>Bkash TransactionID</th>
-    <th>Status</th>
-    <th colspan="2" class="text-center">Action</th>
-  </tr>
+            </tr>
+        </thead>
+        <tbody>
 
-@foreach($users as $item)
-    <tr>
-        <td>{{ $item->id }}</td>
-        <td>{{ $item->name }}</td>
-        <td>{{ $item->phone }}</td>
-        <td>{{ $item->nid }}</td>
-        <td>{{ $item->gender }}</td>
-        <td>{{ $item->birthDate }}</td>
-        <td>{{ $item->bloodGroup }}</td>
-        <td>{{ $item->designation }}</td>
-        <td>{{ $item->city }}</td>
-        <td>{{ $item->vehicle }}</td>
-        <td>{{ $item->drivingLicense }}</td>
-        <td>{{ $item->cityName }}</td>
-        <td>{{ $item->category }}</td>
-        <td>{{ $item->number }}</td>
-        <td>{{ $item->refCode }}</td>
-        <td>{{ $item->shareableRefcode }}</td>
-        <td>{{ $item->transactionId }}</td>
+        @foreach($users as $item)
 
-        @if($item->status==1)
+            <tr>
+                <td>{{ $item->id }}</td>
+                <td>{{ $item->name }}</td>
+                <td>{{ $item->phone }}</td>
+                <td>{{ $item->nid }}</td>
+                <td>{{ $item->gender }}</td>
+                <td>{{ $item->birthDate }}</td>
+                <td>{{ $item->bloodGroup }}</td>
+                <td>{{ $item->designation }}</td>
+                <td>{{ $item->city }}</td>
+                <td>{{ $item->vehicle }}</td>
+                <td>{{ $item->drivingLicense }}</td>
+                <td>{{ $item->cityName }}</td>
+                <td>{{ $item->category }}</td>
+                <td>{{ $item->number }}</td>
+                <td>{{ $item->refCode }}</td>
+                <td>{{ $item->shareableRefcode }}</td>
+                <td>{{ $item->transactionId }}</td>
+
+                @if($item->status==1)
 
         <td>
             <a href="{{url('admin/view/status/0')}}/{{$item->id}}">
                 <button type="button" class="btn btn-primary">Active</button>
+            </a>
+            <a href="{{url('admin/viewusers')}}/{{$item->id}}">
+                <button type="button" class="btn btn-primary">Details</button>
+            </a>
+            <a href="{{url('admin/viewusers/delete')}}/{{$item->id}}" id="delete">
+                <button type="button" class="btn btn-danger">Delete</button>
             </a>
         </td>
         
@@ -126,41 +83,126 @@ tr:nth-child(even){background-color: #f2f2f2}
             <a href="{{url('admin/view/status/1')}}/{{$item->id}}">
                 <button type="button" class="btn btn-outline-primary">Deactive</button>
             </a>
-        </td>
-
-        @endif
-
-        <!-- Details Button -->
-        <td>
             <a href="{{url('admin/viewusers')}}/{{$item->id}}">
                 <button type="button" class="btn btn-primary">Details</button>
             </a>
-        </td>
-
-        <!-- Delete Button -->
-        <td>
             <a href="{{url('admin/viewusers/delete')}}/{{$item->id}}" id="delete">
                 <button type="button" class="btn btn-danger">Delete</button>
             </a>
         </td>
 
-    </tr>
-@endforeach
+        @endif
 
-</table>
+        
 
-<!-- Pagination -->
-<br>
-<br>
-<div class="row justify-content-md-center">
-  <div class="col-md-auto">
-  {{ $users->links() }}
-  </div> 
-</div>
-<br>
-<br>
+            </tr>
 
-</div>
+            @endforeach
+           
+            </tbody>
+        <tfoot>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Nid</th>
+                <th>Gender</th>
+                <th>Birth Date</th>
+                <th>Blood Group</th>
+                <th>Users Designation</th>
+                <th>City</th>
+                <th>Vehicle</th>
+                <th>Driving License</th>
+                <th>City Name</th>
+                <th>Category</th>
+                <th>Number</th>
+                <th>User Reference Number</th>
+                <th>Shareable Reference Number</th>
+                <th>Bkash TransactionID</th>
+                <th>Status</th>
+                
+            </tr>
+        </tfoot>
+    </table>
+
+
+
+<script
+  src="https://code.jquery.com/jquery-3.6.2.min.js"
+  integrity="sha256-2krYZKh//PcchRtd+H+VyyQoZ/e3EcrkxhM8ycwASPA="
+  crossorigin="anonymous"></script>
+
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.js"></script>
+
+ <script type="text/Javascript">
+
+    // $(document).ready( function () {
+    // $('#myTable').DataTable();
+    // });
+
+    $(document).ready(function () {
+    // Setup - add a text input to each footer cell
+    $('#example thead tr')
+        .clone(true)
+        .addClass('filters')
+        .appendTo('#example thead');
+ 
+    var table = $('#example').DataTable({
+        orderCellsTop: true,
+        fixedHeader: true,
+        initComplete: function () {
+            var api = this.api();
+ 
+            // For each column
+            api
+                .columns()
+                .eq(0)
+                .each(function (colIdx) {
+                    // Set the header cell to contain the input element
+                    var cell = $('.filters th').eq(
+                        $(api.column(colIdx).header()).index()
+                    );
+                    var title = $(cell).text();
+                    $(cell).html('<input type="text" placeholder="' + title + '" />');
+ 
+                    // On every keypress in this input
+                    $(
+                        'input',
+                        $('.filters th').eq($(api.column(colIdx).header()).index())
+                    )
+                        .off('keyup change')
+                        .on('change', function (e) {
+                            // Get the search value
+                            $(this).attr('title', $(this).val());
+                            var regexr = '({search})'; //$(this).parents('th').find('select').val();
+ 
+                            var cursorPosition = this.selectionStart;
+                            // Search the column for that value
+                            api
+                                .column(colIdx)
+                                .search(
+                                    this.value != ''
+                                        ? regexr.replace('{search}', '(((' + this.value + ')))')
+                                        : '',
+                                    this.value != '',
+                                    this.value == ''
+                                )
+                                .draw();
+                        })
+                        .on('keyup', function (e) {
+                            e.stopPropagation();
+ 
+                            $(this).trigger('change');
+                            $(this)
+                                .focus()[0]
+                                .setSelectionRange(cursorPosition, cursorPosition);
+                        });
+                });
+        },
+    });
+});
+   
+</script>
 
 </body>
 
