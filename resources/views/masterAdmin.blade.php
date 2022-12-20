@@ -107,6 +107,58 @@
         });
     </script>
 
+<script type="text/javascript">
+        $(function(){
+            $(document).on('click','#active',function(e){
+                e.preventDefault();
+                var link = $(this).attr("href");
+                Swal.fire({
+                title: 'Are you sure?',
+                text: "You want to activate this user!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, active!'
+                }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = link
+                    Swal.fire(
+                    'Activated!',
+                    'success'
+                    )
+                }
+                })
+            });
+        });
+    </script>
+
+<script type="text/javascript">
+        $(function(){
+            $(document).on('click','#deactive',function(e){
+                e.preventDefault();
+                var link = $(this).attr("href");
+                Swal.fire({
+                title: 'Are you sure?',
+                text: "You want to deactivate this user!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, deactivate!'
+                }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = link
+                    Swal.fire(
+                    'Deactivated!',
+                    'success'
+                    )
+                }
+                })
+            });
+        });
+    </script>
+
 
 
 </html>

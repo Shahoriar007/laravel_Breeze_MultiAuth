@@ -1,5 +1,39 @@
 @extends('masterAdmin')
 @section('adminUserView')
+
+<!-- Css -->
+<style>
+
+div#example_info {
+    font-size: medium;
+    padding-top: 30px;
+}
+
+div#example_paginate {
+    padding-top: 30px;
+}
+
+div.dataTables_wrapper div.dataTables_filter input {
+    display: inline-block;
+    font-size: 15px !important;
+    padding: 10px !important;
+}
+
+div.dataTables_wrapper div.dataTables_length select {
+    width: auto;
+    display: inline-block;
+    font-size: 15px !important;
+    padding: 10px;
+}
+
+.nk-menu-text {
+    flex-grow: 1;
+    display: inline-block;
+    white-space: nowrap;
+    padding: 8px !important;
+}
+
+</style>
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -66,7 +100,7 @@
                 @if($item->status==1)
 
         <td>
-            <a href="{{url('admin/view/status/0')}}/{{$item->id}}">
+            <a href="{{url('admin/view/status/0')}}/{{$item->id}}" id="deactive">
                 <button type="button" class="btn btn-primary">Active</button>
             </a>
             <a href="{{url('admin/viewusers')}}/{{$item->id}}">
@@ -80,7 +114,7 @@
         @elseif($item->status==0)
 
         <td>
-            <a href="{{url('admin/view/status/1')}}/{{$item->id}}">
+            <a href="{{url('admin/view/status/1')}}/{{$item->id}}" id="active">
                 <button type="button" class="btn btn-outline-primary">Deactive</button>
             </a>
             <a href="{{url('admin/viewusers')}}/{{$item->id}}">
