@@ -75,9 +75,6 @@ Route::prefix('admin')->group(function(){
 });
 
 
-// check
-Route::get('/check', function () {
-    return view('checkkkkkkk');
-});
+
 
 require __DIR__.'/adminauth.php';

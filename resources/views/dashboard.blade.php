@@ -79,7 +79,21 @@
                         <div class="myaccount-page-wrapper">
                             <!-- My Account Tab Menu Start -->
                             <div class="row">
-                                <div class="col-lg-3">
+                                <div class="col-lg-4">
+
+                                <h5 style="font-size: 14px; font-weight: bold; text-align: center;">পরিবরতন/যুক্ত করতে অপশনটিতে ক্লিক করুন</h5>
+
+                                <div class="user-leftbar-details">
+                                    <div>
+                                        <img src="{{ asset('userFrontend/img/user-pik.jpg')}}" class="img-responsive" alt="user">
+                                    </div>
+                                    <div class="ml-2">
+                                        <h5>Adv. Sharifuzzaman</h5>
+                                        <p>Reference Number: <span>01910512921</span></p>
+                                        <p>Position: <span>User or Admin</span></p>
+                                    </div>
+                                </div>
+
                                     <div class="myaccount-tab-menu nav" role="tablist">
 
                                         <a href="#dashboad" class="active" data-toggle="tab">
@@ -97,7 +111,7 @@
                                 <!--My Account Tab Menu End-->
 
                                 <!--My Account Tab Content Start-->
-                                <div class="col-lg-9 mt-5 mt-lg-0">
+                                <div class="col-lg-8 mt-5 mt-lg-0">
                                     <div class="tab-content" id="myaccountContent">
                                         <!-- Single Tab Content Start -->
                                         <div class="tab-pane fade show active" id="dashboad" role="tabpanel">
