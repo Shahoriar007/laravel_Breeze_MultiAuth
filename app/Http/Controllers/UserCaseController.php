@@ -10,6 +10,10 @@ use Image;
 
 class UserCaseController extends Controller
 {
+    public function caseReportFormView(){
+
+        return view('caseReport');
+    }
     // case submit form
     public function caseStore(Request $request, $id ){
 

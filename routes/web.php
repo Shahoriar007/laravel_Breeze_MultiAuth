@@ -27,7 +27,8 @@ Route::get('/dashboard/edit/{id}', [RegisteredUserController::class, 'userEdit']
 // edit
 Route::post('/dashboard/update/{id}', [RegisteredUserController::class, 'userUpdate'])->middleware(['auth', 'verified'])->name('userProfileUpdate');
 
-// Case
+// Case Report View
+Route::get('/dashboard/casereport', [UserCaseController::class, 'caseReportFormView'])->middleware(['auth', 'verified'])->name('caseReport');
 // Case Submit Form
 Route::post('/dashboard/{id}', [UserCaseController::class, 'caseStore'])->middleware(['auth', 'verified'])->name('caseSubmit');
 

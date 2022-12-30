@@ -4,7 +4,7 @@
 
 <body class="background">
 
-<nav class="header-wrap animated navbar navbar-expand-md navbar-dark bg-dark">
+    <!-- <nav class="header-wrap animated navbar navbar-expand-md navbar-dark bg-dark">
         <a class="navbar-brand logo" href="index.html"><img src="{{ asset('img/logo1.png')}}" alt=""></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -58,217 +58,245 @@
 
             </ul>
         </div>
-    </nav>
+    </nav> -->
 
 
 
     <div class="container">
-    <div class="main-body">
-    
-    <br><br>
-    
-          <div class="row gutters-sm">
-            <div class="col-md-4 mb-3">
-              <div class="card">
-                <div class="card-body">
-                  <div class="d-flex flex-column align-items-center text-center">
-                    
+        <div class="main-body">
 
-                    @if(Auth::user()->photo)
-                    <img src="{{ asset(Auth::user()->photo) }}" class="rounded-circle" width="150" alt="">
-                    @else
-                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
-                    @endif
 
-                    <div class="mt-3">
-                      <h4>{{ Auth::guard('web')->user()->name }}</h4>
-                      
-                      <a class="btn btn-primary text-center" href="{{ route('userProfileEdit', Auth::guard('web')->user()->id) }}">Edit</a>
-                      
+
+            <br><br>
+
+            <!--== Page Content Wrapper Start ==-->
+            <div class="main-content p-tb-100">
+                <div class="container container-xxl">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <!-- My Account Page Start -->
+                            <div class="myaccount-page-wrapper">
+                                <!-- My Account Tab Menu Start -->
+                                <div class="row">
+
+                                    @include('sidebar')
+                                    <!--My Account Tab Menu End-->
+
+                                    <!--My Account Tab Content Start-->
+                                    <div class="col-lg-8 mt-5 mt-lg-0">
+                                        <div class="tab-content" id="myaccountContent">
+                                            <!-- Single Tab Content Start -->
+                                            <div class="tab-pane fade show active" id="dashboad" role="tabpanel">
+                                                <div class="myaccount-content">
+
+
+                                                    <div class="row gutters-sm">
+                                                        <div class="col-md-4 mb-3">
+                                                            <div class="card">
+                                                                <div class="card-body">
+                                                                    <div
+                                                                        class="d-flex flex-column align-items-center text-center">
+
+
+                                                                        @if(Auth::user()->photo)
+                                                                        <img src="{{ asset(Auth::user()->photo) }}"
+                                                                            class="rounded-circle" width="150" alt="">
+                                                                        @else
+                                                                        <img src="https://bootdey.com/img/Content/avatar/avatar7.png"
+                                                                            alt="Admin" class="rounded-circle"
+                                                                            width="150">
+                                                                        @endif
+
+                                                                        <div class="mt-3">
+                                                                            <h4>{{ Auth::guard('web')->user()->name }}
+                                                                            </h4>
+
+                                                                            <a class="btn btn-primary text-center"
+                                                                                href="{{ route('userProfileEdit', Auth::guard('web')->user()->id) }}">Profile
+                                                                                Edit</a>
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+
+                                                        <div class="col-md-8">
+                                                            <div class="card mb-3">
+                                                                <div class="card-body">
+                                                                    <div class="row">
+                                                                        <div class="col-sm-4">
+                                                                            <h6 class="mb-0">Full Name</h6>
+                                                                        </div>
+                                                                        <div class="col-sm-8 text-secondary">
+                                                                            {{ Auth::guard('web')->user()->name }}
+                                                                        </div>
+                                                                    </div>
+                                                                    <hr>
+                                                                    <div class="row">
+                                                                        <div class="col-sm-4">
+                                                                            <h6 class="mb-0">Email</h6>
+                                                                        </div>
+                                                                        <div class="col-sm-8 text-secondary">
+                                                                            {{ Auth::guard('web')->user()->email }}
+                                                                        </div>
+                                                                    </div>
+                                                                    <hr>
+                                                                    <div class="row">
+                                                                        <div class="col-sm-4">
+                                                                            <h6 class="mb-0">Phone</h6>
+                                                                        </div>
+                                                                        <div class="col-sm-8 text-secondary">
+                                                                            {{ Auth::guard('web')->user()->phone }}
+                                                                        </div>
+                                                                    </div>
+                                                                    <hr>
+                                                                    <div class="row">
+                                                                        <div class="col-sm-4">
+                                                                            <h6 class="mb-0">Gender</h6>
+                                                                        </div>
+                                                                        <div class="col-sm-8 text-secondary">
+                                                                            <h4> {{ Auth::guard('web')->user()->gender }}
+                                                                            </h4>
+                                                                        </div>
+                                                                    </div>
+                                                                    <hr>
+                                                                    <div class="row">
+                                                                        <div class="col-sm-4">
+                                                                            <h6 class="mb-0">Date of Birth</h6>
+                                                                        </div>
+                                                                        <div class="col-sm-8 text-secondary">
+                                                                            {{ Auth::guard('web')->user()->birthDate }}
+                                                                        </div>
+                                                                    </div>
+                                                                    <hr>
+                                                                    <div class="row">
+                                                                        <div class="col-sm-4">
+                                                                            <h6 class="mb-0">Blood Group</h6>
+                                                                        </div>
+                                                                        <div class="col-sm-8 text-secondary">
+                                                                            {{ Auth::guard('web')->user()->bloodGroup }}
+                                                                        </div>
+                                                                    </div>
+                                                                    <hr>
+                                                                    <div class="row">
+                                                                        <div class="col-sm-4">
+                                                                            <h6 class="mb-0">City</h6>
+                                                                        </div>
+                                                                        <div class="col-sm-8 text-secondary">
+                                                                            {{ Auth::guard('web')->user()->city }}
+                                                                        </div>
+                                                                    </div>
+                                                                    <hr>
+                                                                    <div class="row">
+                                                                        <div class="col-sm-4">
+                                                                            <h6 class="mb-0">Nid No</h6>
+                                                                        </div>
+                                                                        <div class="col-sm-8 text-secondary">
+                                                                            {{ Auth::guard('web')->user()->nid }}
+                                                                        </div>
+                                                                    </div>
+                                                                    <hr>
+
+                                                                    <div class="row">
+                                                                        <div class="col-sm-4">
+                                                                            <h6 class="mb-0">Submitted Referance Number
+                                                                            </h6>
+                                                                        </div>
+                                                                        <div class="col-sm-8 text-secondary">
+                                                                            {{ Auth::guard('web')->user()->refCode }}
+                                                                        </div>
+                                                                    </div>
+                                                                    <hr>
+
+                                                                    <div class="row">
+                                                                        <div class="col-sm-4">
+                                                                            <h6 class="mb-0">Shareable Reference Number
+                                                                            </h6>
+                                                                        </div>
+                                                                        <div class="col-sm-8 text-secondary">
+                                                                            {{ Auth::guard('web')->user()->shareableRefcode }}
+                                                                        </div>
+                                                                    </div>
+                                                                    <hr>
+
+                                                                    <div class="row">
+                                                                        <div class="col-sm-4">
+                                                                            <h6 class="mb-0">Vehicle</h6>
+                                                                        </div>
+                                                                        <div class="col-sm-8 text-secondary">
+                                                                            {{ Auth::guard('web')->user()->vehicle }}
+                                                                        </div>
+                                                                    </div>
+                                                                    <hr>
+
+                                                                    <div class="row">
+                                                                        <div class="col-sm-4">
+                                                                            <h6 class="mb-0">Driving license</h6>
+                                                                        </div>
+                                                                        <div class="col-sm-8 text-secondary">
+                                                                            {{ Auth::guard('web')->user()->drivingLicense }}
+                                                                        </div>
+                                                                    </div>
+                                                                    <hr>
+
+                                                                    <div class="row">
+                                                                        <div class="col-sm-4">
+                                                                            <h6 class="mb-0">City Name</h6>
+                                                                        </div>
+                                                                        <div class="col-sm-8 text-secondary">
+                                                                            {{ Auth::guard('web')->user()->cityName }}
+                                                                        </div>
+                                                                    </div>
+                                                                    <hr>
+
+                                                                    <div class="row">
+                                                                        <div class="col-sm-4">
+                                                                            <h6 class="mb-0">Category</h6>
+                                                                        </div>
+                                                                        <div class="col-sm-8 text-secondary">
+                                                                            <h4> {{ Auth::guard('web')->user()->category }}
+                                                                            </h4>
+                                                                        </div>
+                                                                    </div>
+                                                                    <hr>
+
+                                                                    <div class="row">
+                                                                        <div class="col-sm-4">
+                                                                            <h6 class="mb-0">Number</h6>
+                                                                        </div>
+                                                                        <div class="col-sm-8 text-secondary">
+                                                                            {{ Auth::guard('web')->user()->number }}
+                                                                        </div>
+                                                                    </div>
+
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+
+
+
+                                        </div>
+                                    </div>
+                                    <!-- My Account Tab Content End -->
+                                </div>
+                            </div>
+                            <!-- My Account Page End -->
+                        </div>
                     </div>
-                  </div>
                 </div>
-              </div>
-              
             </div>
 
-            <div class="col-md-8">
-              <div class="card mb-3">
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0">Full Name</h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                    {{ Auth::guard('web')->user()->name }}
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0">Email</h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                    {{ Auth::guard('web')->user()->email }}
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0">Phone</h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                    {{ Auth::guard('web')->user()->phone }}
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0">Gender</h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                    <h4> {{ Auth::guard('web')->user()->gender }}</h4>
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0">Date of Birth</h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                    {{ Auth::guard('web')->user()->birthDate }}
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0">Blood Group</h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                    {{ Auth::guard('web')->user()->bloodGroup }}
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0">City</h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                    {{ Auth::guard('web')->user()->city }}
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0">Nid No</h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                    {{ Auth::guard('web')->user()->nid }}
-                    </div>
-                  </div>
-                  <hr>
-                  
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-6">
-              <div class="card mb-3">
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0">Submitted Referance Number</h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                    {{ Auth::guard('web')->user()->refCode }}
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0">Shareable Reference Number</h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                    {{ Auth::guard('web')->user()->shareableRefcode }}
-                    </div>
-                  </div>
-                  <hr>
-                  <!-- <div class="row">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0">Transaction Id</h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                    {{ Auth::guard('web')->user()->transactionId }}
-                    </div>
-                  </div> -->
-                 
-                  <hr>
-                  
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-6">
-              <div class="card mb-3">
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0">Vehicle</h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                    {{ Auth::guard('web')->user()->vehicle }}
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0">Driving license</h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                    {{ Auth::guard('web')->user()->drivingLicense }}
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0">City Name</h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                    {{ Auth::guard('web')->user()->cityName }}
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0">Category</h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                    <h4> {{ Auth::guard('web')->user()->category }}</h4>
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0">Number</h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                    {{ Auth::guard('web')->user()->number }}
-                    </div>
-                  </div>
-                  
-                </div>
-              </div>
-            </div>
-
-
-          </div>
-
-        </div>
-    </div>
 
 
 
-@endsection
 
-
-            
+            @endsection

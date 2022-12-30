@@ -20,7 +20,6 @@
 
 .myaccount-tab-menu a {
     border: 1px solid #c5c5c5;
-    border-bottom: none;
     color: #727272;
     font-weight: 700;
     font-size: 14px;
@@ -31,9 +30,7 @@
     text-transform: uppercase;
 }
 
-.myaccount-tab-menu a:last-child {
-    border-bottom: 1px solid #c5c5c5;
-}
+
 
 .myaccount-tab-menu a:hover, .myaccount-tab-menu a.active {
     background-color: orange;
