@@ -35,7 +35,7 @@
 
         <a href="#">General Massage</a>
 
-        <a href="#">Support</a>
+        <a href="{{ route('userSupport', Auth::guard('web')->user()->id) }}" class="{{ Request::is('dashboard/support') ? 'active' : '' }}">Support</a>
 
         <a href="#">Present Status</a>
 

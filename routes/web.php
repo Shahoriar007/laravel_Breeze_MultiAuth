@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\UserCaseController;
+use App\Http\Controllers\UserSupportController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 
 
@@ -31,6 +32,11 @@ Route::post('/dashboard/update/{id}', [RegisteredUserController::class, 'userUpd
 Route::get('/dashboard/casereport', [UserCaseController::class, 'caseReportFormView'])->middleware(['auth', 'verified'])->name('caseReport');
 // Case Submit Form
 Route::post('/dashboard/{id}', [UserCaseController::class, 'caseStore'])->middleware(['auth', 'verified'])->name('caseSubmit');
+
+// User Support page view
+Route::get('/dashboard/support/{id}', [UserSupportController::class, 'userSupportMsgView'])->middleware(['auth', 'verified'])->name('userSupport');
+
+Route::post('/dashboard/support/{id}', [UserSupportController::class, 'userSupportMsgSend'])->middleware(['auth', 'verified'])->name('userSupportMsgPost');
 
 
 require __DIR__.'/auth.php';
@@ -71,6 +77,15 @@ Route::prefix('admin')->group(function(){
     Route::get('/viewcases', [UserCaseController::class, 'showAllcases'])->middleware(['auth:admin', 'verified'])->name('all.cases');
     // Case Details View
     Route::get('/viewcases/{id}', [UserCaseController::class, 'caseDetails'])->middleware(['auth:admin', 'verified']);
+
+    // All cases view
+    Route::get('/admin_support', [UserSupportController::class, 'adminSupportChatView'])->middleware(['auth:admin', 'verified'])->name('allSupportMsg');
+
+    // All msg of a user view
+    Route::get('/support_support/{id}', [UserSupportController::class, 'adminSupportChatViewMsg'])->middleware(['auth:admin', 'verified'])->name('adminSupportMsg');
+
+    Route::post('/support_support/{id}', [UserSupportController::class, 'adminSupportMsgPost'])->middleware(['auth:admin', 'verified'])->name('adminSupportMsgPost');
+
 
     
 });
