@@ -41,9 +41,8 @@
 
 
                                                                         @if($usersAllCasesDetails->casePhoto)
-                                                                        <img src="{{ asset($usersAllCasesDetails->casePhoto) }}"
-                                                                            class="rounded-circle" width="150" alt="">
-                                                                            <a class="btn btn-outline-secondary" href="{{ asset($usersAllCasesDetails->casePhoto) }}">View</a>
+                                                                            <a href="{{ asset($usersAllCasesDetails->casePhoto) }}"><img src="{{ asset($usersAllCasesDetails->casePhoto) }}"
+                                                                             width="150" alt=""></a>
                                                                         @else
                                                                         <img src="https://bootdey.com/img/Content/avatar/avatar7.png"
                                                                             alt="Admin" class="rounded-circle"
