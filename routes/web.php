@@ -35,8 +35,13 @@ Route::post('/dashboard/{id}', [UserCaseController::class, 'caseStore'])->middle
 
 // User Support page view
 Route::get('/dashboard/support/{id}', [UserSupportController::class, 'userSupportMsgView'])->middleware(['auth', 'verified'])->name('userSupport');
-
+// User Support msg send
 Route::post('/dashboard/support/{id}', [UserSupportController::class, 'userSupportMsgSend'])->middleware(['auth', 'verified'])->name('userSupportMsgPost');
+
+//User all submitted case view table
+Route::get('/dashboard/allcases/{id}', [UserCaseController::class, 'userAllCasesView'])->middleware(['auth', 'verified'])->name('allCases');
+// User Case Details View
+Route::get('/dashboard/userViewcases/{id}', [UserCaseController::class, 'userCaseDetails'])->middleware(['auth', 'verified'])->name('allCasesDetails');
 
 
 require __DIR__.'/auth.php';
@@ -84,8 +89,11 @@ Route::prefix('admin')->group(function(){
     // All msg of a user view
     Route::get('/support_support/{id}', [UserSupportController::class, 'adminSupportChatViewMsg'])->middleware(['auth:admin', 'verified'])->name('adminSupportMsg');
 
+    // Indivusual user msg show
     Route::post('/support_support/{id}', [UserSupportController::class, 'adminSupportMsgPost'])->middleware(['auth:admin', 'verified'])->name('adminSupportMsgPost');
 
+    // Indivusual user msg show
+    Route::post('/search', [UserSupportController::class, 'adminSupportMsgPostSrc'])->middleware(['auth:admin', 'verified'])->name('adminSupportMsgSearch');
 
     
 });

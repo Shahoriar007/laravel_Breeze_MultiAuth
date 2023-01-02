@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\UserSupportChat;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class UserSupportController extends Controller
@@ -28,27 +29,30 @@ class UserSupportController extends Controller
 
     }
 
+    // Admin all msg view
     public function adminSupportChatView(){
 
         $usersChatAll = UserSupportChat::where('sender','=','u')->latest()->get();
 
-         return view('adminSupport',compact('usersChatAll'));
+         return view('adminSupportNoid',compact('usersChatAll'));
 
     }
 
+    // Admin all msg view with chat get
     public function adminSupportChatViewMsg($id){
 
         $usersChat = UserSupportChat::where('userId','=', $id)->latest()->get();
 
+        $userNameSend = User::find($id);
+
         $usersChatAll = UserSupportChat::where('sender','=','u')->latest()->get();
 
-         return view('adminSupport',compact('usersChatAll','usersChat'));
+         return view('adminSupport',compact('usersChatAll','userNameSend','usersChat'));
 
     }
 
+    // Admin send msg
     public function adminSupportMsgPost(Request $request, $id ){
-
-        
 
         UserSupportChat::create([
             'userId' => $id,
@@ -57,6 +61,24 @@ class UserSupportController extends Controller
          ]);
 
         return redirect()->route('adminSupportMsg',$id);
+
+    }
+
+    // Admin all msg view with chat get
+    public function adminSupportMsgPostSrc(Request $request){
+
+        $userIdfilter = User::where('name','=', $request->name)->get();
+
+        $id = $userIdfilter[0]->id;
+        
+
+        $usersChat = UserSupportChat::where('userId','=', $id)->latest()->get();
+
+        $userNameSend = User::find($id);
+
+        $usersChatAll = UserSupportChat::where('sender','=','u')->latest()->get();
+
+        return view('adminSupport',compact('usersChatAll','userNameSend','usersChat'));
 
     }
 }

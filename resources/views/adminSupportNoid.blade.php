@@ -22,55 +22,55 @@
                         <div class="col-sm-3 col-xs-3 heading-avatar">
                             <a href="{{route('admin.dashboard')}}" class="btn btn-primary">< Back</a>
                         </div>
+                        
+                        
                     </div>
 
                     <div class="row searchBox">
                         <div class="col-sm-12 searchBox-inner">
-
-                        <form method="POST" action="{{ route('adminSupportMsgSearch') }}">
-                            @csrf
-                            <div class="col-sm-8 form-group has-feedback">
-                                <input id="name" type="text" class="form-control" name="name"
-                                    placeholder="Search">
-                            </div>
-                            <div class="col-sm-4 form-group has-feedback">
-                                <button class="btn btn-success" type="submit">Search</button>
-                            </div>
-                        </form>
-
+                            <form method="POST" action="{{ route('adminSupportMsgSearch') }}">
+                                @csrf
+                                <div class="col-sm-8 form-group has-feedback">
+                                    <input id="name" type="text" class="form-control" name="name"
+                                        placeholder="Search">
+                                </div>
+                                <div class="col-sm-4 form-group has-feedback">
+                                    <button class="btn btn-success" type="submit">Search</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
 
                     <div class="row sideBar">
 
-                        @foreach($usersChatAll as $chatInfoAll)
+                    @foreach($usersChatAll as $chatInfoAll)
 
-                        <div class="row sideBar-body">
+                    <div class="row sideBar-body">
 
-                            <div class="col-sm-9 col-xs-9 sideBar-main">
-                                <div class="row">
-                                    <div class="col-sm-6 col-xs-6 sideBar-name">
+                        <div class="col-sm-9 col-xs-9 sideBar-main">
+                            <div class="row">
+                                <div class="col-sm-6 col-xs-6 sideBar-name">
 
-                                    @php
-                                        $userName = \App\Models\User::findOrFail($chatInfoAll->userId);
-                                    @endphp
-                                        <span class="name-meta">{{ $userName->name }}</span>
+                                @php
+                                    $userName = \App\Models\User::findOrFail($chatInfoAll->userId);
+                                @endphp
+                                    <span class="name-meta">{{ $userName->name }}</span>
 
-                                        <a href="{{ route('adminSupportMsg',  $chatInfoAll->userId) }}">
-                                            <span class="name-meta">Msg: {{ $chatInfoAll->msgText }}</span>
-                                        </a>
-          
-                                    </div>
+                                    <a href="{{ route('adminSupportMsg',  $chatInfoAll->userId) }}">
+                                        <span class="name-meta">Msg: {{ $chatInfoAll->msgText }}</span>
+                                    </a>
 
-                                    <div class="col-sm-6 col-xs-6 pull-right sideBar-time">
-                                        <span class="time-meta pull-right">{{ $chatInfoAll->created_at }}
-                                        </span>
-                                    </div>
+                                </div>
+
+                                <div class="col-sm-6 col-xs-6 pull-right sideBar-time">
+                                    <span class="time-meta pull-right">{{ $chatInfoAll->created_at }}
+                                    </span>
                                 </div>
                             </div>
                         </div>
+                    </div>
 
-                        @endforeach
+                    @endforeach
 
 
                     </div>
@@ -82,16 +82,10 @@
             <div class="col-sm-8 conversation">
                 <div class="row heading">
                     <div class="col-sm-2 col-md-1 col-xs-3 heading-avatar">
-                        <div class="heading-avatar-icon">
-                            <img src="https://bootdey.com/img/Content/avatar/avatar6.png">
-                        </div>
+                        
                     </div>
-                    
                     <div class="col-sm-8 col-xs-7 heading-name">
-
-                        <a class="heading-name-meta">{{ $userNameSend->name }}
-                        </a>
-                        <span class="heading-online">Online</span>
+                        
                     </div>
                     <div class="col-sm-1 col-xs-1  heading-dot pull-right">
                         <i class="fa fa-ellipsis-v fa-2x  pull-right" aria-hidden="true"></i>
@@ -101,33 +95,11 @@
                 <div class="row message" id="conversation">
                     <div class="row message-previous">
                         <div class="col-sm-12 previous">
-                            <!-- <a onclick="previous(this)" id="ankitjain28" name="20">
-                                Show Previous Message!
-                            </a> -->
+                            
                         </div>
                     </div>
 
-                    @foreach($usersChat as $chatInfo)
-                    <div class="row message-body">
-
-                        @if( $chatInfo->sender == "u" )
-                        <div class="col-sm-12 message-main-receiver">
-                            <div class="receiver">
-                                @else
-                                <div class="col-sm-12 message-main-sender">
-                                    <div class="sender">
-                                        @endif
-                                        <div class="message-text">
-                                            {{ $chatInfo->msgText }}
-                                        </div>
-                                        <span class="message-time pull-right">
-                                            {{ $chatInfo->created_at }}
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            @endforeach
-
+                
                         </div>
 
                         <div class="row reply">
@@ -135,8 +107,7 @@
                                 <i class="fa fa-smile-o fa-2x"></i>
                             </div>
 
-                            <form method="POST" action="{{ route('adminSupportMsgPost', $chatInfo->userId) }}">
-                                @csrf
+                            
 
                                 <div class="col-sm-9 col-xs-9 reply-main">
                                     <input class="form-control" type="text" id="msgText" name="msgText">
@@ -146,7 +117,7 @@
                                     <button class="btn btn-primary btn-block" type="submit">Send</button>
                                 </div>
 
-                            </form>
+                            
 
                         </div>
                     </div>

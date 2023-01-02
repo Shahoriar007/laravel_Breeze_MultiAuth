@@ -25,7 +25,7 @@
 
         <a href="{{ route('caseReport') }}" class="{{ Request::is('dashboard/casereport') ? 'active' : '' }}" >Case Report</a>
 
-        <a href="#">All Cases</a>
+        <a href="{{ route('allCases', Auth::guard('web')->user()->id) }}" class="{{ Request::is('dashboard/allcases') ? 'active' : '' }}">All Cases</a>
 
         <!-- <a href="#case_report_list" data-toggle="tab">Case Report List</a> -->
 

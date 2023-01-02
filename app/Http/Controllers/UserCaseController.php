@@ -10,10 +10,13 @@ use Image;
 
 class UserCaseController extends Controller
 {
-    public function caseReportFormView(){
+    // -----------------------------------------User Side-------------------------------
 
+    // Case submit form view
+    public function caseReportFormView(){
         return view('caseReport');
     }
+
     // case submit form
     public function caseStore(Request $request, $id ){
 
@@ -55,17 +58,37 @@ class UserCaseController extends Controller
     
     }
 
-    // all cases view classes
+    // User all submitted case view table
+    public function userAllCasesView($id){
+
+        $usersAllCases = Casefine::where('userId','=',$id)->get();
+
+        return view('allSubmittedCase',compact('usersAllCases'));
+
+    }
+
+    public function userCaseDetails($id){
+
+        $usersAllCasesDetails = Casefine::findOrFail($id);
+
+        return view('userCaseDetails',compact('usersAllCasesDetails'));
+
+    }
+
+
+
+
+    // -----------------------------------------Admin Side-------------------------------
+
+    // all cases view table
     public function showAllcases(){
         $cases = Casefine::latest()->paginate(10);
         return view('cases_view',compact('cases'));
     }
 
-    // cases details view classes
+    // cases details view 
     public function caseDetails( $id ){
-
         $caseDetails = Casefine::find($id);
-
         return view('case_details', compact('caseDetails'));
 
     }
