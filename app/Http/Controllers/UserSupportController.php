@@ -71,11 +71,8 @@ class UserSupportController extends Controller
 
         $id = $userIdfilter[0]->id;
         
-
         $usersChat = UserSupportChat::where('userId','=', $id)->latest()->get();
-
         $userNameSend = User::find($id);
-
         $usersChatAll = UserSupportChat::where('sender','=','u')->latest()->get();
 
         return view('adminSupport',compact('usersChatAll','userNameSend','usersChat'));

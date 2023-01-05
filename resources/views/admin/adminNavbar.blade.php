@@ -38,6 +38,9 @@
                                             <a href="{{ route('showUsers') }}" class="nk-menu-link"><span class="nk-menu-text">All Users</span></a>
                                         </li>
                                         <li class="nk-menu-item">
+                                            <a href="{{ route('adminAddUserDgn') }}" class="nk-menu-link"><span class="nk-menu-text">Add User Designation</span></a>
+                                        </li>
+                                        <li class="nk-menu-item">
                                             <a href="{{ route('adminAddUser') }}" class="nk-menu-link"><span class="nk-menu-text">Add User</span></a>
                                         </li>
                                     </ul><!-- .nk-menu-sub -->

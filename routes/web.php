@@ -6,7 +6,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\UserCaseController;
 use App\Http\Controllers\UserSupportController;
+use App\Http\Controllers\GeneralMsgController;
+use App\Http\Controllers\UserDesignationController;
+use App\Http\Controllers\UserCaseChatController;
 use App\Http\Controllers\Auth\RegisteredUserController;
+
 
 
 Route::get('/', function () {
@@ -42,6 +46,11 @@ Route::post('/dashboard/support/{id}', [UserSupportController::class, 'userSuppo
 Route::get('/dashboard/allcases/{id}', [UserCaseController::class, 'userAllCasesView'])->middleware(['auth', 'verified'])->name('allCases');
 // User Case Details View
 Route::get('/dashboard/userViewcases/{id}', [UserCaseController::class, 'userCaseDetails'])->middleware(['auth', 'verified'])->name('allCasesDetails');
+// User Case Details msg post
+Route::post('/dashboard/userViewcases/{id}', [UserCaseChatController::class, 'userAllCaseMsgPost'])->middleware(['auth', 'verified'])->name('userCaseMsgPost');
+
+// General Msg View
+Route::get('/dashboard/generalMsg/{id}', [GeneralMsgController::class, 'userGeneralMsgView'])->middleware(['auth', 'verified'])->name('userGeneralMsg');
 
 
 require __DIR__.'/auth.php';
@@ -63,8 +72,14 @@ Route::prefix('admin')->group(function(){
     Route::get('/adduser', [RegisteredUserController::class, 'usersAddByAdminView'])->middleware(['auth:admin', 'verified'])->name('adminAddUser');
     // Admin add user page view
     Route::post('/adduser', [RegisteredUserController::class, 'usersAddByAdminForm'])->middleware(['auth:admin', 'verified'])->name('adminAddUserForm');
+    // Admin add user designation view
+    Route::get('/add_Designation', [UserDesignationController::class, 'usersDesignationAddView'])->middleware(['auth:admin', 'verified'])->name('adminAddUserDgn');
+    // Admin add user designation form post
+    Route::post('/add_Designation', [UserDesignationController::class, 'usersDesignationAddform'])->middleware(['auth:admin', 'verified'])->name('adminAddUserDgnForm');
+    // Admin can delete user designation
+    Route::get('/add_Designation/{id}', [UserDesignationController::class, 'usersDesignationDelete'])->middleware(['auth:admin', 'verified'])->name('adminDeleteUserDgn');
     // Users details view
-    Route::get('/viewusers/{id}', [UserController::class, 'usersDetails'])->middleware(['auth:admin', 'verified']);
+    Route::get('/viewusers/{id}', [UserController::class, 'usersDetails'])->middleware(['auth:admin', 'verified'])->name('userDetails');
     // edit page view
     Route::get('/viewusers/edit/{id}', [UserController::class, 'adminUserProfileEditView'])->middleware(['auth:admin', 'verified'])->name('userProfileEditviewbyadmin');
     // edit
@@ -77,11 +92,16 @@ Route::prefix('admin')->group(function(){
     Route::get('/view/status/{status}/{id}', [UserController::class, 'UserStatus'])->middleware(['auth:admin', 'verified']);
 
 
-
     // All cases view
     Route::get('/viewcases', [UserCaseController::class, 'showAllcases'])->middleware(['auth:admin', 'verified'])->name('all.cases');
     // Case Details View
-    Route::get('/viewcases/{id}', [UserCaseController::class, 'caseDetails'])->middleware(['auth:admin', 'verified']);
+    Route::get('/viewcases/{id}', [UserCaseController::class, 'caseDetails'])->middleware(['auth:admin', 'verified'])->name('allCasesDetailsAdmin');
+    // case details status update
+    Route::post('/viewcases/status/{id}', [UserCaseController::class, 'caseStatusUpdate'])->middleware(['auth:admin', 'verified'])->name('adminUpdateCaseStatus');
+
+    // Admin Case Details msg post
+    Route::post('/viewcases/{id}', [UserCaseChatController::class, 'adminAllCaseMsgPost'])->middleware(['auth:admin', 'verified'])->name('adminCaseMsgPost');
+
 
     // All cases view
     Route::get('/admin_support', [UserSupportController::class, 'adminSupportChatView'])->middleware(['auth:admin', 'verified'])->name('allSupportMsg');
@@ -94,6 +114,14 @@ Route::prefix('admin')->group(function(){
 
     // Indivusual user msg show
     Route::post('/search', [UserSupportController::class, 'adminSupportMsgPostSrc'])->middleware(['auth:admin', 'verified'])->name('adminSupportMsgSearch');
+
+    // All msg of a user view
+    Route::get('/generalMsg/{id}', [GeneralMsgController::class, 'adminGeneralMsgView'])->middleware(['auth:admin', 'verified'])->name('adminGeneralMsg');
+
+    // general msg post form
+    Route::post('/generalMsg/{id}', [GeneralMsgController::class, 'adminGeneralMsgPost'])->middleware(['auth:admin', 'verified'])->name('adminGeneralMsgPost');
+
+
 
     
 });

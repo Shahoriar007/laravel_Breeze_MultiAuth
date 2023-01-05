@@ -121,8 +121,15 @@
 
                                     <select name="designation" id="designation">
                                         <option data-display="Select"></option>
-                                        <option value="General User">General User</option>
-                                        <option value="Employee">Employee</option>
+
+                                        @php
+                                            $UserDesignation = \App\Models\UserDesignation::all();
+                                        @endphp
+
+                                        @foreach($UserDesignation as $userDegShow)
+                                        <option value="{{ $userDegShow->userDgn }}">{{ $userDegShow->userDgn }}</option>
+                                        @endforeach
+                                       
                                     </select>
                                     
                                 </div>

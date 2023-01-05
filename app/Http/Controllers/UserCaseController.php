@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Casefine;
+use App\Models\UserCaseChat;
 
 
 use Image;
@@ -66,14 +67,17 @@ class UserCaseController extends Controller
         return view('allSubmittedCase',compact('usersAllCases'));
 
     }
-
+    // User Case Details
     public function userCaseDetails($id){
 
         $usersAllCasesDetails = Casefine::findOrFail($id);
+        $usersCaseChat = UserCaseChat::where('caseId','=', $id)->get();
 
-        return view('userCaseDetails',compact('usersAllCasesDetails'));
+        return view('userCaseDetails',compact('usersAllCasesDetails','usersCaseChat'));
 
     }
+
+    
 
 
 
@@ -88,8 +92,24 @@ class UserCaseController extends Controller
 
     // cases details view 
     public function caseDetails( $id ){
+
         $caseDetails = Casefine::find($id);
-        return view('case_details', compact('caseDetails'));
+        $usersCaseChat = UserCaseChat::where('caseId','=', $id)->get();
+
+        return view('case_details', compact('caseDetails','usersCaseChat'));
 
     }
+
+    // Admin user Case Status update
+    public function caseStatusUpdate(Request $request, $id){
+
+        $case = Casefine::find($id);
+        $case->caseStatus = $request->caseStatus;
+
+        $case->save();
+
+        return redirect()->route('allCasesDetailsAdmin',$id);
+
+    }
+
 }

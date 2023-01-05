@@ -43,7 +43,7 @@
                                                 <td>{{ $caseList->id }}</td>
                                                 <td>{{ $caseList->caseId }}</td>
                                                 <td>{{ $caseList->caseCode }}</td>
-                                                <td></td>
+                                                <td>{{ $caseList->caseStatus }}</td>
                                                 <td>{{ $caseList->created_at }}</td>
 
                                                 <td>

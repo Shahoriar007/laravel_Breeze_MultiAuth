@@ -33,7 +33,7 @@
 
         <a href="{{ route('userProfileEdit', Auth::guard('web')->user()->id) }}">Edit Info</a>
 
-        <a href="#">General Massage</a>
+        <a href="{{ route('userGeneralMsg', Auth::guard('web')->user()->id) }}" class="{{ Request::is('dashboard/support') ? 'active' : '' }}">General Massage</a>
 
         <a href="{{ route('userSupport', Auth::guard('web')->user()->id) }}" class="{{ Request::is('dashboard/support') ? 'active' : '' }}">Support</a>
 
