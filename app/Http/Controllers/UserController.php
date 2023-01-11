@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Account;
 use Illuminate\Support\Facades\Input;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 
 class UserController extends Controller
@@ -17,6 +18,14 @@ class UserController extends Controller
         $users = User::all();
         //$users = User::where('designation',Input::get('designation'))->get();
         return view('users_view',compact('users'));
+    }
+
+    // all users view short table
+    public function usersViewShort(){
+
+        $users = User::all();
+        //$users = User::where('designation',Input::get('designation'))->get();
+        return view('users_view_shortTable',compact('users'));
     }
 
    
@@ -156,6 +165,41 @@ class UserController extends Controller
 
         // $request->session()->flash('message','Category Status Updated');
         return redirect('admin/viewusers')->with($notification);
+    }
+
+    // Generate User Prolfile PDF
+    public function generateUserPdf($id){
+
+        $userDetails = User::find($id);
+
+        //dd($userDetails);
+
+        $data = array(
+            "id"=>$userDetails->id,
+            "name"=>$userDetails->name,
+            "email"=>$userDetails->email,
+            "phone"=>$userDetails->phone,
+            "nid"=>$userDetails->nid,
+            "gender"=>$userDetails->gender,
+            "birthDate"=>$userDetails->birthDate,
+            "bloodGroup"=>$userDetails->bloodGroup,
+            "city"=>$userDetails->city,
+            "vehicle"=>$userDetails->vehicle,
+            "drivingLicense"=>$userDetails->drivingLicense,
+            "cityName"=>$userDetails->cityName,
+            "category"=>$userDetails->category,
+            "number"=>$userDetails->number,
+            
+            "refCode"=>$userDetails->refCode,
+            "shareableRefcode"=>$userDetails->shareableRefcode,
+            "designation"=>$userDetails->designation,
+            
+
+        );
+
+        $pdf = Pdf::loadView('downloadUserProfile', compact('data'));
+        return $pdf->download();
+
     }
 
 

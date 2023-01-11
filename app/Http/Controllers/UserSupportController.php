@@ -11,7 +11,7 @@ class UserSupportController extends Controller
     // User Support Msg Section View
     public function userSupportMsgView( $id ){
 
-        $usersChat = UserSupportChat::where('userId','=', $id)->latest()->get();
+        $usersChat = UserSupportChat::where('userId','=', $id)->get();
 
         return view('user_support', compact('usersChat'));
 
@@ -41,11 +41,11 @@ class UserSupportController extends Controller
     // Admin all msg view with chat get
     public function adminSupportChatViewMsg($id){
 
-        $usersChat = UserSupportChat::where('userId','=', $id)->latest()->get();
+        $usersChat = UserSupportChat::where('userId','=', $id)->get();
 
         $userNameSend = User::find($id);
 
-        $usersChatAll = UserSupportChat::where('sender','=','u')->latest()->get();
+        $usersChatAll = UserSupportChat::where('sender','=','u')->get();
 
          return view('adminSupport',compact('usersChatAll','userNameSend','usersChat'));
 
@@ -71,9 +71,9 @@ class UserSupportController extends Controller
 
         $id = $userIdfilter[0]->id;
         
-        $usersChat = UserSupportChat::where('userId','=', $id)->latest()->get();
+        $usersChat = UserSupportChat::where('userId','=', $id)->get();
         $userNameSend = User::find($id);
-        $usersChatAll = UserSupportChat::where('sender','=','u')->latest()->get();
+        $usersChatAll = UserSupportChat::where('sender','=','u')->get();
 
         return view('adminSupport',compact('usersChatAll','userNameSend','usersChat'));
 

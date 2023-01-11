@@ -23,7 +23,12 @@ class UserDesignationController extends Controller
             'userDgn' => $request->userDgn,
          ]);
 
-        return redirect()->route('adminAddUserDgn');
+         $notification = array(
+            'message' => 'Added successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('adminAddUserDgn')->with($notification);
 
     }
 
@@ -32,7 +37,12 @@ class UserDesignationController extends Controller
 
         UserDesignation::findOrFail($id)->delete();
 
-        return redirect()->route('adminAddUserDgn');
+        $notification = array(
+            'message' => 'Deleted successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('adminAddUserDgn')->with($notification);
 
     }
     

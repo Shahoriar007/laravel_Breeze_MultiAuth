@@ -4,114 +4,187 @@
 
 
 <style>
-/* table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-} */
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-  width: 100%;
-  border: 1px solid #ddd;
+div#example_info {
+    font-size: medium;
+    padding-top: 30px;
 }
 
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
+div#example_paginate {
+    padding-top: 30px;
 }
 
-tr:nth-child(even) {
-  background-color: #dddddd;
+div.dataTables_wrapper div.dataTables_filter input {
+    display: inline-block;
+    font-size: 15px !important;
+    padding: 10px !important;
 }
 
-th, td {
-  text-align: left;
-  padding: 8px;
+div.dataTables_wrapper div.dataTables_length select {
+    width: auto;
+    display: inline-block;
+    font-size: 15px !important;
+    padding: 10px;
 }
 
-tr:nth-child(even){background-color: #f2f2f2}
+.nk-menu-text {
+    flex-grow: 1;
+    display: inline-block;
+    white-space: nowrap;
+    padding: 8px !important;
+}
 </style>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 
 
 </head>
+
 <body>
 
-<div>
-    <a href="{{route('admin.dashboard')}}"> Dashboard</a>
-</div>
-<br>
-<br>
-<br>
-<br>
-<br>
-<h2>Case Table</h2>
+    <div>
+        <a href="{{route('admin.dashboard')}}"> Dashboard</a>
+    </div>
+    <br>
+    <br>
 
-<div style="overflow-x:auto;">
-<table>
-  <tr>
-    <th>ID</th>
-    <th>User ID</th>
-    <th>Case ID</th>
-    <th>Case code</th>
-    <th>fine ammount</th>
-    
-    <th>Action</th>
-  </tr>
+    <h2 class="text-center">Case Table</h2>
 
-@foreach($cases as $item)
-    <tr>
-        <td>{{ $item->id }}</td>
-        <td>{{ $item->userId }}</td>
-        <td>{{ $item->caseId }}</td>
-        <td>{{ $item->caseCode }}</td>
-        <td>{{ $item->fineAmmount }}</td>
+    <div style="overflow-x:auto;">
+        <table id="example" class="display" style="width:100%">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>User ID</th>
+                    <th>Case ID</th>
+                    <th>Case code</th>
+                    <th>fine ammount</th>
+                    <th>Case Status</th>
+
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach($cases as $item)
+                <tr>
+                    <td>{{ $item->id }}</td>
+                    <td>{{ $item->userId }}</td>
+                    <td>{{ $item->caseId }}</td>
+                    <td>{{ $item->caseCode }}</td>
+                    <td>{{ $item->fineAmmount }}</td>
+                    <td>{{ $item->caseStatus }}</td>
+
+
+                    <td>
+                        <a href="{{url('admin/viewcases')}}/{{$item->id}}">
+                            <button type="button" class="btn btn-primary">Details</button>
+                        </a>
+                        <a href="{{url('admin/caseDelete')}}/{{$item->id}}" id="delete">
+                            <button type="button" class="btn btn-danger">Delete</button>
+                        </a>
+                    </td>
+
+                </tr>
+                @endforeach
+
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>Id</th>
+                    <th>User Id</th>
+                    <th>Case Id</th>
+                    <th>Case code</th>
+                    <th>Fine Ammount</th>
+                    <th>Case Status</th>
+
+                    <th>Action</th>
+
+                </tr>
+            </tfoot>
+
+        </table>
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.2.min.js"
+        integrity="sha256-2krYZKh//PcchRtd+H+VyyQoZ/e3EcrkxhM8ycwASPA=" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.js">
+    </script>
+
+    <script type="text/Javascript">
+
+        // $(document).ready( function () {
+    // $('#myTable').DataTable();
+    // });
+
+    $(document).ready(function () {
         
-
-        <td>
-            <a href="{{url('admin/viewcases')}}/{{$item->id}}">
-                <button type="button" class="btn btn-primary">Details</button>
-            </a>
-        </td>
-        
-    </tr>
-@endforeach
-
-</table>
-
-<!-- Pagination -->
-<!-- <br>
-<br>
-<div class="row justify-content-md-center">
-  <div class="col-md-auto">
-  {{ $cases->links() }}
-  </div> 
-</div>
-<br>
-<br> -->
-
-</div>
-
-
-  
-<script
-  src="https://code.jquery.com/jquery-3.6.2.min.js"
-  integrity="sha256-2krYZKh//PcchRtd+H+VyyQoZ/e3EcrkxhM8ycwASPA="
-  crossorigin="anonymous"></script>
-
-  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.js"></script>
-
- <script type="text/Javascript">
-
-    $(document).ready( function () {
-    $('#myTable').DataTable();
+    // Setup - add a text input to each footer cell
+    $('#example thead tr')
+        .clone(true)
+        .addClass('filters')
+        .appendTo('#example thead');
+ 
+    var table = $('#example').DataTable({
+        orderCellsTop: true,
+        fixedHeader: true,
+        initComplete: function () {
+            var api = this.api();
+ 
+            // For each column
+            api
+                .columns()
+                .eq(0)
+                .each(function (colIdx) {
+                    // Set the header cell to contain the input element
+                    var cell = $('.filters th').eq(
+                        $(api.column(colIdx).header()).index()
+                    );
+                    var title = $(cell).text();
+                    $(cell).html('<input type="text" placeholder="' + title + '" />');
+ 
+                    // On every keypress in this input
+                    $(
+                        'input',
+                        $('.filters th').eq($(api.column(colIdx).header()).index())
+                    )
+                        .off('keyup change')
+                        .on('change', function (e) {
+                            // Get the search value
+                            $(this).attr('title', $(this).val());
+                            var regexr = '({search})'; //$(this).parents('th').find('select').val();
+ 
+                            var cursorPosition = this.selectionStart;
+                            // Search the column for that value
+                            api
+                                .column(colIdx)
+                                .search(
+                                    this.value != ''
+                                        ? regexr.replace('{search}', '(((' + this.value + ')))')
+                                        : '',
+                                    this.value != '',
+                                    this.value == ''
+                                )
+                                .draw();
+                        })
+                        .on('keyup', function (e) {
+                            e.stopPropagation();
+ 
+                            $(this).trigger('change');
+                            $(this)
+                                .focus()[0]
+                                .setSelectionRange(cursorPosition, cursorPosition);
+                        });
+                });
+        },
     });
+});
    
 </script>
 
 
-@endsection
-
-
+    @endsection

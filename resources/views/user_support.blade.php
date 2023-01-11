@@ -44,7 +44,7 @@
                                                             <!--Widget body-->
                                                             <div id="demo-chat-body" class="in">
                                                                 <div class="nano has-scrollbar" style="height:380px">
-                                                                    <div class="nano-content pad-all" tabindex="0"
+                                                                    <div class="nano-content pad-all" id="conversation" tabindex="0"
                                                                         style="right: -17px;">
                                                                         <ul class="list-unstyled media-block">
 
@@ -103,8 +103,8 @@
                                                                         @csrf
                                                                         
                                                                         <div class="col-lg-12 mb-3">
-                                                                        <textarea oninput="auto_grow(this)" name="caseMsgText"
-                                                                                id="caseMsgText" rows="1" class="form-control"
+                                                                        <textarea oninput="auto_grow(this)" name="msgText"
+                                                                                id="msgText" rows="1" class="form-control"
                                                                                 placeholder="message"></textarea>
                                                                         </div>
 
@@ -141,6 +141,14 @@
                 element.style.height = "5px";
                 element.style.height = (element.scrollHeight) + "px";
             }
+            </script>
+
+            <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+
+            <script type="text/javascript">
+                $(document).ready(function(){
+                    $('#conversation').animate({scrollTop:1000000},800);
+                })
             </script>
 
 

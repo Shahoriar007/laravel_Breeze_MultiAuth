@@ -52,6 +52,9 @@ Route::post('/dashboard/userViewcases/{id}', [UserCaseChatController::class, 'us
 // General Msg View
 Route::get('/dashboard/generalMsg/{id}', [GeneralMsgController::class, 'userGeneralMsgView'])->middleware(['auth', 'verified'])->name('userGeneralMsg');
 
+// Download invoice (User) 
+Route::get('generate-invoicepdf/{id}',[UserCaseController::class, 'downloadInvAdmin'])->middleware(['auth', 'verified'])->name('downloadInvoiceUser');
+
 
 require __DIR__.'/auth.php';
 
@@ -68,6 +71,8 @@ Route::prefix('admin')->group(function(){
 
     // All Users view
     Route::get('/viewusers', [UserController::class, 'usersView'])->middleware(['auth:admin', 'verified'])->name('showUsers');
+    // All Users view short table
+    Route::get('/viewusersShort', [UserController::class, 'usersViewShort'])->middleware(['auth:admin', 'verified'])->name('showUsersShort');
     // Admin add user page view
     Route::get('/adduser', [RegisteredUserController::class, 'usersAddByAdminView'])->middleware(['auth:admin', 'verified'])->name('adminAddUser');
     // Admin add user page view
@@ -87,15 +92,15 @@ Route::prefix('admin')->group(function(){
     // Admin User Delete
     Route::get('/viewusers/delete/{id}', [UserController::class, 'deleteUsers'])->middleware(['auth:admin', 'verified']);
 
-
     // Approve/inapprove 
     Route::get('/view/status/{status}/{id}', [UserController::class, 'UserStatus'])->middleware(['auth:admin', 'verified']);
-
 
     // All cases view
     Route::get('/viewcases', [UserCaseController::class, 'showAllcases'])->middleware(['auth:admin', 'verified'])->name('all.cases');
     // Case Details View
     Route::get('/viewcases/{id}', [UserCaseController::class, 'caseDetails'])->middleware(['auth:admin', 'verified'])->name('allCasesDetailsAdmin');
+    // Case Details View
+    Route::get('/caseDelete/{id}', [UserCaseController::class, 'caseDeleteAdmin'])->middleware(['auth:admin', 'verified']);
     // case details status update
     Route::post('/viewcases/status/{id}', [UserCaseController::class, 'caseStatusUpdate'])->middleware(['auth:admin', 'verified'])->name('adminUpdateCaseStatus');
 
@@ -120,6 +125,18 @@ Route::prefix('admin')->group(function(){
 
     // general msg post form
     Route::post('/generalMsg/{id}', [GeneralMsgController::class, 'adminGeneralMsgPost'])->middleware(['auth:admin', 'verified'])->name('adminGeneralMsgPost');
+
+    // Admin general msg delete
+    Route::get('/generalMsg/delete/{id}/{caseId}', [GeneralMsgController::class, 'adminGeneralMsgdelete'])->middleware(['auth:admin', 'verified'])->name('adminGeneralMsgDelete');
+
+    // Generate Case details PDF
+    Route::get('generate-pdf/{id}',[UserCaseController::class, 'generateCasePdf'])->name('generatePdf');
+
+    // Generate User details PDF
+    Route::get('generate-userpdf/{id}',[UserController::class, 'generateUserPdf'])->name('generateUserPdf');
+
+    // Download invoice (admin) 
+    Route::get('generate-invoicepdf/{id}',[UserCaseController::class, 'downloadInvAdmin'])->name('downloadInvoiceAdmin');
 
 
 

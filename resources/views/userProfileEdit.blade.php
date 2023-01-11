@@ -256,6 +256,7 @@
     <script type="text/javascript">
         $(document).ready(function(){
             $('#photo').change(function(e){
+                echo("yes");
                 var reader = new FileReader();
                 reader.onload = function(e){
                     $('#showcasePhoto').attr('src',e.target.result);

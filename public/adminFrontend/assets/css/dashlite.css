@@ -32296,7 +32296,7 @@ h6 .badge, .h6 .badge {
 }
 .data-value {
   color: #526484;
-  font-size: 0.9375rem;
+  font-size: initial;
 }
 .data-more {
   position: relative;

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Casefine;
 use App\Models\UserCaseChat;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 
 use Image;
@@ -100,6 +101,14 @@ class UserCaseController extends Controller
 
     }
 
+    // cases delete
+    public function caseDeleteAdmin( $id ){
+
+        Casefine::findOrFail($id)->delete();
+        return redirect()->route('all.cases');
+
+    }
+
     // Admin user Case Status update
     public function caseStatusUpdate(Request $request, $id){
 
@@ -108,8 +117,58 @@ class UserCaseController extends Controller
 
         $case->save();
 
-        return redirect()->route('allCasesDetailsAdmin',$id);
+        $notification = array(
+            'message' => 'Case status updated successfully',
+            'alert-type' => 'success'
+        );
 
+        return redirect()->route('allCasesDetailsAdmin',$id)->with($notification);
+
+    }
+
+    // Generate Case PDF
+    public function generateCasePdf($id){
+
+        $caseDetails = Casefine::find($id);
+
+        $data = array(
+            "id"=>$caseDetails->id,
+            "userId"=>$caseDetails->userId,
+            "caseId"=>$caseDetails->caseId,
+            "caseCode"=>$caseDetails->caseCode,
+            "fineAmmount"=>$caseDetails->fineAmmount,
+            "caseStatus"=>$caseDetails->caseStatus,
+
+        );
+
+        $pdf = Pdf::loadView('downloadCase', compact('data'));
+        return $pdf->download();
+
+    }
+
+    // Generate Admin Case Invoice PDF
+    public function downloadInvAdmin($id){
+
+        $caseDetails = Casefine::find($id);
+
+        // 50% of case fine 
+        $dueAmmount = $caseDetails->caseCode / 2;
+
+        $invdata = array(
+            "id"=>$caseDetails->id,
+            "userId"=>$caseDetails->userId,
+            "caseId"=>$caseDetails->caseId,
+            "caseCode"=>$caseDetails->caseCode,
+            "newcaseCode"=>$dueAmmount,
+            "fineAmmount"=>$caseDetails->fineAmmount,
+            "caseStatus"=>$caseDetails->caseStatus,
+            "created_at"=>$caseDetails->created_at,
+            
+
+        );
+
+        $pdf = Pdf::loadView('downloadCaseInvoice', compact('invdata'));
+        return $pdf->download();
     }
 
 }

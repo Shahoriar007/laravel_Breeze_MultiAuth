@@ -6,10 +6,15 @@
   <div class="nk-content ">
                     <div class="container-fluid">
                         <div class="nk-content-inner">
+
+                        <div style="text-align: end">
                             
                         <a href="{{ route('showUsers') }}" class="btn btn-outline-light bg-white d-none d-sm-inline-flex"><em class="icon ni ni-arrow-left"></em><span>Back</span></a>
-                                                        
-                        
+                        <a href="{{ route('generateUserPdf',$userDetails->id) }}" class="btn btn-outline-light bg-white d-none d-sm-inline-flex"><em class="icon ni ni-arrow-down"></em><span>Download</span></a>
+                               
+                        </div>
+
+                        <br>
                             <div class="nk-content-body">
                                 <div class="nk-block">
                                     

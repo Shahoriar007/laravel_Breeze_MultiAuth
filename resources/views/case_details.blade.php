@@ -24,9 +24,9 @@
                         <div class="nk-block-head-content">
                             <a href="" class="btn btn-outline-light bg-white d-none d-sm-inline-flex"><em
                                     class="icon ni ni-arrow-left"></em><span>Back</span></a>
-                            <a href="html/user-list-regular.html"
-                                class="btn btn-icon btn-outline-light bg-white d-inline-flex d-sm-none"><em
-                                    class="icon ni ni-arrow-left"></em></a>
+                            <a href="{{ route('generatePdf',$caseDetails->id) }}" class="btn btn-outline-light bg-white d-none d-sm-inline-flex"><span>Download</span><em
+                                    class="icon ni ni-arrow-down"></em></a>
+                           
                         </div>
                     </div>
                 </div><!-- .nk-block-head -->
@@ -88,6 +88,12 @@
                                                 </div>
                                             </div>
                                             <div class="profile-ud-item">
+                                                <div class="profile-ud wider">
+                                                    <span class="profile-ud-label">Invoice </span>
+                                                   <a href="{{ route('downloadInvoiceAdmin',$caseDetails->id) }}" class="btn btn-info">Download</a>
+                                                </div>
+                                            </div>
+                                            <div class="profile-ud-item">
                                                 <form method="POST" action="{{ route('adminUpdateCaseStatus',$caseDetails->id) }}">
                                                     @csrf
 
@@ -137,8 +143,8 @@
 
                                                             <!--Widget body-->
                                                             <div id="demo-chat-body" class="in">
-                                                                <div class="nano has-scrollbar" style="height:380px">
-                                                                    <div class="nano-content pad-all" tabindex="0"
+                                                                <div class="nano has-scrollbar"  style="height:380px">
+                                                                    <div class="nano-content pad-all" id="conversation" tabindex="0"
                                                                         style="right: -17px;">
                                                                         <ul class="list-unstyled media-block">
 
@@ -257,7 +263,13 @@
 </div>
 <!-- content @e -->
 
+<script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
 
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('#conversation').animate({scrollTop:1000000},800);
+            })
+        </script>
 
 @endsection
 

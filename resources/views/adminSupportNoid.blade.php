@@ -45,22 +45,26 @@
 
                     @foreach($usersChatAll as $chatInfoAll)
 
+                    @php
+                        $userName = \App\Models\User::findOrFail($chatInfoAll->userId);
+                    @endphp
+
+                    <a href="{{ route('adminSupportMsg',  $chatInfoAll->userId) }}">
+
                     <div class="row sideBar-body">
 
                         <div class="col-sm-9 col-xs-9 sideBar-main">
                             <div class="row">
+                           
                                 <div class="col-sm-6 col-xs-6 sideBar-name">
 
-                                @php
-                                    $userName = \App\Models\User::findOrFail($chatInfoAll->userId);
-                                @endphp
+                                
                                     <span class="name-meta">{{ $userName->name }}</span>
 
-                                    <a href="{{ route('adminSupportMsg',  $chatInfoAll->userId) }}">
                                         <span class="name-meta">Msg: {{ $chatInfoAll->msgText }}</span>
-                                    </a>
 
                                 </div>
+                                
 
                                 <div class="col-sm-6 col-xs-6 pull-right sideBar-time">
                                     <span class="time-meta pull-right">{{ $chatInfoAll->created_at }}
@@ -69,6 +73,8 @@
                             </div>
                         </div>
                     </div>
+
+                    </a>
 
                     @endforeach
 

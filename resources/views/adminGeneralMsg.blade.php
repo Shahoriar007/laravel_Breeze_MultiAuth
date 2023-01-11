@@ -63,25 +63,25 @@
                                         <tbody>
 
                                         @php
-                                            $id = 1;
+                                            $indexid = 1;
                                         @endphp
                                            
                                         @foreach($generalMsg as $warningMsg )
                                             <tr>
-                                                <td>{{ $id }}</td>
+                                                <td>{{ $indexid }}</td>
                                                 <td>{{ $warningMsg->msgText }}</td>
                                                 <td>{{ $warningMsg->created_at }}</td>
                                                
                                                 <td>
-                                                    <button  class="btn btn-danger">Delete</button>
+                                                    <a href="{{ url('admin/generalMsg/delete')}}/{{$warningMsg->id}}/{{$id}}" class="btn btn-danger">Delete</a>
                                                 </td>
-                                                <td>
+                                                <!-- <td>
                                                     <button  class="btn btn-success">Enable</button>
-                                                </td>
+                                                </td> -->
                                             </tr>
 
                                             @php
-                                                $id = $id + 1;
+                                                $indexid = $indexid + 1;
                                             @endphp
                                         @endforeach
 

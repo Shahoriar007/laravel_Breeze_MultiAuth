@@ -7,9 +7,11 @@ use Illuminate\Http\Request;
 
 class GeneralMsgController extends Controller
 {
+
     // Admin General Msg view Page
     public function adminGeneralMsgView($id)
     {
+
         $generalMsg = GeneralMsg::where('userId','=', $id)->latest()->get();
 
         return view('adminGeneralMsg', compact('generalMsg','id'));
@@ -22,7 +24,25 @@ class GeneralMsgController extends Controller
             'msgText' => $request->msgText,
          ]);
 
-        return redirect()->route('adminGeneralMsg',$id);
+         $notification = array(
+            'message' => 'Massage sent!',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('adminGeneralMsg',$id)->with($notification);
+    }
+
+    // Delete general msg
+    public function adminGeneralMsgDelete($id,$caseId)
+    {
+        GeneralMsg::findOrFail($id)->delete();
+
+        $notification = array(
+            'message' => 'Massage deleted!',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('adminGeneralMsg',$caseId)->with($notification);
     }
 
     // ----------------------------------User Side---------------------------------------------------
@@ -33,8 +53,5 @@ class GeneralMsgController extends Controller
 
         return view('userGeneralMsg', compact('generalMsg'));
     }
-
-
-
     
 }
