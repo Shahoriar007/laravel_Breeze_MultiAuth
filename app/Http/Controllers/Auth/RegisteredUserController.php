@@ -13,6 +13,8 @@ use Illuminate\Validation\Rules;
 
 use Illuminate\Support\Str;
 
+use Image;
+
 class RegisteredUserController extends Controller
 {
     /**
@@ -50,7 +52,11 @@ class RegisteredUserController extends Controller
 
         $path = null;
         if ($request->hasFile('photo')) {
-            $path = $request->file('photo')->storePublicly('photos');
+            //  Image name genarate, resize and save in a folder
+            $image = $request->file('photo');
+            $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+            Image::make($image)->resize(300,300)->save('upload/user_images/'.$name_gen);
+            $path = 'upload/user_images/'.$name_gen;
         }
 
         $user = User::create([
@@ -105,28 +111,9 @@ class RegisteredUserController extends Controller
                 'alert-type' => 'success'
             );
     
-            //return redirect(RouteServiceProvider::HOME);
-            // return view('dashboard')->with($notification);
             return redirect()->route('dashboard')->with($notification);
 
-    // if($request->transactionId != null ){
-
-    //     User::findOrFail($id)->update([
-    //         'transactionId' => $request->transactionId,
-    //     ]);
-
-    //     $notification = array(
-    //         'message' => 'Registration done succesfully',
-    //         'alert-type' => 'success'
-    //     );
-
-    //     //return redirect(RouteServiceProvider::HOME);
-    //     // return view('dashboard')->with($notification);
-    //     return redirect()->route('dashboard')->with($notification);
-
-    // }else{
-    //     return redirect()->route('tranlogin');
-    // }
+    
 
         
     }
@@ -148,7 +135,10 @@ class RegisteredUserController extends Controller
 
             $path = $moreInfo->photo;
             if ($request->file('photo')) {
-                $path = $request->file('photo')->storePublicly('photos');
+                $image = $request->file('photo');
+                $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+                Image::make($image)->resize(300,300)->save('upload/user_images/'.$name_gen);
+                $path = 'upload/user_images/'.$name_gen;
             }
     
             User::findOrFail($id)->update([
@@ -202,7 +192,10 @@ class RegisteredUserController extends Controller
 
         $path = null;
         if ($request->hasFile('photo')) {
-            $path = $request->file('photo')->storePublicly('photos');
+            $image = $request->file('photo');
+                $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+                Image::make($image)->resize(300,300)->save('upload/user_images/'.$name_gen);
+                $path = 'upload/user_images/'.$name_gen;
         }
 
         $user = User::create([
