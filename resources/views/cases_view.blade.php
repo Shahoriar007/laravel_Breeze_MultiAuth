@@ -56,7 +56,7 @@ div.dataTables_wrapper div.dataTables_length select {
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>User ID</th>
+                    <th>User Name</th>
                     <th>Case ID</th>
                     <th>Case code</th>
                     <th>fine ammount</th>
@@ -70,7 +70,13 @@ div.dataTables_wrapper div.dataTables_length select {
                 @foreach($cases as $item)
                 <tr>
                     <td>{{ $item->id }}</td>
-                    <td>{{ $item->userId }}</td>
+                    
+                    @php
+                        $userName = \App\Models\User::find($item->userId);
+                    @endphp
+
+                    <td>{{ $userName->name }}</td>
+
                     <td>{{ $item->caseId }}</td>
                     <td>{{ $item->caseCode }}</td>
                     <td>{{ $item->fineAmmount }}</td>
@@ -93,7 +99,7 @@ div.dataTables_wrapper div.dataTables_length select {
             <tfoot>
                 <tr>
                     <th>Id</th>
-                    <th>User Id</th>
+                    <th>User Name</th>
                     <th>Case Id</th>
                     <th>Case code</th>
                     <th>Fine Ammount</th>

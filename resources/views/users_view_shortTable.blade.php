@@ -52,10 +52,10 @@ div.dataTables_wrapper div.dataTables_length select {
 <table id="example" class="display" style="width:100%">
         <thead>
             <tr>
-                <!-- <th>Id</th>
+                <!-- <th>Id</th> -->
                 <th>Name</th>
                 <th>Phone</th>
-                <th>Nid</th>
+                <!-- <th>Nid</th>
                 <th>Gender</th>
                 <th>Birth Date</th>
                 <th>Blood Group</th> -->
@@ -79,10 +79,10 @@ div.dataTables_wrapper div.dataTables_length select {
         @foreach($users as $item)
 
             <tr>
-                <!-- <td>{{ $item->id }}</td>
+                <!-- <td>{{ $item->id }}</td> -->
                 <td>{{ $item->name }}</td>
                 <td>{{ $item->phone }}</td>
-                <td>{{ $item->nid }}</td>
+                <!-- <td>{{ $item->nid }}</td>
                 <td>{{ $item->gender }}</td>
                 <td>{{ $item->birthDate }}</td>
                 <td>{{ $item->bloodGroup }}</td> -->
@@ -136,10 +136,10 @@ div.dataTables_wrapper div.dataTables_length select {
             </tbody>
         <tfoot>
             <tr>
-                <!-- <th>Id</th>
+                <!-- <th>Id</th> -->
                 <th>Name</th>
                 <th>Phone</th>
-                <th>Nid</th>
+                <!-- <th>Nid</th>
                 <th>Gender</th>
                 <th>Birth Date</th>
                 <th>Blood Group</th> -->

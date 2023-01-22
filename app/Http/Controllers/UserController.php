@@ -23,7 +23,7 @@ class UserController extends Controller
     // all users view short table
     public function usersViewShort(){
 
-        $users = User::all();
+        $users = User::latest()->get();
         //$users = User::where('designation',Input::get('designation'))->get();
         return view('users_view_shortTable',compact('users'));
     }

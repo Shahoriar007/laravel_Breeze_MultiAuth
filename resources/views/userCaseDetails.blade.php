@@ -144,6 +144,8 @@
                                                                                         alt="Profile Picture">
                                                                                 </div>
                                                                                 <div class="media-body pad-hor">
+                                                                                    <div class="speech">
+                                                                                        <a class="media-heading">Admin</a>
                                                                                     @else
                                                                                     <div class="media-right">
                                                                                         <img src="https://bootdey.com/img/Content/avatar/avatar2.png"
@@ -152,12 +154,10 @@
                                                                                     </div>
                                                                                     <div
                                                                                         class="media-body pad-hor speech-right">
-                                                                                        @endif
-
-
                                                                                         <div class="speech">
-                                                                                            <a
-                                                                                                class="media-heading">{{ Auth::guard('web')->user()->name }}</a>
+                                                                                            <a class="media-heading">{{ Auth::guard('web')->user()->name }}</a>
+                                                                                        @endif
+                                                             
                                                                                             <p>{{ $chatInfo->caseMsgText }}
                                                                                             </p>
                                                                                             <p class="speech-time">

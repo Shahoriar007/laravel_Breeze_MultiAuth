@@ -27,7 +27,7 @@ class UserCaseController extends Controller
             // Validation 
             'caseId' => 'required',
             'caseCode' => 'required',
-            'casePhoto' => 'required',
+            'casePhoto' => 'required|max:2048',
 
         ],[
             'caseId.required' => 'Please fillup this field',
@@ -38,7 +38,7 @@ class UserCaseController extends Controller
          //  Image name genarate, resize and save in a folder
          $image = $request->file('casePhoto');
          $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
-         Image::make($image)->resize(300,300)->save('upload/case_images/'.$name_gen);
+         Image::make($image)->save('upload/case_images/'.$name_gen);
          $save_url = 'upload/case_images/'.$name_gen;
 
          Casefine::create([
@@ -63,7 +63,7 @@ class UserCaseController extends Controller
     // User all submitted case view table
     public function userAllCasesView($id){
 
-        $usersAllCases = Casefine::where('userId','=',$id)->get();
+        $usersAllCases = Casefine::where('userId','=',$id)->latest()->get();
 
         return view('allSubmittedCase',compact('usersAllCases'));
 
