@@ -1,5 +1,5 @@
 <div class="col-lg-4">
-
+<div class="outer-box">
 <h5 style="font-size: 14px; font-weight: bold; text-align: center;">পরিবরতন/যুক্ত করতে অপশনটিতে ক্লিক করুন</h5>
 
 <div class="user-leftbar-details">
@@ -10,14 +10,14 @@
             <img src="https://bootdey.com/img/Content/avatar/avatar7.png" class="img-responsive" alt="user">
         @endif
     </div>
-    <div class="ml-2">
-        <h5>{{ Auth::guard('web')->user()->name }}</h5>
+    <div class="ml-2" style="font-size:14px">
+        <h5 style="font-size:14px">{{ Auth::guard('web')->user()->name }}</h5>
         <p>Reference Number: <span>{{ Auth::guard('web')->user()->shareableRefcode }}</span></p>
         <p>Position: <span>{{ Auth::guard('web')->user()->designation }}</span></p>
     </div>
 </div>
 
-    <div class="myaccount-tab-menu nav dropdown show" role="tablist">
+    <div class="myaccount-tab-menu nav dropdown show inner-box" role="tablist">
 
         <a href="{{ route('main.home') }}">Home</a>
 
@@ -47,6 +47,8 @@
                     <button type="submit" class="btn btn-danger text-center">Logout</button>
                 </form>
 
+    </div>
+    
     </div>
     
 </div>

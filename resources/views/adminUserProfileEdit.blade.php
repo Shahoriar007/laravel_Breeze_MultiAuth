@@ -155,6 +155,7 @@
                                         <option value="CNG">CNG</option>
                                         <option value="Pickup">Pickup</option>
                                         <option value="Truck">Truck</option>
+                                        <option value="Bus">Bus</option>
                                     </select>
                                     <!-- <input id="vehicle" type="text" name="vehicle"  required> -->
                                 </div>

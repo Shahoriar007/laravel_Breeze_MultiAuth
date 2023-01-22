@@ -27,6 +27,12 @@
 
                                 </li><!-- .nk-menu-item -->
                                 
+                                <li class="nk-menu-item">
+                                    <a href="{{ route('admin.dashboard') }}" class="nk-menu-link">
+                                        <span class="nk-menu-icon"><em class="icon ni ni-building"></em></span>
+                                        <span class="nk-menu-text">Dashboard</span>
+                                    </a>
+                                </li><!-- .nk-menu-item -->
 
                                 <li class="nk-menu-item has-sub">
                                     <a href="#" class="nk-menu-link nk-menu-toggle">
@@ -34,6 +40,7 @@
                                         <span class="nk-menu-text">Users</span>
                                     </a>
                                     <ul class="nk-menu-sub">
+                                        
                                         <li class="nk-menu-item">
                                             <a href="{{ route('showUsers') }}" class="nk-menu-link"><span class="nk-menu-text">All Users</span></a>
                                         </li>

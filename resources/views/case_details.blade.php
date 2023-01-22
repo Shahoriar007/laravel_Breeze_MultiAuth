@@ -102,11 +102,12 @@
                                                         
                                                         <select name="caseStatus" id="caseStatus" class="form-control">
                                                         <option data-display="Select"><?php echo "$caseDetails->caseStatus" ?></option>
-                                                            <option value="Pending">Pending</option>
-                                                            <option value="Paid">Paid</option>
-                                                            <option value="Approved">Approved</option>
-                                                            <option value="Working">Working</option>
-                                                            <option value="Done">Done</option>
+                                                            <option value="pending">Pending</option>
+                                                            <option value="paid">Paid</option>
+                                                            <option value="approved">Approved</option>
+                                                            <option value="working">Working</option>
+                                                            <option value="done">Done</option>
+                                                            <option value="cancel">Cancel</option>
                                                         </select>
                                                         
                                                         <button class="btn btn-info" type="submit">Save</button>

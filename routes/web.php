@@ -9,6 +9,8 @@ use App\Http\Controllers\UserSupportController;
 use App\Http\Controllers\GeneralMsgController;
 use App\Http\Controllers\UserDesignationController;
 use App\Http\Controllers\UserCaseChatController;
+use App\Http\Controllers\AdminDashboardController;
+
 use App\Http\Controllers\Auth\RegisteredUserController;
 
 
@@ -59,16 +61,11 @@ Route::get('generate-invoicepdf/{id}',[UserCaseController::class, 'downloadInvAd
 require __DIR__.'/auth.php';
 
 
-// Admin
-
-Route::get('/admin/dashboard', function () {
-    return view('admin.dashboard');
-})->middleware(['auth:admin', 'verified'])->name('admin.dashboard');
-
-
 // Admin view
 Route::prefix('admin')->group(function(){
 
+    // Admin Dashboard
+    Route::get('/dashboard', [AdminDashboardController::class, 'adminDashboard'])->middleware(['auth:admin', 'verified'])->name('admin.dashboard');
     // All Users view
     Route::get('/viewusers', [UserController::class, 'usersView'])->middleware(['auth:admin', 'verified'])->name('showUsers');
     // All Users view short table

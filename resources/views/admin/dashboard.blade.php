@@ -9,9 +9,9 @@
                                 <div class="nk-block-head nk-block-head-sm">
                                     <div class="nk-block-between">
                                         <div class="nk-block-head-content">
-                                            <h3 class="nk-block-title page-title">Investment Dashboard</h3>
+                                            <h3 class="nk-block-title page-title">Dashboard</h3>
                                             <div class="nk-block-des text-soft">
-                                                <p>Welcome to Crypto Invest Dashboard</p>
+                                                <p>Site Statistics</p>
                                             </div>
                                         </div><!-- .nk-block-head-content -->
                                         
@@ -19,113 +19,282 @@
                                 </div><!-- .nk-block-head -->
                                 <div class="nk-block">
                                     <div class="row g-gs">
-                                        <div class="col-md-4">
+                                        <div class="col-md-3">
                                             <div class="card card-bordered card-full">
                                                 <div class="card-inner">
                                                     <div class="card-title-group align-start mb-0">
                                                         <div class="card-title">
-                                                            <h6 class="subtitle">Total Deposit</h6>
+                                                            <h6 class="subtitle">All Users</h6>
                                                         </div>
                                                         <div class="card-tools">
-                                                            <em class="card-hint icon ni ni-help-fill" data-bs-toggle="tooltip" data-bs-placement="left" title="Total Deposited"></em>
+                                                            <em class="card-hint icon ni ni-help-fill" data-bs-toggle="tooltip" data-bs-placement="left" title="All Users"></em>
                                                         </div>
                                                     </div>
                                                     <div class="card-amount">
-                                                        <span class="amount"> 49,595.34 <span class="currency currency-usd">USD</span>
-                                                        </span>
-                                                        <span class="change up text-danger"><em class="icon ni ni-arrow-long-up"></em>1.93%</span>
-                                                    </div>
-                                                    <div class="invest-data">
-                                                        <div class="invest-data-amount g-2">
-                                                            <div class="invest-data-history">
-                                                                <div class="title">This Month</div>
-                                                                <div class="amount">2,940.59 <span class="currency currency-usd">USD</span></div>
-                                                            </div>
-                                                            <div class="invest-data-history">
-                                                                <div class="title">This Week</div>
-                                                                <div class="amount">1,259.28 <span class="currency currency-usd">USD</span></div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="invest-data-ck">
-                                                            <canvas class="iv-data-chart" id="totalDeposit"></canvas>
-                                                        </div>
+                                                        <span class="amount"> {{$allUsers}} </span>
+                                                       
+                                                        <span class="change up text-danger"></span>
                                                     </div>
                                                 </div>
                                             </div><!-- .card -->
 
                                         </div><!-- .col -->
-                                        <div class="col-md-4">
+
+                                        <div class="col-md-3">
                                             <div class="card card-bordered card-full">
                                                 <div class="card-inner">
                                                     <div class="card-title-group align-start mb-0">
                                                         <div class="card-title">
-                                                            <h6 class="subtitle">Total Withdraw</h6>
+                                                            <h6 class="subtitle">Completed Case</h6>
                                                         </div>
                                                         <div class="card-tools">
-                                                            <em class="card-hint icon ni ni-help-fill" data-bs-toggle="tooltip" data-bs-placement="left" title="Total Withdraw"></em>
+                                                            <em class="card-hint icon ni ni-help-fill" data-bs-toggle="tooltip" data-bs-placement="left" title="All Users"></em>
                                                         </div>
                                                     </div>
                                                     <div class="card-amount">
-                                                        <span class="amount"> 49,595.34 <span class="currency currency-usd">USD</span>
-                                                        </span>
-                                                        <span class="change down text-danger"><em class="icon ni ni-arrow-long-down"></em>1.93%</span>
-                                                    </div>
-                                                    <div class="invest-data">
-                                                        <div class="invest-data-amount g-2">
-                                                            <div class="invest-data-history">
-                                                                <div class="title">This Month</div>
-                                                                <div class="amount">2,940.59 <span class="currency currency-usd">USD</span></div>
-                                                            </div>
-                                                            <div class="invest-data-history">
-                                                                <div class="title">This Week</div>
-                                                                <div class="amount">1,259.28 <span class="currency currency-usd">USD</span></div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="invest-data-ck">
-                                                            <canvas class="iv-data-chart" id="totalWithdraw"></canvas>
-                                                        </div>
+                                                        <span class="amount"> {{$completedCase}} </span>
+                                                       
+                                                        <span class="change up text-danger"></span>
                                                     </div>
                                                 </div>
                                             </div><!-- .card -->
+
                                         </div><!-- .col -->
 
-                                         <div class="col-md-4">
+                                        <div class="col-md-3">
                                             <div class="card card-bordered card-full">
                                                 <div class="card-inner">
                                                     <div class="card-title-group align-start mb-0">
                                                         <div class="card-title">
-                                                            <h6 class="subtitle">Total Withdraw</h6>
+                                                            <h6 class="subtitle">Pending Case</h6>
                                                         </div>
                                                         <div class="card-tools">
-                                                            <em class="card-hint icon ni ni-help-fill" data-bs-toggle="tooltip" data-bs-placement="left" title="Total Withdraw"></em>
+                                                            <em class="card-hint icon ni ni-help-fill" data-bs-toggle="tooltip" data-bs-placement="left" title="All Users"></em>
                                                         </div>
                                                     </div>
                                                     <div class="card-amount">
-                                                        <span class="amount"> 49,595.34 <span class="currency currency-usd">USD</span>
-                                                        </span>
-                                                        <span class="change down text-danger"><em class="icon ni ni-arrow-long-down"></em>1.93%</span>
-                                                    </div>
-                                                    <div class="invest-data">
-                                                        <div class="invest-data-amount g-2">
-                                                            <div class="invest-data-history">
-                                                                <div class="title">This Month</div>
-                                                                <div class="amount">2,940.59 <span class="currency currency-usd">USD</span></div>
-                                                            </div>
-                                                            <div class="invest-data-history">
-                                                                <div class="title">This Week</div>
-                                                                <div class="amount">1,259.28 <span class="currency currency-usd">USD</span></div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="invest-data-ck">
-                                                            <canvas class="iv-data-chart" id="totalWithdraw"></canvas>
-                                                        </div>
+                                                        <span class="amount"> {{$pendingCase}} </span>
+                                                       
+                                                        <span class="change up text-danger"></span>
                                                     </div>
                                                 </div>
                                             </div><!-- .card -->
+
+                                        </div><!-- .col -->
+
+                                        <div class="col-md-3">
+                                            <div class="card card-bordered card-full">
+                                                <div class="card-inner">
+                                                    <div class="card-title-group align-start mb-0">
+                                                        <div class="card-title">
+                                                            <h6 class="subtitle">Cancelled Case</h6>
+                                                        </div>
+                                                        <div class="card-tools">
+                                                            <em class="card-hint icon ni ni-help-fill" data-bs-toggle="tooltip" data-bs-placement="left" title="All Users"></em>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-amount">
+                                                        <span class="amount"> {{$cancelCase}} </span>
+                                                       
+                                                        <span class="change up text-danger"></span>
+                                                    </div>
+                                                </div>
+                                            </div><!-- .card -->
+
+                                        </div><!-- .col -->
+                                        
+                                    </div>
+
+                                    
+                                </div>
+
+                                <div class="nk-block">
+                                    <div class="row g-gs">
+
+                                        <div class="col-md-3">
+                                            <div class="card card-bordered card-full">
+                                                <div class="card-inner">
+                                                    <div class="card-title-group align-start mb-0">
+                                                        <div class="card-title">
+                                                            <h6 class="subtitle">Total Employee List</h6>
+                                                        </div>
+                                                        <div class="card-tools">
+                                                            <em class="card-hint icon ni ni-help-fill" data-bs-toggle="tooltip" data-bs-placement="left" title="All Users"></em>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-amount">
+                                                        <span class="amount"> {{$employeeCase}} </span>
+                                                       
+                                                        <span class="change up text-danger"></span>
+                                                    </div>
+                                                </div>
+                                            </div><!-- .card -->
+
+                                        </div><!-- .col -->
+
+                                        <div class="col-md-3">
+                                            <div class="card card-bordered card-full">
+                                                <div class="card-inner">
+                                                    <div class="card-title-group align-start mb-0">
+                                                        <div class="card-title">
+                                                            <h6 class="subtitle">Total Criminal Case</h6>
+                                                        </div>
+                                                        <div class="card-tools">
+                                                            <em class="card-hint icon ni ni-help-fill" data-bs-toggle="tooltip" data-bs-placement="left" title="All Users"></em>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-amount">
+                                                        <span class="amount"> 0 </span>
+                                                       
+                                                        <span class="change up text-danger"></span>
+                                                    </div>
+                                                </div>
+                                            </div><!-- .card -->
+
                                         </div><!-- .col -->
 
                                         
+
+                                        <div class="col-md-3">
+                                            <div class="card card-bordered card-full">
+                                                <div class="card-inner">
+                                                    <div class="card-title-group align-start mb-0">
+                                                        <div class="card-title">
+                                                            <h6 class="subtitle">Total CNG Member</h6>
+                                                        </div>
+                                                        <div class="card-tools">
+                                                            <em class="card-hint icon ni ni-help-fill" data-bs-toggle="tooltip" data-bs-placement="left" title="All Users"></em>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-amount">
+                                                        <span class="amount"> {{$totalCNG}} </span>
+                                                       
+                                                        <span class="change up text-danger"></span>
+                                                    </div>
+                                                </div>
+                                            </div><!-- .card -->
+
+                                        </div><!-- .col -->
+
+                                        <div class="col-md-3">
+                                            <div class="card card-bordered card-full">
+                                                <div class="card-inner">
+                                                    <div class="card-title-group align-start mb-0">
+                                                        <div class="card-title">
+                                                            <h6 class="subtitle">Total Car Member</h6>
+                                                        </div>
+                                                        <div class="card-tools">
+                                                            <em class="card-hint icon ni ni-help-fill" data-bs-toggle="tooltip" data-bs-placement="left" title="All Users"></em>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-amount">
+                                                        <span class="amount"> {{$totalCar}} </span>
+                                                       
+                                                        <span class="change up text-danger"></span>
+                                                    </div>
+                                                </div>
+                                            </div><!-- .card -->
+
+                                        </div><!-- .col -->
+                                        
                                     </div>
+
+                                    
+                                </div>
+
+
+                                <div class="nk-block">
+                                    <div class="row g-gs">
+
+                                        <div class="col-md-3">
+                                            <div class="card card-bordered card-full">
+                                                <div class="card-inner">
+                                                    <div class="card-title-group align-start mb-0">
+                                                        <div class="card-title">
+                                                            <h6 class="subtitle">Total Bike Members</h6>
+                                                        </div>
+                                                        <div class="card-tools">
+                                                            <em class="card-hint icon ni ni-help-fill" data-bs-toggle="tooltip" data-bs-placement="left" title="All Users"></em>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-amount">
+                                                        <span class="amount"> {{$totalBike}} </span>
+                                                       
+                                                        <span class="change up text-danger"></span>
+                                                    </div>
+                                                </div>
+                                            </div><!-- .card -->
+
+                                        </div><!-- .col -->
+
+                                        <div class="col-md-3">
+                                            <div class="card card-bordered card-full">
+                                                <div class="card-inner">
+                                                    <div class="card-title-group align-start mb-0">
+                                                        <div class="card-title">
+                                                            <h6 class="subtitle">Total Truck Member</h6>
+                                                        </div>
+                                                        <div class="card-tools">
+                                                            <em class="card-hint icon ni ni-help-fill" data-bs-toggle="tooltip" data-bs-placement="left" title="All Users"></em>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-amount">
+                                                        <span class="amount"> {{$totalTruck}} </span>
+                                                       
+                                                        <span class="change up text-danger"></span>
+                                                    </div>
+                                                </div>
+                                            </div><!-- .card -->
+
+                                        </div><!-- .col -->
+
+                                        
+
+                                        <div class="col-md-3">
+                                            <div class="card card-bordered card-full">
+                                                <div class="card-inner">
+                                                    <div class="card-title-group align-start mb-0">
+                                                        <div class="card-title">
+                                                            <h6 class="subtitle">Total Bus Member</h6>
+                                                        </div>
+                                                        <div class="card-tools">
+                                                            <em class="card-hint icon ni ni-help-fill" data-bs-toggle="tooltip" data-bs-placement="left" title="All Users"></em>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-amount">
+                                                        <span class="amount"> {{$totalBus}} </span>
+                                                       
+                                                        <span class="change up text-danger"></span>
+                                                    </div>
+                                                </div>
+                                            </div><!-- .card -->
+
+                                        </div><!-- .col -->
+
+                                        <div class="col-md-3">
+                                            <div class="card card-bordered card-full">
+                                                <div class="card-inner">
+                                                    <div class="card-title-group align-start mb-0">
+                                                        <div class="card-title">
+                                                            <h6 class="subtitle">Total Request</h6>
+                                                        </div>
+                                                        <div class="card-tools">
+                                                            <em class="card-hint icon ni ni-help-fill" data-bs-toggle="tooltip" data-bs-placement="left" title="All Users"></em>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-amount">
+                                                        <span class="amount"> {{$totalReq}} </span>
+                                                       
+                                                        <span class="change up text-danger"></span>
+                                                    </div>
+                                                </div>
+                                            </div><!-- .card -->
+
+                                        </div><!-- .col -->
+                                        
+                                    </div>
+
+                                    
                                 </div>
                             </div>
                         </div>

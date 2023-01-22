@@ -1,4 +1,36 @@
 
+
+/****************22-1-2023********/
+
+.myaccount-tab-menu a {
+    border:none !important;
+    color: #000 !important;
+    font-weight: 700;
+    font-size: 16px !important;
+    line-height: 1 !important;
+    letter-spacing: 1px;
+    display: block;
+    padding: 15px;
+    text-transform: Capitalize !important;
+    text-align:left;
+}
+
+.outer-box{
+    background-color: #BDB5FF;
+    padding:20px;
+    border-radius:10px;
+    border:1px solid red;
+    
+}
+
+.inner-box{
+   border:1px solid red;
+   border-radius:10px;
+   background-color: #8B80FF;
+}
+/****************22-1-2023********/
+
+
 /*== My Account Page Start ==*/
 
 
@@ -16,19 +48,11 @@
     -moz-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column;
+   
+    
 }
 
-.myaccount-tab-menu a {
-    border: 1px solid #c5c5c5;
-    color: #727272;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 1.5;
-    letter-spacing: 1px;
-    display: block;
-    padding: 15px;
-    text-transform: uppercase;
-}
+
 
 
 
@@ -47,7 +71,7 @@
 .myaccount-content {
     font-size: 16px;
     line-height: 1.5;
-    border: 1px solid #c5c5c5;
+    border-radius:10px;
     background-color: #fff;
     padding: 30px;
 }
@@ -296,3 +320,9 @@ textarea {
     max-height: 100px;
 }
 /*===============chatbox==========**/
+
+
+
+
+
+
