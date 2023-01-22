@@ -45,4 +45,54 @@ class AdminDashboardController extends Controller
 
         return view('admin.dashboard',compact('allUsers','completedCase','pendingCase','cancelCase','employeeCase','totalCNG','totalCar','totalBike','totalTruck','totalBus','totalReq'));
     }
+
+    // Admin Employee Table
+    public function employeeListTable()
+    {
+        $adminEmployeeList = User::where('designation','=','Employee')->get();
+
+        return view('adminEmployeeList',compact('adminEmployeeList'));
+    }
+
+    // Admin CarChalok Table
+    public function carChalokTable()
+    {
+        $totalCarChalok = User::where('vehicle','=','Car')->get();
+
+        return view('adminTotalCarChalok',compact('totalCarChalok'));
+    }
+
+    // Admin BikeChalok Table
+    public function bikeChalokTable()
+    {
+        $totalBikeChalok = User::where('vehicle','=','Bike')->get();
+
+        return view('adminTotalBikeChalok',compact('totalBikeChalok'));
+    }
+
+    // Admin CNG Chalok Table
+    public function cngChalokTable()
+    {
+        $totalCngChalok = User::where('vehicle','=','CNG')->get();
+
+        return view('adminTotalCngChalok',compact('totalCngChalok'));
+    }
+
+    // Admin Bus Chalok Table
+    public function busChalokTable()
+    {
+        $totalBusChalok = User::where('vehicle','=','Bus')->get();
+
+        return view('adminTotalBusChalok',compact('totalBusChalok'));
+    }
+
+    // Admin Truck Chalok Table
+    public function truckChalokTable()
+    {
+        $totalTruckChalok = User::where('vehicle','=','Truck')->get();
+
+        return view('adminTotalTruckChalok',compact('totalTruckChalok'));
+    }
+
+
 }

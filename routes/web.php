@@ -135,6 +135,25 @@ Route::prefix('admin')->group(function(){
     // Download invoice (admin) 
     Route::get('generate-invoicepdf/{id}',[UserCaseController::class, 'downloadInvAdmin'])->name('downloadInvoiceAdmin');
 
+    // Admin Employee List
+    Route::get('employeeList/',[AdminDashboardController::class, 'employeeListTable'])->name('adminEmployeeList');
+
+    // Admin Car Chalok List
+    Route::get('carChalokList/',[AdminDashboardController::class, 'carChalokTable'])->name('adminCarChalokList');
+
+    // Admin Bike Chalok List
+    Route::get('bikeChalokList/',[AdminDashboardController::class, 'bikeChalokTable'])->name('adminBikeChalokList');
+
+    // Admin CNG Chalok List
+    Route::get('cngChalokList/',[AdminDashboardController::class, 'cngChalokTable'])->name('adminCngChalokList');
+
+    // Admin Bus Chalok List
+    Route::get('busChalokList/',[AdminDashboardController::class, 'busChalokTable'])->name('adminBusChalokList');
+
+    // Admin Truck Chalok List
+    Route::get('truckChalokList/',[AdminDashboardController::class, 'truckChalokTable'])->name('adminTruckChalokList');
+    
+
 
 
     
