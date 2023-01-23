@@ -72,7 +72,7 @@ div.dataTables_wrapper div.dataTables_length select {
                     <td>{{ $item->id }}</td>
                     
                     @php
-                        $userName = \App\Models\User::find($item->userId);
+                        $userName = \App\Models\User::findOrFail($item->userId);
                     @endphp
 
                     <td>{{ $userName->name }}</td>

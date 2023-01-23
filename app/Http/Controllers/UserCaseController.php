@@ -87,7 +87,7 @@ class UserCaseController extends Controller
 
     // all cases view table
     public function showAllcases(){
-        $cases = Casefine::latest()->paginate(10);
+        $cases = Casefine::all();
         return view('cases_view',compact('cases'));
     }
 
@@ -146,8 +146,19 @@ class UserCaseController extends Controller
 
     }
 
-    // Generate Admin Case Invoice PDF
+    // Admin Case Invoice View
     public function downloadInvAdmin($id){
+
+        $caseDetails = Casefine::find($id);
+
+        // 50% of case fine 
+        $dueAmmount = $caseDetails->caseCode / 2;
+
+        return view('userInvoicePage', compact('caseDetails','dueAmmount'));
+    }
+
+    // Admin Case Invoice View
+    public function downloadInvAdminPDF($id){
 
         $caseDetails = Casefine::find($id);
 
@@ -169,6 +180,9 @@ class UserCaseController extends Controller
 
         $pdf = Pdf::loadView('downloadCaseInvoice', compact('invdata'));
         return $pdf->download();
+
     }
+
+
 
 }

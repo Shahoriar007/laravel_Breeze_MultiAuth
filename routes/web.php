@@ -54,8 +54,10 @@ Route::post('/dashboard/userViewcases/{id}', [UserCaseChatController::class, 'us
 // General Msg View
 Route::get('/dashboard/generalMsg/{id}', [GeneralMsgController::class, 'userGeneralMsgView'])->middleware(['auth', 'verified'])->name('userGeneralMsg');
 
-// Download invoice (User) 
+// invoice Page view(User) 
 Route::get('generate-invoicepdf/{id}',[UserCaseController::class, 'downloadInvAdmin'])->middleware(['auth', 'verified'])->name('downloadInvoiceUser');
+
+Route::get('download-invoicepdf/{id}',[UserCaseController::class, 'downloadInvAdminPDF'])->middleware(['auth', 'verified'])->name('downloadInvoicePDFUser');
 
 
 require __DIR__.'/auth.php';

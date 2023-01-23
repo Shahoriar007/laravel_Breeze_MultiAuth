@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    
 </head>
  <style>
 body {
@@ -80,40 +80,53 @@ div.absolute {
 
  </style>
 <body>
-    <page size="A4" style="padding: 100px;  class="relative"">
+    <page size="A4" style="padding: 100px;  class="relative">
         <div >
                 
             <div style="float:left;width: 50%;">
                 <h3> USER PART</h3>
                 <div>
-                    <img src="nirapodchalok.jpg" alt="" style="height: 100px;float: left;margin-top: 50px;" >
+                    
                     <h2 style="font-weight: 700;
                     font-size: 25px; float: right;margin-top: 85px;">NIRAPOD CHALOK</h2>
                 </div>
                 <div style="margin-top: 180px;">
-                    <h3 style="font-size: large;">Invoice ID # 0125</h3>
+                    <h3 style="font-size: large;">Invoice ID # {{$caseDetails->id}}</h3>
                 </div>
                     <div style="margin-top:40px; text-align: left;">
                         <h4>Invoice To:</h4>
-                        <p>Sheikh Lalon Ahmed</p>
-                        <p>Driving Licence No: 12151601</p>
-                        <p>case No: 252545262</p>
-                        <p>Fine Amount: 3000</p>
-                        <p>Pay Amount: 1500</p>
-                        <p>Active Mobile No:01910512921</p>
-                        <p>Refference Number: ncu 0125 </p>
+
+                        @php
+                            $userInfo = \App\Models\User::find($caseDetails->userId);
+                        @endphp
+
+                        <p>{{ $userInfo->name }}</p>
+                        <p>Driving Licence No: {{ $userInfo->drivingLicense }}</p>
+
+                        <p>case No: {{$caseDetails->caseId}}</p>
+                        <p>Fine Amount: {{$caseDetails->caseCode}}</p>
+                        <p>Pay Amount: {{$dueAmmount}}</p>
+
+                        <p>Active Mobile No:{{ $userInfo->phone }}</p>
+                        <p>Refference Number: {{ $userInfo->shareableRefcode }} </p>
                     </div>
                 <div style="margin-top: 100px;">
                     <p>Invoice Date:</p>
-                    <p>11/11/2022</p>
+
+                    @php
+                        date_default_timezone_set('Asia/Dhaka');
+                        $date = date('d-m-y');
+                    @endphp
+
+                    <p>{{ $date }}</p>
                 </div>
                 
             </div> 
             <div style="float:right;width: 50%;">
-                <h1 style="margin-left: 150px;"> STATUS: UNPAID</h1>
-                <h4 style="margin-left: 200px;">Due Date:01/01/2023</h4>
+                <h1 style="margin-left: 100px; text-transform: uppercase; "> STATUS: {{$caseDetails->caseStatus}}</h1>
+                <!-- <h4 style="margin-left: 200px;">Due Date:01/01/2023</h4> -->
                 <div>
-                    <img src="bkash_payment_logo.png" alt="" style="height: 70px; float: right;" >
+                   
                 </div>
                 <h2 style="margin-top:5px;  display: inline-block;color: white; font-weight: 900; background-color: darkgreen;padding: 10px; border-radius: 15px; float: right;">Pay Fast with bkash</h2>
                     <div style="margin-top:180px; text-align: right;">
@@ -124,9 +137,9 @@ div.absolute {
                         <p>Email: Nirapodchalok@gmail.com</p>
                         <p>Cell: 01557-855233</p>
                         <p>Govt Approved Organization: DSWF</p>
-                        <p>Case No: 252545262 </p>
-                        <p>Fine Amount: 3000</p>
-                        <p>Pay Amount: 1500</p>
+                        <p>Case No: {{$caseDetails->caseId}} </p>
+                        <p>Fine Amount: {{$caseDetails->caseCode}}</p>
+                        <p>Pay Amount: {{$dueAmmount}}</p>
                     </div>
                     <h2 style="font-weight: 700; font-size: 20px;text-align: right;margin-top:30px;margin-bottom: 10px;">Payment Method</h2>
                 <p style="border:2px solid black;padding: 5px;">bakash payment (Auto Checkout)</p>
@@ -142,21 +155,23 @@ div.absolute {
             <div style="float:left;width: 50%;">
                 <h3> OFFICE PART</h3>
                 <div style="margin-top: 100px;">
-                    <h3 style="font-size: large;">Invoice ID # 0125</h3>
+                    <h3 style="font-size: large;">Invoice ID # {{$caseDetails->id}}</h3>
                 </div>
                     <div style="margin-top:40px; text-align: left;">
                         <h4>Invoice To:</h4>
-                        <p></p>
-                        <p>Driving Licence No: 12151601</p>
-                        <p>case No: 252545262</p>
-                        <p>Fine Amount: 3000</p>
-                        <p>Pay Amount: 1500</p>
-                        <p>Active Mobile No:01910512921</p>
-                        <p>Liable Amount: 1500 </p>
+                        <p>{{ $userInfo->name }}</p>
+                        <p>Driving Licence No: {{ $userInfo->drivingLicense }}</p>
+
+                        <p>case No: {{$caseDetails->caseId}}</p>
+                        <p>Fine Amount: {{$caseDetails->caseCode}}</p>
+                        <p>Pay Amount: {{$dueAmmount}}</p>
+
+                        <p>Active Mobile No:{{ $userInfo->phone }}</p>
+                        <p>Liable Amount: {{$dueAmmount}} </p>
                     </div>
                 <div style="margin-top: 100px;">
                     <p>Invoice Date:</p>
-                    <p>11/11/2022</p>
+                    <p>{{ $date }}</p>
                 </div>
                 
             </div> 
@@ -168,7 +183,7 @@ div.absolute {
                                 <th>Description</th>
                             </tr>
                             <tr>
-                              <td>Case No:252545262(only for this Case id)</td>
+                              <td>Case No:{{$caseDetails->caseId}}</td>
                             </tr>
                           </table>
                         <table style="float: right;">
@@ -181,15 +196,15 @@ div.absolute {
                               <td>Due Customer</td>
                             </tr>
                             <tr>
-                              <td>3000/-</td>
-                              <td>1500/-</td>
-                              <td>1500/-</td>
+                              <td>{{$caseDetails->caseCode}}/-</td>
+                              <td>{{$dueAmmount}}/-</td>
+                              <td>{{$dueAmmount}}/-</td>
                             </tr>
                           </table>
                     </div>
             </div> 
-            <a href="#" class="button" style="border-radius: 10px;margin-left: 120px;margin-top:200px;">Download</a>
-            <a href="#" class="button" style="border-radius: 10px;margin-left: 20px;margin-top:200px;">Print</a>
+            <a href="{{ route('downloadInvoicePDFUser',$caseDetails->id) }}" class="button" style="border-radius: 10px;margin-left: 120px;margin-top:200px;">Download</a>
+            <a href="{{ route('downloadInvoicePDFUser',$caseDetails->id) }}" class="button" style="border-radius: 10px;margin-left: 20px;margin-top:200px;">Print</a>
         </div>
     </page>
 	
