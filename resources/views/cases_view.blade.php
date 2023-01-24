@@ -57,9 +57,9 @@ div.dataTables_wrapper div.dataTables_length select {
                 <tr>
                     <th>ID</th>
                     <th>User Name</th>
-                    <th>Case ID</th>
-                    <th>Case code</th>
-                    <th>fine ammount</th>
+                    <th>Case Number</th>
+                    <th>Case Fine</th>
+                    <th>Comments</th>
                     <th>Case Status</th>
 
                     <th>Action</th>
@@ -100,9 +100,9 @@ div.dataTables_wrapper div.dataTables_length select {
                 <tr>
                     <th>Id</th>
                     <th>User Name</th>
-                    <th>Case Id</th>
-                    <th>Case code</th>
-                    <th>Fine Ammount</th>
+                    <th>Case Number</th>
+                    <th>Case Fine</th>
+                    <th>Comments</th>
                     <th>Case Status</th>
 
                     <th>Action</th>

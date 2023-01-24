@@ -44,6 +44,9 @@ Route::get('/dashboard/support/{id}', [UserSupportController::class, 'userSuppor
 // User Support msg send
 Route::post('/dashboard/support/{id}', [UserSupportController::class, 'userSupportMsgSend'])->middleware(['auth', 'verified'])->name('userSupportMsgPost');
 
+// User Support page view
+Route::get('/dashboard/status/{id}', [UserController::class, 'userStatusView'])->middleware(['auth', 'verified'])->name('userStatus');
+
 //User all submitted case view table
 Route::get('/dashboard/allcases/{id}', [UserCaseController::class, 'userAllCasesView'])->middleware(['auth', 'verified'])->name('allCases');
 // User Case Details View

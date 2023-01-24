@@ -17,14 +17,18 @@ page {
   margin-bottom: 0.5cm;
   box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
 }
-page[size="A4"] {  
+
+
+/* page[size="A4"] {  
   width: 21cm;
   height: 14.85cm; 
 }
 page[size="A4"][layout="landscape"] {
   width: 14.85cm;
   height: 21cm;  
-}
+} */
+
+
 h1{
     font-weight: 700;
     font-size: 30px;
@@ -37,7 +41,7 @@ h4{
     font-weight: 700;
 }
 p{
-    line-height: 10px;
+    line-height: 2px;
 }
 table, th, td {
   border: 1px solid;
@@ -71,17 +75,18 @@ div.relative {
 
 div.absolute {
   position: absolute;
-  top: 19.85cm;
-  left: 600px;
-  width: 200px;
+  top: 15.85cm;
+  /* left: 550px;
+  width: 250px; */
   background-color: green;
-  border-radius: 20px;
+  border-radius: 25px;
+  text-align: center;
 }
 
  </style>
 <body>
-    <page size="A4" style="padding: 100px;  class="relative"">
-        <div >
+    <page size="A4"class="relative">
+        <div style="margin: 50px; margin-top: 0 !important;" >
                 
             <div style="float:left;width: 50%;">
                 <h3> USER PART</h3>
@@ -103,20 +108,20 @@ div.absolute {
                         <p>Active Mobile No:01910512921</p>
                         <p>Refference Number: ncu 0125 </p>
                     </div>
-                <div style="margin-top: 100px;">
+                <div style="margin-top: 60px;">
                     <p>Invoice Date:</p>
                     <p>11/11/2022</p>
                 </div>
                 
             </div> 
             <div style="float:right;width: 50%;">
-                <h1 style="margin-left: 150px;"> STATUS: UNPAID</h1>
-                <h4 style="margin-left: 200px;">Due Date:01/01/2023</h4>
+                <h1 style="margin-left: 100px;"> STATUS: UNPAID</h1>
+                <h4 style="margin-left: 150px;">Due Date:01/01/2023</h4>
                 <div>
-                    <img src="bkash_payment_logo.png" alt="" style="height: 70px; float: right;" >
+                    <img src="bkash_payment_logo.png" alt="" style="height: 50px; float: right;" >
                 </div>
-                <h2 style="margin-top:5px;  display: inline-block;color: white; font-weight: 900; background-color: darkgreen;padding: 10px; border-radius: 15px; float: right;">Pay Fast with bkash</h2>
-                    <div style="margin-top:180px; text-align: right;">
+                <h2 style="margin-top:5px;  display: inline-block;color: white; background-color: darkgreen;padding: 5px; border-radius: 20px; float: right;font-weight: 700;">Pay Fast with bkash</h2>
+                    <div style="margin-top:150px; text-align: right;">
                         <h4>Pay To:</h4>
                         <p>Nirapodchalok.com</p>
                         <p>1 Indira Road,City Corporation Corner Market,</p>
@@ -129,17 +134,16 @@ div.absolute {
                         <p>Pay Amount: 1500</p>
                     </div>
                     <h2 style="font-weight: 700; font-size: 20px;text-align: right;margin-top:30px;margin-bottom: 10px;">Payment Method</h2>
-                <p style="border:2px solid black;padding: 5px;">bakash payment (Auto Checkout)</p>
+                <p style="border:2px solid black;padding: 10px;">bakash payment (Auto Checkout)</p>
             </div> 
         </div>
         <div class="absolute">
-            <p style="padding: 5px;font-weight: 700; color: white;">50% Paying Organization</p>
+            <p style="padding: 7px;font-weight: 700; color: white;">50% Paying Organization</p>
         </div>
     </page>
-    <page size="A4" style="padding: 100px;">
-        <div >
-                
-            <div style="float:left;width: 50%;">
+    <page size="A4" >
+        <div style="margin: 50px; margin-top: 0 !important;" >
+            <div style="float:left;width: 50%;margin-top:30px;">
                 <h3> OFFICE PART</h3>
                 <div style="margin-top: 100px;">
                     <h3 style="font-size: large;">Invoice ID # 0125</h3>
@@ -154,15 +158,15 @@ div.absolute {
                         <p>Active Mobile No:01910512921</p>
                         <p>Liable Amount: 1500 </p>
                     </div>
-                <div style="margin-top: 100px;">
+                <div style="margin-top: 95px;">
                     <p>Invoice Date:</p>
                     <p>11/11/2022</p>
                 </div>
                 
             </div> 
             <div style="float:right;width: 50%;">
-                <h1 style="font-size: 25px;">AFTER VERIFIED WILL BE PAID</h1>
-                    <div style="margin-top:180px; ">
+                <h1 style="font-size: 20px;margin-top:50px;">AFTER VERIFIED WILL BE PAID</h1>
+                    <div style="margin-top:100px; ">
                         <table style="float: left;">
                             <tr>
                                 <th>Description</th>
@@ -188,8 +192,8 @@ div.absolute {
                           </table>
                     </div>
             </div> 
-            <a href="#" class="button" style="border-radius: 10px;margin-left: 120px;margin-top:200px;">Download</a>
-            <a href="#" class="button" style="border-radius: 10px;margin-left: 20px;margin-top:200px;">Print</a>
+            <a href="#" class="button" style="border-radius: 10px;margin-left: 100px;margin-top:180px;">Download</a>
+            <a href="#" class="button" style="border-radius: 10px;margin-left: 10px;margin-top:180px;">Print</a>
         </div>
     </page>
 	

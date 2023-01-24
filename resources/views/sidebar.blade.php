@@ -33,11 +33,11 @@
 
         <a href="{{ route('userProfileEdit', Auth::guard('web')->user()->id) }}">Edit Info</a>
 
-        <a href="{{ route('userGeneralMsg', Auth::guard('web')->user()->id) }}" class="{{ Request::is('dashboard/support') ? 'active' : '' }}">General Massage</a>
+        <a href="{{ route('userGeneralMsg', Auth::guard('web')->user()->id) }}" class="{{ Request::is('dashboard/support') ? 'active' : '' }}">Inbox</a>
 
         <a href="{{ route('userSupport', Auth::guard('web')->user()->id) }}" class="{{ Request::is('dashboard/support') ? 'active' : '' }}">Support</a>
 
-        <a href="#">Present Status</a>
+        <a href="{{ route('userStatus', Auth::guard('web')->user()->id) }}"  class="{{ Request::is('dashboard/status') ? 'active' : '' }}">Present Status</a>
 
         <form method="POST" action="{{ route('logout') }}" style="display: flex; justify-content: center; box-shadow: none;
     background: transparent;

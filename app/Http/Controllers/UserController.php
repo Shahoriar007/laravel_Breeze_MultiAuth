@@ -203,5 +203,15 @@ class UserController extends Controller
     }
 
 
+    // User status view
+    public function userStatusView($id){
+
+        $userStatus = User::find($id);
+
+        return view('userStatus', compact('userStatus'));
+
+    }
+
+
     
 }

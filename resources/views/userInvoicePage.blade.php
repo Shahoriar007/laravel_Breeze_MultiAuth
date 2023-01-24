@@ -86,7 +86,7 @@ div.absolute {
             <div style="float:left;width: 50%;">
                 <h3> USER PART</h3>
                 <div>
-                    
+                    <img src="{{ asset('userFrontend/img/nirapodchalok.jpg')}}" alt="" style="height: 100px;float: left;margin-top: 50px;" >
                     <h2 style="font-weight: 700;
                     font-size: 25px; float: right;margin-top: 85px;">NIRAPOD CHALOK</h2>
                 </div>
@@ -126,7 +126,7 @@ div.absolute {
                 <h1 style="margin-left: 100px; text-transform: uppercase; "> STATUS: {{$caseDetails->caseStatus}}</h1>
                 <!-- <h4 style="margin-left: 200px;">Due Date:01/01/2023</h4> -->
                 <div>
-                   
+                    <img src="{{ asset('userFrontend/img/bkash_payment_logo.png')}}" alt="" style="height: 70px; float: right;" >
                 </div>
                 <h2 style="margin-top:5px;  display: inline-block;color: white; font-weight: 900; background-color: darkgreen;padding: 10px; border-radius: 15px; float: right;">Pay Fast with bkash</h2>
                     <div style="margin-top:180px; text-align: right;">
