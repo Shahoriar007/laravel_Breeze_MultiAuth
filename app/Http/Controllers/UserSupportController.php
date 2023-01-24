@@ -67,15 +67,25 @@ class UserSupportController extends Controller
     // Admin all msg view with chat get
     public function adminSupportMsgPostSrc(Request $request){
 
-        $userIdfilter = User::where('name','=', $request->name)->get();
+        $userIdfilter = User::where('name','=', $request->name)->orwhere('phone','=', $request->name)->get();
 
-        $id = $userIdfilter[0]->id;
+        if( count($userIdfilter) > 0 )
+        {
+            $id = $userIdfilter[0]->id;
         
-        $usersChat = UserSupportChat::where('userId','=', $id)->get();
-        $userNameSend = User::find($id);
-        $usersChatAll = UserSupportChat::where('sender','=','u')->get();
+            $usersChat = UserSupportChat::where('userId','=', $id)->get();
+            $userNameSend = User::find($id);
+            $usersChatAll = UserSupportChat::where('sender','=','u')->get();
+    
+            return view('adminSupport',compact('usersChatAll','userNameSend','usersChat'));
+           
+        }else{
 
-        return view('adminSupport',compact('usersChatAll','userNameSend','usersChat'));
+            return redirect()->route('allSupportMsg');
+            
+        }
+
+       
 
     }
 }

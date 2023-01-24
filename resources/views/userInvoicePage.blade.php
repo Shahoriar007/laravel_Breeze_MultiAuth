@@ -84,6 +84,8 @@ div.absolute {
         <div >
                 
             <div style="float:left;width: 50%;">
+            
+
                 <h3> USER PART</h3>
                 <div>
                     <img src="{{ asset('userFrontend/img/nirapodchalok.jpg')}}" alt="" style="height: 100px;float: left;margin-top: 50px;" >
@@ -128,7 +130,9 @@ div.absolute {
                 <div>
                     <img src="{{ asset('userFrontend/img/bkash_payment_logo.png')}}" alt="" style="height: 70px; float: right;" >
                 </div>
-                <h2 style="margin-top:5px;  display: inline-block;color: white; font-weight: 900; background-color: darkgreen;padding: 10px; border-radius: 15px; float: right;">Pay Fast with bkash</h2>
+                
+                <a href="#" class="button" style="margin-top:5px;  display: inline-block;color: white; font-weight: 900; background-color: darkgreen;padding: 10px; border-radius: 15px; float: right;">Pay With Bkash</a>
+
                     <div style="margin-top:180px; text-align: right;">
                         <h4>Pay To:</h4>
                         <p>Nirapodchalok.com</p>
@@ -142,7 +146,15 @@ div.absolute {
                         <p>Pay Amount: {{$dueAmmount}}</p>
                     </div>
                     <h2 style="font-weight: 700; font-size: 20px;text-align: right;margin-top:30px;margin-bottom: 10px;">Payment Method</h2>
-                <p style="border:2px solid black;padding: 5px;">bakash payment (Auto Checkout)</p>
+                <!-- <p style="border:2px solid black;padding: 5px;">bakash payment (Auto Checkout)</p> -->
+
+                <select style="float: right;">
+                    <option value="Other Payment 1">Rocket </option>
+                    <option value="Other Payment 2">Nagad </option>
+                    <option value="Other Payment 3">Upay </option>
+                    <option value="Other Payment 4">Bkash</option>
+                </select>
+
             </div> 
         </div>
         <div class="absolute">

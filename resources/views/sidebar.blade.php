@@ -23,7 +23,7 @@
 
         <a href="{{ route('dashboard') }}" class="{{ Request::is('dashboard') ? 'active' : '' }}" >Dashboard</a>
 
-        <a href="{{ route('caseReport') }}" class="{{ Request::is('dashboard/casereport') ? 'active' : '' }}" >Case Report</a>
+        <a href="{{ route('caseReport') }}" class="{{ Request::is('dashboard/casereport') ? 'active' : '' }}" >Case Submit</a>
 
         <a href="{{ route('allCases', Auth::guard('web')->user()->id) }}" class="{{ Request::is('dashboard/allcases') ? 'active' : '' }}">All Cases</a>
 

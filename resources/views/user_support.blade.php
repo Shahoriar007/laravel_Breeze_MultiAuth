@@ -71,8 +71,7 @@
 
 
                                                                                         <div class="speech">
-                                                                                            <a
-                                                                                                class="media-heading">{{ Auth::guard('web')->user()->name }}</a>
+                                                                                            
                                                                                             <p>{{ $chatInfo->msgText }}
                                                                                             </p>
                                                                                             <p class="speech-time">

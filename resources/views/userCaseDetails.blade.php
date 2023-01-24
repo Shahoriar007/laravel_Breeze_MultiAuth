@@ -102,7 +102,7 @@
                                                                             <h6 class="mb-0">Invoice</h6>
                                                                         </div>
                                                                         <div class="col-sm-8 text-secondary">
-                                                                        <a href="{{ route('downloadInvoiceUser',$usersAllCasesDetails->id) }}" class="btn btn-info">Download</a>
+                                                                        <a href="{{ route('downloadInvoiceUser',$usersAllCasesDetails->id) }}" class="btn btn-info">View Invoice</a>
                                                                         </div>
                                                                     </div>
 
