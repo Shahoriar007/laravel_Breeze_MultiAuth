@@ -37,6 +37,8 @@
 
         <a href="{{ route('userSupport', Auth::guard('web')->user()->id) }}" class="{{ Request::is('dashboard/support') ? 'active' : '' }}">Support</a>
 
+        <a href="{{ route('generalCase', Auth::guard('web')->user()->id) }}" class="{{ Request::is('dashboard/generalCase') ? 'active' : '' }}">General Case</a>
+
         <a href="{{ route('userStatus', Auth::guard('web')->user()->id) }}"  class="{{ Request::is('dashboard/status') ? 'active' : '' }}">Present Status</a>
 
         <form method="POST" action="{{ route('logout') }}" style="display: flex; justify-content: center; box-shadow: none;

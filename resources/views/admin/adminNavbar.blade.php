@@ -130,6 +130,13 @@
                                     </a>
                                 </li><!-- .nk-menu-item -->
 
+                                <li class="nk-menu-item">
+                                    <a href="{{ route('allGeneralCaseMsg') }}" class="nk-menu-link">
+                                        <span class="nk-menu-icon"><em class="icon ni ni-building"></em></span>
+                                        <span class="nk-menu-text">General Case</span>
+                                    </a>
+                                </li><!-- .nk-menu-item -->
+
                                 
 
                             </ul><!-- .nk-menu -->
