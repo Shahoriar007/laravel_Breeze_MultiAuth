@@ -2,8 +2,13 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\User;
+use App\Models\Admin;
 use App\Models\Casefine;
+
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 
 class AdminDashboardController extends Controller
@@ -43,7 +48,9 @@ class AdminDashboardController extends Controller
         // Total Request
         $totalReq = User::count();
 
-        return view('admin.dashboard',compact('allUsers','completedCase','pendingCase','cancelCase','employeeCase','totalCNG','totalCar','totalBike','totalTruck','totalBus','totalReq'));
+        $generalUser = User::where('designation','=','General User')->count();
+
+        return view('admin.dashboard',compact('allUsers','completedCase','pendingCase','cancelCase','employeeCase','totalCNG','totalCar','totalBike','totalTruck','totalBus','totalReq','generalUser'));
     }
 
     // Admin Employee Table
@@ -93,6 +100,43 @@ class AdminDashboardController extends Controller
 
         return view('adminTotalTruckChalok',compact('totalTruckChalok'));
     }
+
+
+    // Admin change pass
+
+     public function adminChangePassword()
+     {
+         return view('adminChangePasswordView');
+     }
+
+     public function adminCheckChangePassword(Request $request)
+     {
+
+        $id = Auth::guard('admin')->user()->id;
+
+        $preAdmin = Admin::find($id);
+
+        if(!Hash::check($request->oldPassword, Auth::guard('admin')->user()->password))
+        {
+            $notification = array(
+                'message' => 'Password did not matched',
+                'alert-type' => 'success'
+            );
+
+            
+        }else{
+            $preAdmin->password = Hash::make($request->password);
+            $preAdmin->save();
+
+            $notification = array(
+                'message' => 'Password changed',
+                'alert-type' => 'success'
+            );
+
+        }
+
+        return redirect()->route('adminChangePass')->with($notification);
+     }
 
 
 }

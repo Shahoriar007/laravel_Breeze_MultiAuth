@@ -15,7 +15,13 @@ class UserController extends Controller
     // all users view classes
     public function usersView(){
 
+        // $start_time = microtime(as_float:true);
+
         $users = User::all();
+
+        // $end_time = microtime(as_float:true);
+
+        // dd($end_time - $start_time);
         //$users = User::where('designation',Input::get('designation'))->get();
         return view('users_view',compact('users'));
     }

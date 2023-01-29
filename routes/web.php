@@ -77,6 +77,10 @@ Route::prefix('admin')->group(function(){
 
     // Admin Dashboard
     Route::get('/dashboard', [AdminDashboardController::class, 'adminDashboard'])->middleware(['auth:admin', 'verified'])->name('admin.dashboard');
+
+    // Admin Password Change View
+    Route::get('/changePassword', [AdminDashboardController::class, 'adminChangePassword'])->middleware(['auth:admin', 'verified'])->name('adminChangePass');
+    Route::post('/checkchangePassword', [AdminDashboardController::class, 'adminCheckChangePassword'])->middleware(['auth:admin', 'verified'])->name('checkchangePassword');
     // All Users view
     Route::get('/viewusers', [UserController::class, 'usersView'])->middleware(['auth:admin', 'verified'])->name('showUsers');
     // All Users view short table

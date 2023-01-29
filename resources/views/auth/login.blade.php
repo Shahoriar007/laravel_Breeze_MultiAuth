@@ -37,6 +37,9 @@
                             <input type="submit" class="fire mb-2">
                             <div>Doesn't have account? <a href="{{ route('register') }}" style="color: #fbc72a;">Registration</a>
                             </div>
+
+                            <div>Forget password? <a href="#" style="color: #fbc72a;">Recover</a>
+                            </div>
                         </div>
 
                   

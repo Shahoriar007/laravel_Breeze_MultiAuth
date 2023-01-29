@@ -45,7 +45,7 @@ class UserSupportController extends Controller
 
         $userNameSend = User::find($id);
 
-        $usersChatAll = UserSupportChat::where('sender','=','u')->get();
+        $usersChatAll = UserSupportChat::where('sender','=','u')->latest()->get();
 
          return view('adminSupport',compact('usersChatAll','userNameSend','usersChat'));
 
@@ -75,7 +75,7 @@ class UserSupportController extends Controller
         
             $usersChat = UserSupportChat::where('userId','=', $id)->get();
             $userNameSend = User::find($id);
-            $usersChatAll = UserSupportChat::where('sender','=','u')->get();
+            $usersChatAll = UserSupportChat::where('sender','=','u')->latest()->get();
     
             return view('adminSupport',compact('usersChatAll','userNameSend','usersChat'));
            

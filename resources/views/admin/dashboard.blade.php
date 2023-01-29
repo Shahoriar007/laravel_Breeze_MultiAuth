@@ -137,14 +137,14 @@
                                                 <div class="card-inner">
                                                     <div class="card-title-group align-start mb-0">
                                                         <div class="card-title">
-                                                            <h6 class="subtitle">Total Criminal Case</h6>
+                                                            <h6 class="subtitle">Total General Member</h6>
                                                         </div>
                                                         <div class="card-tools">
                                                             <em class="card-hint icon ni ni-help-fill" data-bs-toggle="tooltip" data-bs-placement="left" title="All Users"></em>
                                                         </div>
                                                     </div>
                                                     <div class="card-amount">
-                                                        <span class="amount"> 0 </span>
+                                                        <span class="amount"> {{$generalUser}} </span>
                                                        
                                                         <span class="change up text-danger"></span>
                                                     </div>
