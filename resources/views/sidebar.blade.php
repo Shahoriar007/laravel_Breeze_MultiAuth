@@ -41,6 +41,8 @@
 
         <a href="{{ route('userStatus', Auth::guard('web')->user()->id) }}"  class="{{ Request::is('dashboard/status') ? 'active' : '' }}">Present Status</a>
 
+        <a href="{{ route('paymentHistory', Auth::guard('web')->user()->id) }}"  class="{{ Request::is('dashboard/paymentHistory') ? 'active' : '' }}">Payment History</a>
+
         <form method="POST" action="{{ route('logout') }}" style="display: flex; justify-content: center; box-shadow: none;
     background: transparent;
     padding: 14px;">

@@ -11,6 +11,7 @@ use App\Http\Controllers\UserDesignationController;
 use App\Http\Controllers\UserCaseChatController;
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\GenenralCaseMsgController;
+use App\Http\Controllers\UserPaymentHistoryController;
 
 use App\Http\Controllers\Auth\RegisteredUserController;
 
@@ -19,6 +20,10 @@ use App\Http\Controllers\Auth\RegisteredUserController;
 Route::get('/', function () {
     return view('welcome');
 })->name('main.home');
+
+Route::get('/termsCondition', function () {
+    return view('termsConditionView');
+})->name('termsCondition');
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
@@ -52,6 +57,9 @@ Route::post('/dashboard/generalCase/{id}', [GenenralCaseMsgController::class, 'u
 
 // User Status view
 Route::get('/dashboard/status/{id}', [UserController::class, 'userStatusView'])->middleware(['auth', 'verified'])->name('userStatus');
+
+// User Payment History view
+Route::get('/dashboard/paymentHistory/{id}', [UserPaymentHistoryController::class, 'paymentHistoryView'])->middleware(['auth', 'verified'])->name('paymentHistory');
 
 //User all submitted case view table
 Route::get('/dashboard/allcases/{id}', [UserCaseController::class, 'userAllCasesView'])->middleware(['auth', 'verified'])->name('allCases');
