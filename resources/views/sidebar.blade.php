@@ -29,7 +29,7 @@
 
         <!-- <a href="#case_report_list" data-toggle="tab">Case Report List</a> -->
 
-        <a href="{{ route('profilePage') }}" class="{{ Request::is('dashboard/profile') ? 'active' : '' }}" >Profile</a>
+        <a href="{{ route('profilePage') }}" class="{{ Request::is('dashboard/profile') ? 'active' : '' }}" >View Profile</a>
 
         <a href="{{ route('userProfileEdit', Auth::guard('web')->user()->id) }}">Edit Info</a>
 
@@ -42,6 +42,8 @@
         <a href="{{ route('userStatus', Auth::guard('web')->user()->id) }}"  class="{{ Request::is('dashboard/status') ? 'active' : '' }}">Present Status</a>
 
         <a href="{{ route('paymentHistory', Auth::guard('web')->user()->id) }}"  class="{{ Request::is('dashboard/paymentHistory') ? 'active' : '' }}">Payment History</a>
+
+        <a href="#"  class="{{ Request::is('dashboard/paymentHistory') ? 'active' : '' }}">Renew</a>
 
         <form method="POST" action="{{ route('logout') }}" style="display: flex; justify-content: center; box-shadow: none;
     background: transparent;
