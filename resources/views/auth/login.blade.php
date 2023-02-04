@@ -38,7 +38,7 @@
                             <div>Doesn't have account? <a href="{{ route('register') }}" style="color: #fbc72a;">Registration</a>
                             </div>
 
-                            <div>Forget password? <a href="#" style="color: #fbc72a;">Recover</a>
+                            <div>Forget password? <a href="{{ route('userPasswordRecover') }}" style="color: #fbc72a;">Recover</a>
                             </div>
                         </div>
 

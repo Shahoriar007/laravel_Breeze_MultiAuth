@@ -10,7 +10,7 @@
     <!-- Fav Icon  -->
     <link rel="shortcut icon" href="{{ asset('adminFrontend/images/favicon.png')}}">
     <!-- Page Title  -->
-    <title>DashLite Template</title>
+    <title></title>
     <!-- StyleSheets  -->
     <link rel="stylesheet" href="{{ asset('adminFrontend/assets/css/dashlite.css?ver=3.1.1')}}">
     <link id="skin-default" rel="stylesheet" href="{{ asset('adminFrontend/assets/css/theme.css?ver=3.1.1')}}">
@@ -34,7 +34,7 @@
                                     <div class="nk-block-head-content">
                                         <h4 class="nk-block-title">Admin Sign-In</h4>
                                         <div class="nk-block-des">
-                                            <p>Access the Dashlite panel using your email and passcode.</p>
+                                            <p>Access the Admin panel using your email and passcode.</p>
                                         </div>
                                     </div>
                                 </div>

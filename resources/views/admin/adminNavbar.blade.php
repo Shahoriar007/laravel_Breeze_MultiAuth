@@ -88,6 +88,12 @@
                                     </a>
                                 </li><!-- .nk-menu-item -->
                                 <li class="nk-menu-item">
+                                    <a href="" class="nk-menu-link">
+                                        <span class="nk-menu-icon"><em class="icon ni ni-building"></em></span>
+                                        <span class="nk-menu-text"> Total Pickup Chalok</span>
+                                    </a>
+                                </li><!-- .nk-menu-item -->
+                                <li class="nk-menu-item">
                                     <a href="{{ route('adminAddUser') }}" class="nk-menu-link">
                                         <span class="nk-menu-icon"><em class="icon ni ni-building"></em></span>
                                         <span class="nk-menu-text">Add User</span>
@@ -120,6 +126,34 @@
                                     <a href="{{ route('all.cases') }}" class="nk-menu-link">
                                         <span class="nk-menu-icon"><em class="icon ni ni-building"></em></span>
                                         <span class="nk-menu-text">All Cases</span>
+                                    </a>
+                                </li><!-- .nk-menu-item -->
+
+                                <li class="nk-menu-item">
+                                    <a href="#" class="nk-menu-link">
+                                        <span class="nk-menu-icon"><em class="icon ni ni-building"></em></span>
+                                        <span class="nk-menu-text">Pending Cases</span>
+                                    </a>
+                                </li><!-- .nk-menu-item -->
+
+                                <li class="nk-menu-item">
+                                    <a href="#" class="nk-menu-link">
+                                        <span class="nk-menu-icon"><em class="icon ni ni-building"></em></span>
+                                        <span class="nk-menu-text">Completed Cases</span>
+                                    </a>
+                                </li><!-- .nk-menu-item -->
+
+                                <li class="nk-menu-item">
+                                    <a href="" class="nk-menu-link">
+                                        <span class="nk-menu-icon"><em class="icon ni ni-building"></em></span>
+                                        <span class="nk-menu-text">Cancled Cases</span>
+                                    </a>
+                                </li><!-- .nk-menu-item -->
+
+                                <li class="nk-menu-item">
+                                    <a href="" class="nk-menu-link">
+                                        <span class="nk-menu-icon"><em class="icon ni ni-building"></em></span>
+                                        <span class="nk-menu-text">Manage Documents</span>
                                     </a>
                                 </li><!-- .nk-menu-item -->
 

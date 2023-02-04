@@ -3,7 +3,6 @@
 
 <!-- Css -->
 <style>
-
 div#example_info {
     font-size: medium;
     padding-top: 30px;
@@ -32,24 +31,27 @@ div.dataTables_wrapper div.dataTables_length select {
     white-space: nowrap;
     padding: 8px !important;
 }
-
 </style>
 <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 
 </head>
+
 <body>
 
-<div>
-    <a href="{{route('admin.dashboard')}}"> Dashboard</a>
-</div>
-<br><br>
+    
 
-<h2 class="text-center">Users Table</h2>
+    <div>
+        <a href="{{route('admin.dashboard')}}"> Dashboard</a>
+    </div>
+    <br><br>
+
+    <h2 class="text-center">Users Table</h2>
 
 
-<table id="example" class="display" style="width:100%">
+    <table id="example" class="display" style="width:100%">
         <thead>
             <tr>
                 <th>Id</th>
@@ -70,13 +72,13 @@ div.dataTables_wrapper div.dataTables_length select {
                 <th>Shareable Reference Number</th>
                 <th>Bkash TransactionID</th>
                 <th>Status & Action</th>
-                
+
 
             </tr>
         </thead>
         <tbody>
 
-        @foreach($users as $item)
+            @foreach($users as $item)
 
             <tr>
                 <td>{{ $item->id }}</td>
@@ -99,41 +101,41 @@ div.dataTables_wrapper div.dataTables_length select {
 
                 @if($item->status==1)
 
-        <td>
-            <a href="{{url('admin/view/status/0')}}/{{$item->id}}" id="deactive">
-                <button type="button" class="btn btn-primary">Active</button>
-            </a>
-            <a href="{{url('admin/viewusers')}}/{{$item->id}}">
-                <button type="button" class="btn btn-primary">Details</button>
-            </a>
-            <a href="{{url('admin/viewusers/delete')}}/{{$item->id}}" id="delete">
-                <button type="button" class="btn btn-danger">Delete</button>
-            </a>
-        </td>
-        
-        @elseif($item->status==0)
+                <td>
+                    <a href="{{url('admin/view/status/0')}}/{{$item->id}}" id="deactive">
+                        <button type="button" class="btn btn-primary">Active</button>
+                    </a>
+                    <a href="{{url('admin/viewusers')}}/{{$item->id}}">
+                        <button type="button" class="btn btn-primary">Details</button>
+                    </a>
+                    <a href="{{url('admin/viewusers/delete')}}/{{$item->id}}" id="delete">
+                        <button type="button" class="btn btn-danger">Delete</button>
+                    </a>
+                </td>
 
-        <td>
-            <a href="{{url('admin/view/status/1')}}/{{$item->id}}" id="active">
-                <button type="button" class="btn btn-outline-primary">Deactive</button>
-            </a>
-            <a href="{{url('admin/viewusers')}}/{{$item->id}}">
-                <button type="button" class="btn btn-primary">Details</button>
-            </a>
-            <a href="{{url('admin/viewusers/delete')}}/{{$item->id}}" id="delete">
-                <button type="button" class="btn btn-danger">Delete</button>
-            </a>
-        </td>
+                @elseif($item->status==0)
 
-        @endif
+                <td>
+                    <a href="{{url('admin/view/status/1')}}/{{$item->id}}" id="active">
+                        <button type="button" class="btn btn-outline-primary">Deactive</button>
+                    </a>
+                    <a href="{{url('admin/viewusers')}}/{{$item->id}}">
+                        <button type="button" class="btn btn-primary">Details</button>
+                    </a>
+                    <a href="{{url('admin/viewusers/delete')}}/{{$item->id}}" id="delete">
+                        <button type="button" class="btn btn-danger">Delete</button>
+                    </a>
+                </td>
 
-        
+                @endif
+
+
 
             </tr>
 
             @endforeach
-           
-            </tbody>
+
+        </tbody>
         <tfoot>
             <tr>
                 <th>Id</th>
@@ -154,23 +156,22 @@ div.dataTables_wrapper div.dataTables_length select {
                 <th>Shareable Reference Number</th>
                 <th>Bkash TransactionID</th>
                 <th>Status</th>
-                
+
             </tr>
         </tfoot>
     </table>
 
 
 
-<script
-  src="https://code.jquery.com/jquery-3.6.2.min.js"
-  integrity="sha256-2krYZKh//PcchRtd+H+VyyQoZ/e3EcrkxhM8ycwASPA="
-  crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.2.min.js"
+        integrity="sha256-2krYZKh//PcchRtd+H+VyyQoZ/e3EcrkxhM8ycwASPA=" crossorigin="anonymous"></script>
 
-  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.js">
+    </script>
 
- <script type="text/Javascript">
+    <script type="text/Javascript">
 
-    // $(document).ready( function () {
+        // $(document).ready( function () {
     // $('#myTable').DataTable();
     // });
 
@@ -241,8 +242,3 @@ div.dataTables_wrapper div.dataTables_length select {
 </body>
 
 @endsection
-
-
-
-
-

@@ -215,8 +215,8 @@ div.absolute {
                           </table>
                     </div>
             </div> 
-            <a href="{{ route('downloadInvoicePDFUser',$caseDetails->id) }}" class="button" style="border-radius: 10px;margin-left: 120px;margin-top:200px;">Download</a>
-            <a href="{{ route('downloadInvoicePDFUser',$caseDetails->id) }}" class="button" style="border-radius: 10px;margin-left: 20px;margin-top:200px;">Print</a>
+            <a onclick="window.print()" class="button" style="border-radius: 10px;margin-left: 120px;margin-top:200px;">Download</a>
+            <a onclick="window.print()" class="button" style="border-radius: 10px;margin-left: 20px;margin-top:200px;">Print</a>
         </div>
     </page>
 	

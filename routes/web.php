@@ -25,6 +25,10 @@ Route::get('/termsCondition', function () {
     return view('termsConditionView');
 })->name('termsCondition');
 
+Route::get('/passwordRecover', function () {
+    return view('userPasswordRecover');
+})->name('userPasswordRecover');
+
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');

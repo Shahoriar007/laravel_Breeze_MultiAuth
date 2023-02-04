@@ -35,7 +35,7 @@
 
         <a href="{{ route('userGeneralMsg', Auth::guard('web')->user()->id) }}" class="{{ Request::is('dashboard/support') ? 'active' : '' }}">Inbox</a>
 
-        <a href="{{ route('userSupport', Auth::guard('web')->user()->id) }}" class="{{ Request::is('dashboard/support') ? 'active' : '' }}">Support</a>
+        <a href="{{ route('userSupport', Auth::guard('web')->user()->id) }}" class="{{ Request::is('dashboard/support') ? 'active' : '' }}">Help Line</a>
 
         <a href="{{ route('generalCase', Auth::guard('web')->user()->id) }}" class="{{ Request::is('dashboard/generalCase') ? 'active' : '' }}">General Case</a>
 
