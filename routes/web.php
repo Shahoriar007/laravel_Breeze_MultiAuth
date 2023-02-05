@@ -12,6 +12,7 @@ use App\Http\Controllers\UserCaseChatController;
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\GenenralCaseMsgController;
 use App\Http\Controllers\UserPaymentHistoryController;
+use App\Http\Controllers\TermsConditionController;
 
 use App\Http\Controllers\Auth\RegisteredUserController;
 
@@ -21,9 +22,11 @@ Route::get('/', function () {
     return view('welcome');
 })->name('main.home');
 
-Route::get('/termsCondition', function () {
-    return view('termsConditionView');
-})->name('termsCondition');
+// Route::get('/termsCondition', function () {
+//     return view('termsConditionView');
+// })->name('termsCondition');
+
+Route::get('/termsCondition', [TermsConditionController::class, 'userTermsConditionView'])->name('termsCondition');
 
 Route::get('/passwordRecover', function () {
     return view('userPasswordRecover');
@@ -195,6 +198,11 @@ Route::prefix('admin')->group(function(){
 
     // Admin Truck Chalok List
     Route::get('truckChalokList/',[AdminDashboardController::class, 'truckChalokTable'])->name('adminTruckChalokList');
+
+    // Admin Terms Condition View
+    Route::get('termsCondition/',[TermsConditionController::class, 'index'])->name('termsConditionView');
+
+    Route::post('termsCondition/',[TermsConditionController::class, 'create'])->name('termsConditionPost');
     
 
 

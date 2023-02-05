@@ -24,6 +24,8 @@
 
      <!-- datatable -->
      <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.css">
+
+     <script src="https://cdn.ckeditor.com/4.20.1/standard/ckeditor.js"></script>
  
 
 </head>

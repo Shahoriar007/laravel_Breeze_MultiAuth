@@ -88,6 +88,7 @@ class UserCaseController extends Controller
     // all cases view table
     public function showAllcases(){
         $cases = Casefine::all();
+
         return view('cases_view',compact('cases'));
     }
 

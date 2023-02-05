@@ -171,6 +171,13 @@
                                     </a>
                                 </li><!-- .nk-menu-item -->
 
+                                <li class="nk-menu-item">
+                                    <a href="{{ route('termsConditionView') }}" class="nk-menu-link">
+                                        <span class="nk-menu-icon"><em class="icon ni ni-building"></em></span>
+                                        <span class="nk-menu-text">Terms & Condition</span>
+                                    </a>
+                                </li><!-- .nk-menu-item -->
+
                                 
 
                             </ul><!-- .nk-menu -->
