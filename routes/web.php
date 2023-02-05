@@ -13,6 +13,7 @@ use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\GenenralCaseMsgController;
 use App\Http\Controllers\UserPaymentHistoryController;
 use App\Http\Controllers\TermsConditionController;
+use App\Http\Controllers\TranningBranchController;
 
 use App\Http\Controllers\Auth\RegisteredUserController;
 
@@ -27,6 +28,9 @@ Route::get('/', function () {
 // })->name('termsCondition');
 
 Route::get('/termsCondition', [TermsConditionController::class, 'userTermsConditionView'])->name('termsCondition');
+
+// Training Branch View User
+Route::get('/tranningBranch',[TranningBranchController::class, 'userView'])->name('userTranningBranch');
 
 Route::get('/passwordRecover', function () {
     return view('userPasswordRecover');
@@ -134,6 +138,18 @@ Route::prefix('admin')->group(function(){
     // Admin Case Details msg post
     Route::post('/viewcases/{id}', [UserCaseChatController::class, 'adminAllCaseMsgPost'])->middleware(['auth:admin', 'verified'])->name('adminCaseMsgPost');
 
+    // All Pending case view
+    Route::get('/viewPendingCases', [UserCaseController::class, 'showAllPendingCases'])->middleware(['auth:admin', 'verified'])->name('all.pendingCases');
+
+    // All completed case view
+    Route::get('/viewComopletedCases', [UserCaseController::class, 'showAllCompletedCases'])->middleware(['auth:admin', 'verified'])->name('all.completedCases');
+
+    // All cancled case view
+    Route::get('/viewCancledCases', [UserCaseController::class, 'showAllCancledCases'])->middleware(['auth:admin', 'verified'])->name('all.cancledCases');
+
+    // manage Case doc 
+    Route::get('/manageCaseDoc', [UserCaseController::class, 'manageCaseDocView'])->middleware(['auth:admin', 'verified'])->name('manageCaseDoc');
+
 
     // Support
     // Support view
@@ -199,10 +215,26 @@ Route::prefix('admin')->group(function(){
     // Admin Truck Chalok List
     Route::get('truckChalokList/',[AdminDashboardController::class, 'truckChalokTable'])->name('adminTruckChalokList');
 
+    // Admin Pickup Chalok List
+    Route::get('pickupChalokList/',[AdminDashboardController::class, 'pickupChalokTable'])->name('adminPickupChalokList');
+
     // Admin Terms Condition View
     Route::get('termsCondition/',[TermsConditionController::class, 'index'])->name('termsConditionView');
 
     Route::post('termsCondition/',[TermsConditionController::class, 'create'])->name('termsConditionPost');
+
+    // Tranning Branch View Admin
+    Route::get('tranningBranch/',[TranningBranchController::class, 'index'])->name('tranningBranch');
+
+    Route::post('tranningBranch/',[TranningBranchController::class, 'create'])->name('addTranningBranch');
+
+    Route::get('tranningBranchdelete/{id}',[TranningBranchController::class, 'delete'])->name('deleteTranningBranch');
+
+    // User Creators Position
+    Route::get('userCreatorsPosition/',[AdminDashboardController::class, 'viewUsersCreatorsPosition'])->name('userCreatorsPosition');
+    Route::post('userCreatorsPosition/',[AdminDashboardController::class, 'viewUsersCreatorsPositionSearch'])->name('userCreatorsPositionSearch');
+
+    
     
 
 

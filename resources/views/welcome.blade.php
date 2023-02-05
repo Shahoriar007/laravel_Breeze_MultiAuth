@@ -220,6 +220,7 @@
                             <li class="nav-item mb-2"><a href="#services" class="nav-link p-0">Service</a></li>
                             <li class="nav-item mb-2"><a href="#about" class="nav-link p-0">About</a></li>
                             <li class="nav-item mb-2"><a href="{{route('termsCondition')}}" class="nav-link p-0">Terms & Condition</a></li>
+                            <li class="nav-item mb-2"><a href="{{route('userTranningBranch')}}" class="nav-link p-0">Training Branch</a></li>
                         </ul>
                     </div>
 

@@ -184,6 +184,38 @@ class UserCaseController extends Controller
 
     }
 
+    // all pendingcases view table
+    public function showAllPendingCases(){
+
+        $pendingCase = Casefine::where('caseStatus','=',"pending")->get();
+
+        return view('pendingCase',compact('pendingCase'));
+    }
+
+    // all completed cases view table
+    public function showAllCompletedCases(){
+
+        $completedCase = Casefine::where('caseStatus','=',"done")->get();
+
+        return view('completedCase',compact('completedCase'));
+    }
+
+    // all cancled cases view table
+    public function showAllCancledCases(){
+
+        $cancledCase = Casefine::where('caseStatus','=',"cancle")->get();
+
+        return view('cancledCase',compact('cancledCase'));
+    }
+
+    // manage case doc view table
+    public function manageCaseDocView(){
+
+        $caseDoc = Casefine::all();
+
+        return view('manageCaseDoc',compact('caseDoc'));
+    }
+
 
 
 }

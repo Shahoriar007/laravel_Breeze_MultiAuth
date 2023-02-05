@@ -52,9 +52,21 @@
                                     </a>
                                 </li><!-- .nk-menu-item -->
                                 <li class="nk-menu-item">
+                                    <a href="{{ route('tranningBranch') }}" class="nk-menu-link">
+                                        <span class="nk-menu-icon"><em class="icon ni ni-building"></em></span>
+                                        <span class="nk-menu-text">Training Branch</span>
+                                    </a>
+                                </li><!-- .nk-menu-item -->
+                                <li class="nk-menu-item">
                                     <a href="{{ route('adminEmployeeList') }}" class="nk-menu-link">
                                         <span class="nk-menu-icon"><em class="icon ni ni-building"></em></span>
                                         <span class="nk-menu-text"> Employee List</span>
+                                    </a>
+                                </li><!-- .nk-menu-item -->
+                                <li class="nk-menu-item">
+                                    <a href="{{ route('userCreatorsPosition') }}" class="nk-menu-link">
+                                        <span class="nk-menu-icon"><em class="icon ni ni-building"></em></span>
+                                        <span class="nk-menu-text"> Users Creators Position</span>
                                     </a>
                                 </li><!-- .nk-menu-item -->
                                 <li class="nk-menu-item">
@@ -88,7 +100,7 @@
                                     </a>
                                 </li><!-- .nk-menu-item -->
                                 <li class="nk-menu-item">
-                                    <a href="" class="nk-menu-link">
+                                    <a href="{{ route('adminPickupChalokList') }}" class="nk-menu-link">
                                         <span class="nk-menu-icon"><em class="icon ni ni-building"></em></span>
                                         <span class="nk-menu-text"> Total Pickup Chalok</span>
                                     </a>
@@ -130,28 +142,28 @@
                                 </li><!-- .nk-menu-item -->
 
                                 <li class="nk-menu-item">
-                                    <a href="#" class="nk-menu-link">
+                                    <a href="{{ route('all.pendingCases') }}" class="nk-menu-link">
                                         <span class="nk-menu-icon"><em class="icon ni ni-building"></em></span>
                                         <span class="nk-menu-text">Pending Cases</span>
                                     </a>
                                 </li><!-- .nk-menu-item -->
 
                                 <li class="nk-menu-item">
-                                    <a href="#" class="nk-menu-link">
+                                    <a href="{{ route('all.completedCases') }}" class="nk-menu-link">
                                         <span class="nk-menu-icon"><em class="icon ni ni-building"></em></span>
                                         <span class="nk-menu-text">Completed Cases</span>
                                     </a>
                                 </li><!-- .nk-menu-item -->
 
                                 <li class="nk-menu-item">
-                                    <a href="" class="nk-menu-link">
+                                    <a href="{{ route('all.cancledCases') }}" class="nk-menu-link">
                                         <span class="nk-menu-icon"><em class="icon ni ni-building"></em></span>
                                         <span class="nk-menu-text">Cancled Cases</span>
                                     </a>
                                 </li><!-- .nk-menu-item -->
 
                                 <li class="nk-menu-item">
-                                    <a href="" class="nk-menu-link">
+                                    <a href="{{ route('manageCaseDoc') }}" class="nk-menu-link">
                                         <span class="nk-menu-icon"><em class="icon ni ni-building"></em></span>
                                         <span class="nk-menu-text">Manage Documents</span>
                                     </a>

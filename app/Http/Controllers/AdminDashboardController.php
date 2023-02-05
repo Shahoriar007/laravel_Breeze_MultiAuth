@@ -101,6 +101,14 @@ class AdminDashboardController extends Controller
         return view('adminTotalTruckChalok',compact('totalTruckChalok'));
     }
 
+    // Admin Pickup Chalok Table
+    public function pickupChalokTable()
+    {
+        $totalPickupChalok = User::where('vehicle','=','Pickup')->get();
+
+        return view('adminTotalPickupChalok',compact('totalPickupChalok'));
+    }
+
 
     // Admin change pass
 
@@ -137,6 +145,19 @@ class AdminDashboardController extends Controller
 
         return redirect()->route('adminChangePass')->with($notification);
      }
+
+     //Users creators position view
+    public function viewUsersCreatorsPosition()
+    {
+        return view('userCreatorsPosition');
+    }
+
+    public function viewUsersCreatorsPositionSearch(Request $request)
+    {
+        $creators = User::where('refCode','=', $request->refCode)->get();
+
+        return view('userCreatorsPosition', compact('creators'));
+    }
 
 
 }

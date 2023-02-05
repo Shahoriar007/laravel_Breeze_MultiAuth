@@ -46,7 +46,7 @@ div.dataTables_wrapper div.dataTables_length select {
 </div>
 <br><br>
 
-<h2 class="text-center">Users Table</h2>
+<h2 class="text-center">Total CNG Chalok</h2>
 
 
 <table id="example" class="display" style="width:100%">

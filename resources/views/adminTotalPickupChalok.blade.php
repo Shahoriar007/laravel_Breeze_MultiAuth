@@ -42,11 +42,11 @@ div.dataTables_wrapper div.dataTables_length select {
 <body>
 
     <div>
-        <a href="{{route('admin.dashboard')}}"> Dashboard</a>
+        <a href="{{route('admin.dashboard')}}"> Total Pickup Chalok</a>
     </div>
     <br><br>
 
-    <h2 class="text-center">Total Car Chalok</h2>
+    <h2 class="text-center">Total Pickup Chalok</h2>
 
 
     <table id="example" class="display" style="width:100%">
@@ -76,7 +76,7 @@ div.dataTables_wrapper div.dataTables_length select {
         </thead>
         <tbody>
 
-            @foreach($totalCarChalok as $item)
+            @foreach($totalPickupChalok as $item)
 
             <tr>
                 <td>{{ $item->id }}</td>

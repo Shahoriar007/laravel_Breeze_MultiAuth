@@ -71,14 +71,24 @@
 
     <section class="services py-5" id="services">
         <div class="container text-center">
-            <div class="title">Terms and Condition</div>
+            <div class="title">Tranning Branch</div>
 
             <div class="container">
-            <div class="row">
-                @php 
-                    echo $termsCondition[0]->terms;
-                @endphp
-            </div>
+            
+            @if(!empty($trainingBranch))
+
+            @foreach($trainingBranch as $data)
+
+                <h3>{{$data->name}}</h3>
+                <p>{{$data->address}}</p>
+                <p>{{$data->phone}}</p>
+                <br>
+
+            @endforeach
+
+            @endif
+
+            
             </div>
             
             
