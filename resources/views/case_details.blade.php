@@ -89,6 +89,20 @@
                                             </div>
                                             <div class="profile-ud-item">
                                                 <div class="profile-ud wider">
+                                                    <span class="profile-ud-label">Paid With</span>
+                                                    <span class="profile-ud-value">{{ $caseDetails->paidWith }}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="profile-ud-item">
+                                                <div class="profile-ud wider">
+                                                    <span class="profile-ud-label">Transaction Id</span>
+                                                    <span class="profile-ud-value">{{ $caseDetails->trId }}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="profile-ud-item">
+                                                <div class="profile-ud wider">
                                                     <span class="profile-ud-label">Invoice </span>
                                                    <a href="{{ route('downloadInvoiceAdmin',$caseDetails->id) }}" class="btn btn-info">Download</a>
                                                 </div>
@@ -108,7 +122,7 @@
                                                             <option value="working">Working</option>
                                                             <option value="done">Done</option>
                                                             <option value="cancel">Cancel</option>
-                                                            
+
                                                         </select>
                                                         
                                                         <button class="btn btn-info" type="submit">Save</button>

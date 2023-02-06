@@ -61,6 +61,7 @@ div.dataTables_wrapper div.dataTables_length select {
                     <th>Case Fine</th>
                     <th>Comments</th>
                     <th>Case Status</th>
+                    
 
                     <th>Action</th>
                 </tr>

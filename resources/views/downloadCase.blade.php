@@ -66,6 +66,14 @@
                             <th>Comments:</th>
                             <td>{{$data['fineAmmount']}}</td>
                         </tr>
+                        <tr>
+                            <th>Paid With:</th>
+                            <td>{{$data['paidWith']}}</td>
+                        </tr>
+                        <tr>
+                            <th>Transaction Id:</th>
+                            <td>{{$data['trId']}}</td>
+                        </tr>
                     </table>
                 </div>
             </div>

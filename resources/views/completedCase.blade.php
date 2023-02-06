@@ -61,6 +61,8 @@ div.dataTables_wrapper div.dataTables_length select {
                     <th>Case Fine</th>
                     <th>Comments</th>
                     <th>Case Status</th>
+                    <th>Paid With</th>
+                    <th>Transaction Id</th>
 
                     <th>Action</th>
                 </tr>
@@ -81,6 +83,8 @@ div.dataTables_wrapper div.dataTables_length select {
                     <td>{{ $item->caseCode }}</td>
                     <td>{{ $item->fineAmmount }}</td>
                     <td>{{ $item->caseStatus }}</td>
+                    <td>{{ $item->paidWith }}</td>
+                    <td>{{ $item->trId }}</td>
 
 
                     <td>
@@ -104,6 +108,8 @@ div.dataTables_wrapper div.dataTables_length select {
                     <th>Case Fine</th>
                     <th>Comments</th>
                     <th>Case Status</th>
+                    <th>Paid With</th>
+                    <th>Transaction Id</th>
 
                     <th>Action</th>
 

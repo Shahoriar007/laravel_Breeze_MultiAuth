@@ -18,7 +18,11 @@
                                         <div class="row">
                                             <div class="form-group col-md-12 col-lg-12 col-xl-12 required">
                                                 
-                                                <textarea name="terms" id="terms" cols="70" rows="70" ></textarea>
+                                                <textarea name="terms" id="terms" cols="70" rows="70" >
+                                                @php 
+                                                    echo $termsCondition[0]->terms;
+                                                @endphp
+                                                </textarea>
                                             </div>
                                            
                                             
@@ -29,6 +33,7 @@
                                 </div>
                             </div>
                         </div>
+
                     </div><!-- card -->
                 </div><!-- .nk-block -->
             </div><!-- .components-preview -->

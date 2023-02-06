@@ -183,6 +183,8 @@ class UserCaseController extends Controller
             "caseCode"=>$caseDetails->caseCode,
             "fineAmmount"=>$caseDetails->fineAmmount,
             "caseStatus"=>$caseDetails->caseStatus,
+            "paidWith"=>$caseDetails->paidWith,
+            "trId"=>$caseDetails->trId,
 
         );
 

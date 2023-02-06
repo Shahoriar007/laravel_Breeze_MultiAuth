@@ -12,8 +12,6 @@ class TermsConditionController extends Controller
     {
         $termsCondition = TermsCondition::all();
 
-        
-
         return view('termsConditionView',compact('termsCondition'));
     }
 
@@ -22,15 +20,33 @@ class TermsConditionController extends Controller
     // ------------------------Admin Side------------------------------------
     public function index()
     {
-        return view('adminTermsCondition');
+        $termsCondition = TermsCondition::all();
+
+        return view('adminTermsCondition',compact('termsCondition'));
     }
 
     
     public function create(Request $request)
     {
-        TermsCondition::create([
-            'terms' => $request->terms,
-         ]);
+        $data = TermsCondition::where('id','=',1)->get();
+
+        if(empty($data[0]->id) ){
+
+            TermsCondition::create([
+                'terms' => $request->terms,
+             ]);
+
+        }else{
+
+            $termsCondition = TermsCondition::find(1);
+
+            $termsCondition->terms = $request->terms;
+            
+            $termsCondition->save();
+
+        }
+
+        
     
         return redirect()->route('termsConditionView');
     }
