@@ -4,8 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Casefine;
+use App\Models\TempCasefine;
 use App\Models\UserCaseChat;
 use Barryvdh\DomPDF\Facade\Pdf;
+
+use Illuminate\Support\Facades\Auth;
 
 
 use Image;
@@ -41,7 +44,7 @@ class UserCaseController extends Controller
          Image::make($image)->save('upload/case_images/'.$name_gen);
          $save_url = 'upload/case_images/'.$name_gen;
 
-         Casefine::create([
+         TempCasefine::create([
 
             'userId' => $id,
             'caseId' => $request->caseId,
@@ -56,9 +59,50 @@ class UserCaseController extends Controller
             'alert-type' => 'success'
         );
 
-         return redirect()->route('dashboard')->with($notification);
+          return redirect()->route('payFirst')->with($notification);
+
+         //return redirect()->route('dashboard')->with($notification);
     
     }
+
+    // 
+    public function payfirst(){
+
+        $caseDetails = TempCasefine::where('userId','=',Auth::guard('web')->user()->id)->latest()->first();
+
+        // 50% of case fine 
+        $dueAmmount = $caseDetails->caseCode / 2;
+
+        return view('payFirst', compact('caseDetails','dueAmmount'));
+
+    }
+
+    // case submit form
+    public function postCaseAfterpay(Request $request ){
+
+        $caseDetails = TempCasefine::where('userId','=',Auth::guard('web')->user()->id)->latest()->first();
+
+        $status = "done";
+
+         Casefine::create([
+
+            'userId' => $caseDetails->userId,
+            'caseId' => $caseDetails->caseId,
+            'caseCode' => $caseDetails->caseCode,
+            'fineAmmount' => $caseDetails->fineAmmount,
+            'casePhoto' =>  $caseDetails->casePhoto,
+            'caseStatus' => $status,
+            'paidWith' => $request->paidWith,
+            'trId' => $request->trId,
+   
+         ]);
+
+         TempCasefine::where('userId','=',Auth::guard('web')->user()->id)->latest()->first()->delete();
+
+         return redirect()->route('dashboard');
+    
+    }
+
 
     // User all submitted case view table
     public function userAllCasesView($id){

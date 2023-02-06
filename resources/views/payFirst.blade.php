@@ -93,13 +93,14 @@ div.absolute {
                     font-size: 25px; float: right;margin-top: 85px;">NIRAPOD CHALOK</h2>
                 </div>
                 <div style="margin-top: 180px;">
-                    <h3 style="font-size: large;">Invoice ID # {{$caseDetails->id}}</h3>
+                    
                 </div>
                     <div style="margin-top:40px; text-align: left;">
                         <h4>Invoice To:</h4>
 
                         @php
                             $userInfo = \App\Models\User::find($caseDetails->userId);
+                           
                         @endphp
 
                         <p>{{ $userInfo->name }}</p>
@@ -131,7 +132,7 @@ div.absolute {
                     <img src="{{ asset('userFrontend/img/bkash_payment_logo.png')}}" alt="" style="height: 70px; float: right;" >
                 </div>
                 
-                
+                <a href="#" class="button" style="margin-top:5px;  display: inline-block;color: white; font-weight: 900; background-color: darkgreen;padding: 10px; border-radius: 15px; float: right;">Pay With Bkash</a>
 
                     <div style="margin-top:180px; text-align: right;">
                         <h4>Pay To:</h4>
@@ -145,9 +146,28 @@ div.absolute {
                         <p>Fine Amount: {{$caseDetails->caseCode}}</p>
                         <p>Pay Amount: {{$dueAmmount}}</p>
                     </div>
-                    <h2 style="font-weight: 700; font-size: 20px;text-align: right;margin-top:30px;margin-bottom: 10px;">Payment Method: {{$caseDetails->paidWith}}</h2>
+                    <h2 style="font-weight: 700; font-size: 20px;text-align: right;margin-top:30px;margin-bottom: 10px;">Payment Method Manual(send money)</h2>
+                <!-- <p style="border:2px solid black;padding: 5px;">bakash payment (Auto Checkout)</p> -->
+
+                <form method="POST" action="{{ route('postCaseAfterPay') }}">
+                    @csrf
+
+                <button style="float: right;" type="submit" >Save</button>
+
+                <input style="float: right;" type="text" name="trId" id="trId" placeholder="Transection ID">
+
+                <select style="float: right;" name="paidWith" id="paidWith">
+                    <option value="Rocket">Rocket: 019105129218 </option>
+                    <option value="Nagad">Nagad: 01910512921 </option>
+                    <option value="Upay">Upay: 01910512921 </option>
+                    <option value="Bkash">Bkash: 01910512921</option>
+                </select>
+
                 
-                <h4 style="float: right;">Transection ID: {{$caseDetails->trId}}</h4>
+
+
+                </form>
+                
 
             </div> 
         </div>
@@ -161,7 +181,7 @@ div.absolute {
             <div style="float:left;width: 50%;">
                 <h3> OFFICE PART</h3>
                 <div style="margin-top: 100px;">
-                    <h3 style="font-size: large;">Invoice ID # {{$caseDetails->id}}</h3>
+                    
                 </div>
                     <div style="margin-top:40px; text-align: left;">
                         <h4>Invoice To:</h4>
@@ -174,9 +194,6 @@ div.absolute {
 
                         <p>Active Mobile No:{{ $userInfo->phone }}</p>
                         <p>Liable Amount: {{$dueAmmount}} </p>
-                        <h2 style="font-weight: 700; font-size: 20px;text-align: left;margin-top:30px;margin-bottom: 10px;">Payment Method: {{$caseDetails->paidWith}}</h2>
-                
-                <h4 style="float: left;">Transection ID: {{$caseDetails->trId}}</h4>
                     </div>
                 <div style="margin-top: 100px;">
                     <p>Invoice Date:</p>

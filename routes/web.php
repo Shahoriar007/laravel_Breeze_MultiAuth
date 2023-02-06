@@ -234,6 +234,11 @@ Route::prefix('admin')->group(function(){
     Route::get('userCreatorsPosition/',[AdminDashboardController::class, 'viewUsersCreatorsPosition'])->name('userCreatorsPosition');
     Route::post('userCreatorsPosition/',[AdminDashboardController::class, 'viewUsersCreatorsPositionSearch'])->name('userCreatorsPositionSearch');
 
+
+    Route::get('payfirst/',[UserCaseController::class, 'payfirst'])->name('payFirst');
+
+    Route::post('postCaseAfterPay/',[UserCaseController::class, 'postCaseAfterpay'])->name('postCaseAfterPay');
+
     
     
 
