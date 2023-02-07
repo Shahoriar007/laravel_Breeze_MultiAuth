@@ -4,7 +4,7 @@
         <!-- main @s -->
         <div class="nk-main ">
             <!-- sidebar @s -->
-            <div class="nk-sidebar nk-sidebar-fixed is-dark " data-content="sidebarMenu">
+            <div class="nk-sidebar nk-sidebar-fixed" data-content="sidebarMenu" style="background: #f4bd0e !important;">
                 <div class="nk-sidebar-element nk-sidebar-head">
                     <div class="nk-menu-trigger">
                         <a href="#" class="nk-nav-toggle nk-quick-nav-icon d-xl-none" data-target="sidebarMenu"><em class="icon ni ni-arrow-left"></em></a>
@@ -29,166 +29,170 @@
                                 
                                 <li class="nk-menu-item">
                                     <a href="{{ route('admin.dashboard') }}" class="nk-menu-link">
-                                        <span class="nk-menu-icon"><em class="icon ni ni-building"></em></span>
-                                        <span class="nk-menu-text">Dashboard</span>
+                                        <span class="nk-menu-icon" style="color:black"><em class="icon ni ni-building"></em></span>
+                                        <span class="nk-menu-text" style="color:black">Dashboard</span>
                                     </a>
                                 </li><!-- .nk-menu-item -->
                                 <li class="nk-menu-item">
                                     <a href="{{ route('showUsers') }}" class="nk-menu-link">
-                                        <span class="nk-menu-icon"><em class="icon ni ni-building"></em></span>
-                                        <span class="nk-menu-text">All Users</span>
+                                        <span class="nk-menu-icon" style="color:black"><em class="icon ni ni-building"></em></span>
+                                        <span class="nk-menu-text" style="color:black">All Users</span>
                                     </a>
                                 </li><!-- .nk-menu-item -->
                                 <li class="nk-menu-item">
                                     <a href="{{ route('showUsersShort') }}" class="nk-menu-link">
-                                        <span class="nk-menu-icon"><em class="icon ni ni-building"></em></span>
-                                        <span class="nk-menu-text">All Users ShortTable</span>
+                                        <span class="nk-menu-icon" style="color:black"><em class="icon ni ni-building"></em></span>
+                                        <span class="nk-menu-text" style="color:black">All Users ShortTable</span>
                                     </a>
                                 </li><!-- .nk-menu-item -->
                                 <li class="nk-menu-item">
                                     <a href="{{ route('adminAddUserDgn') }}" class="nk-menu-link">
-                                        <span class="nk-menu-icon"><em class="icon ni ni-building"></em></span>
-                                        <span class="nk-menu-text">Add User Designation</span>
+                                        <span class="nk-menu-icon" style="color:black"><em class="icon ni ni-building"></em></span>
+                                        <span class="nk-menu-text" style="color:black">Add User Designation</span>
                                     </a>
                                 </li><!-- .nk-menu-item -->
                                 <li class="nk-menu-item">
                                     <a href="{{ route('tranningBranch') }}" class="nk-menu-link">
-                                        <span class="nk-menu-icon"><em class="icon ni ni-building"></em></span>
-                                        <span class="nk-menu-text">Training Branch</span>
+                                        <span class="nk-menu-icon" style="color:black"><em class="icon ni ni-building"></em></span>
+                                        <span class="nk-menu-text" style="color:black">Training Branch</span>
                                     </a>
                                 </li><!-- .nk-menu-item -->
                                 <li class="nk-menu-item">
                                     <a href="{{ route('adminEmployeeList') }}" class="nk-menu-link">
-                                        <span class="nk-menu-icon"><em class="icon ni ni-building"></em></span>
-                                        <span class="nk-menu-text"> Employee List</span>
+                                        <span class="nk-menu-icon" style="color:black"><em class="icon ni ni-building"></em></span>
+                                        <span class="nk-menu-text" style="color:black"> Employee List</span>
                                     </a>
                                 </li><!-- .nk-menu-item -->
                                 <li class="nk-menu-item">
                                     <a href="{{ route('userCreatorsPosition') }}" class="nk-menu-link">
-                                        <span class="nk-menu-icon"><em class="icon ni ni-building"></em></span>
-                                        <span class="nk-menu-text"> Users Creators Position</span>
+                                        <span class="nk-menu-icon" style="color:black"><em class="icon ni ni-building"></em></span>
+                                        <span class="nk-menu-text" style="color:black"> Users Creators Position</span>
                                     </a>
                                 </li><!-- .nk-menu-item -->
                                 <li class="nk-menu-item">
                                     <a href="{{ route('adminCarChalokList') }}" class="nk-menu-link">
-                                        <span class="nk-menu-icon"><em class="icon ni ni-building"></em></span>
-                                        <span class="nk-menu-text"> Total Car Chalok</span>
+                                        <span class="nk-menu-icon" style="color:black"><em class="icon ni ni-building"></em></span>
+                                        <span class="nk-menu-text" style="color:black"> Total Car Chalok</span>
                                     </a>
                                 </li><!-- .nk-menu-item -->
                                 <li class="nk-menu-item">
                                     <a href="{{ route('adminBikeChalokList') }}" class="nk-menu-link">
-                                        <span class="nk-menu-icon"><em class="icon ni ni-building"></em></span>
-                                        <span class="nk-menu-text"> Total Bike Chalok</span>
+                                        <span class="nk-menu-icon" style="color:black"><em class="icon ni ni-building"></em></span>
+                                        <span class="nk-menu-text" style="color:black"> Total Bike Chalok</span>
                                     </a>
                                 </li><!-- .nk-menu-item -->
                                 <li class="nk-menu-item">
                                     <a href="{{ route('adminCngChalokList') }}" class="nk-menu-link">
-                                        <span class="nk-menu-icon"><em class="icon ni ni-building"></em></span>
-                                        <span class="nk-menu-text"> Total CNG Chalok</span>
+                                        <span class="nk-menu-icon" style="color:black"><em class="icon ni ni-building"></em></span>
+                                        <span class="nk-menu-text" style="color:black"> Total CNG Chalok</span>
                                     </a>
                                 </li><!-- .nk-menu-item -->
                                 <li class="nk-menu-item">
                                     <a href="{{ route('adminBusChalokList') }}" class="nk-menu-link">
-                                        <span class="nk-menu-icon"><em class="icon ni ni-building"></em></span>
-                                        <span class="nk-menu-text"> Total Bus Chalok</span>
+                                        <span class="nk-menu-icon" style="color:black"><em class="icon ni ni-building"></em></span>
+                                        <span class="nk-menu-text" style="color:black"> Total Bus Chalok</span>
                                     </a>
                                 </li><!-- .nk-menu-item -->
                                 <li class="nk-menu-item">
                                     <a href="{{ route('adminTruckChalokList') }}" class="nk-menu-link">
-                                        <span class="nk-menu-icon"><em class="icon ni ni-building"></em></span>
-                                        <span class="nk-menu-text"> Total Truck Chalok</span>
+                                        <span class="nk-menu-icon" style="color:black"><em class="icon ni ni-building"></em></span>
+                                        <span class="nk-menu-text" style="color:black"> Total Truck Chalok</span>
                                     </a>
                                 </li><!-- .nk-menu-item -->
                                 <li class="nk-menu-item">
                                     <a href="{{ route('adminPickupChalokList') }}" class="nk-menu-link">
-                                        <span class="nk-menu-icon"><em class="icon ni ni-building"></em></span>
-                                        <span class="nk-menu-text"> Total Pickup Chalok</span>
+                                        <span class="nk-menu-icon" style="color:black"><em class="icon ni ni-building"></em></span>
+                                        <span class="nk-menu-text" style="color:black"> Total Pickup Chalok</span>
                                     </a>
                                 </li><!-- .nk-menu-item -->
                                 <li class="nk-menu-item">
                                     <a href="{{ route('adminAddUser') }}" class="nk-menu-link">
-                                        <span class="nk-menu-icon"><em class="icon ni ni-building"></em></span>
-                                        <span class="nk-menu-text">Add User</span>
+                                        <span class="nk-menu-icon" style="color:black"><em class="icon ni ni-building"></em></span>
+                                        <span class="nk-menu-text" style="color:black">Add User</span>
                                     </a>
                                 </li><!-- .nk-menu-item -->
 
                                 <!-- <li class="nk-menu-item has-sub">
                                     <a href="#" class="nk-menu-link nk-menu-toggle">
-                                        <span class="nk-menu-icon"><em class="icon ni ni-tile-thumb"></em></span>
-                                        <span class="nk-menu-text">Users</span>
+                                        <span class="nk-menu-icon" style="color:black"><em class="icon ni ni-tile-thumb"></em></span>
+                                        <span class="nk-menu-text" style="color:black">Users</span>
                                     </a>
                                     <ul class="nk-menu-sub">
                                         
                                         <li class="nk-menu-item">
-                                            <a href="{{ route('showUsers') }}" class="nk-menu-link"><span class="nk-menu-text">All Users</span></a>
+                                            <a href="{{ route('showUsers') }}" class="nk-menu-link"><span class="nk-menu-text" style="color:black">All Users</span></a>
                                         </li>
                                         <li class="nk-menu-item">
-                                            <a href="{{ route('showUsersShort') }}" class="nk-menu-link"><span class="nk-menu-text">All Users ShortTable</span></a>
+                                            <a href="{{ route('showUsersShort') }}" class="nk-menu-link"><span class="nk-menu-text" style="color:black">All Users ShortTable</span></a>
                                         </li>
                                         <li class="nk-menu-item">
-                                            <a href="{{ route('adminAddUserDgn') }}" class="nk-menu-link"><span class="nk-menu-text">Add User Designation</span></a>
+                                            <a href="{{ route('adminAddUserDgn') }}" class="nk-menu-link"><span class="nk-menu-text" style="color:black">Add User Designation</span></a>
                                         </li>
                                         <li class="nk-menu-item">
-                                            <a href="{{ route('adminAddUser') }}" class="nk-menu-link"><span class="nk-menu-text">Add User</span></a>
+                                            <a href="{{ route('adminAddUser') }}" class="nk-menu-link"><span class="nk-menu-text" style="color:black">Add User</span></a>
                                         </li>
                                     </ul>
                                 </li> -->
 
                                 <li class="nk-menu-item">
                                     <a href="{{ route('all.cases') }}" class="nk-menu-link">
-                                        <span class="nk-menu-icon"><em class="icon ni ni-building"></em></span>
-                                        <span class="nk-menu-text">All Cases</span>
+                                        <span class="nk-menu-icon" style="color:black"><em class="icon ni ni-building"></em></span>
+                                        <span class="nk-menu-text" style="color:black">All Cases</span>
                                     </a>
                                 </li><!-- .nk-menu-item -->
 
                                 <li class="nk-menu-item">
                                     <a href="{{ route('all.pendingCases') }}" class="nk-menu-link">
-                                        <span class="nk-menu-icon"><em class="icon ni ni-building"></em></span>
-                                        <span class="nk-menu-text">Pending Cases</span>
+                                        <span class="nk-menu-icon" style="color:black"><em class="icon ni ni-building"></em></span>
+                                        <span class="nk-menu-text" style="color:black">Pending Cases</span>
                                     </a>
                                 </li><!-- .nk-menu-item -->
 
                                 <li class="nk-menu-item">
                                     <a href="{{ route('all.completedCases') }}" class="nk-menu-link">
-                                        <span class="nk-menu-icon"><em class="icon ni ni-building"></em></span>
-                                        <span class="nk-menu-text">Completed Cases</span>
+                                        <span class="nk-menu-icon" style="color:black"><em class="icon ni ni-building"></em></span>
+                                        <span class="nk-menu-text" style="color:black">Completed Cases</span>
                                     </a>
                                 </li><!-- .nk-menu-item -->
 
                                 <li class="nk-menu-item">
                                     <a href="{{ route('all.cancledCases') }}" class="nk-menu-link">
-                                        <span class="nk-menu-icon"><em class="icon ni ni-building"></em></span>
-                                        <span class="nk-menu-text">Cancled Cases</span>
+                                        <span class="nk-menu-icon" style="color:black"><em class="icon ni ni-building"></em></span>
+                                        <span class="nk-menu-text" style="color:black">Cancled Cases</span>
                                     </a>
                                 </li><!-- .nk-menu-item -->
 
                                 <li class="nk-menu-item">
                                     <a href="{{ route('manageCaseDoc') }}" class="nk-menu-link">
-                                        <span class="nk-menu-icon"><em class="icon ni ni-building"></em></span>
-                                        <span class="nk-menu-text">Manage Documents</span>
+                                        <span class="nk-menu-icon" style="color:black"><em class="icon ni ni-building"></em></span>
+                                        <span class="nk-menu-text" style="color:black">Manage Documents</span>
                                     </a>
                                 </li><!-- .nk-menu-item -->
 
                                 <li class="nk-menu-item">
                                     <a href="{{ route('allSupportMsg') }}" class="nk-menu-link">
-                                        <span class="nk-menu-icon"><em class="icon ni ni-building"></em></span>
-                                        <span class="nk-menu-text">Support</span>
+                                        <span class="nk-menu-icon" style="color:black"><em class="icon ni ni-building"></em></span>
+                                        <span class="nk-menu-text" style="color:black">Support</span>
                                     </a>
                                 </li><!-- .nk-menu-item -->
 
                                 <li class="nk-menu-item">
                                     <a href="{{ route('allGeneralCaseMsg') }}" class="nk-menu-link">
-                                        <span class="nk-menu-icon"><em class="icon ni ni-building"></em></span>
-                                        <span class="nk-menu-text">General Case</span>
+                                        <span class="nk-menu-icon" style="color:black"><em class="icon ni ni-building"></em></span>
+                                        <span class="nk-menu-text" style="color:black">General Case</span>
                                     </a>
                                 </li><!-- .nk-menu-item -->
 
                                 <li class="nk-menu-item">
                                     <a href="{{ route('termsConditionView') }}" class="nk-menu-link">
-                                        <span class="nk-menu-icon"><em class="icon ni ni-building"></em></span>
-                                        <span class="nk-menu-text">Terms & Condition</span>
+                                        <span class="nk-menu-icon" style="color:black"><em class="icon ni ni-building"></em></span>
+                                        <span class="nk-menu-text" style="color:black">Terms & Condition</span>
                                     </a>
                                 </li><!-- .nk-menu-item -->
+
+                                
+
+                                
 
                                 
 
@@ -224,7 +228,7 @@
                                         <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">
                                             <div class="user-toggle">
                                                 <div class="user-avatar sm">
-                                                    <em class="icon ni ni-user-alt"></em>
+                                                    <img src="{{ asset('userFrontend/img/lalon.jpeg')}}" class="icon ni ni-user-alt">
                                                 </div>
                                                 <div class="user-info d-none d-md-block">
                                                     <div class="user-status">Admin Name</div>

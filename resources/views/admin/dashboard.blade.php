@@ -20,11 +20,11 @@
                                 <div class="nk-block">
                                     <div class="row g-gs">
                                         <div class="col-md-3">
-                                            <div class="card card-bordered card-full">
+                                            <div class="card card-bordered card-full bg-warning">
                                                 <div class="card-inner">
                                                     <div class="card-title-group align-start mb-0">
                                                         <div class="card-title">
-                                                            <h6 class="subtitle">All Users</h6>
+                                                            <h6 class="subtitle" style="color: #000000; font-size: 16px; font-weight: 700;" style="color: #000000; font-size: 16px; font-weight: 700;" style="color: #000000; font-size: 16px; font-weight: 700;">All Users</h6>
                                                         </div>
                                                         <div class="card-tools">
                                                             <em class="card-hint icon ni ni-help-fill" data-bs-toggle="tooltip" data-bs-placement="left" title="All Users"></em>
@@ -41,11 +41,11 @@
                                         </div><!-- .col -->
 
                                         <div class="col-md-3">
-                                            <div class="card card-bordered card-full">
+                                            <div class="card card-bordered card-full bg-success">
                                                 <div class="card-inner">
                                                     <div class="card-title-group align-start mb-0">
                                                         <div class="card-title">
-                                                            <h6 class="subtitle">Completed Case</h6>
+                                                            <h6 class="subtitle" style="color: #000000; font-size: 16px; font-weight: 700;" style="color: #000000; font-size: 16px; font-weight: 700;">Completed Case</h6>
                                                         </div>
                                                         <div class="card-tools">
                                                             <em class="card-hint icon ni ni-help-fill" data-bs-toggle="tooltip" data-bs-placement="left" title="All Users"></em>
@@ -62,11 +62,11 @@
                                         </div><!-- .col -->
 
                                         <div class="col-md-3">
-                                            <div class="card card-bordered card-full">
+                                            <div class="card card-bordered card-full bg-danger">
                                                 <div class="card-inner">
                                                     <div class="card-title-group align-start mb-0">
                                                         <div class="card-title">
-                                                            <h6 class="subtitle">Pending Case</h6>
+                                                            <h6 class="subtitle" style="color: #000000; font-size: 16px; font-weight: 700;" style="color: #000000; font-size: 16px; font-weight: 700;">Pending Case</h6>
                                                         </div>
                                                         <div class="card-tools">
                                                             <em class="card-hint icon ni ni-help-fill" data-bs-toggle="tooltip" data-bs-placement="left" title="All Users"></em>
@@ -83,11 +83,11 @@
                                         </div><!-- .col -->
 
                                         <div class="col-md-3">
-                                            <div class="card card-bordered card-full">
+                                            <div class="card card-bordered card-full bg-warning">
                                                 <div class="card-inner">
                                                     <div class="card-title-group align-start mb-0">
                                                         <div class="card-title">
-                                                            <h6 class="subtitle">Cancelled Case</h6>
+                                                            <h6 class="subtitle" style="color: #000000; font-size: 16px; font-weight: 700;" style="color: #000000; font-size: 16px; font-weight: 700;">Cancelled Case</h6>
                                                         </div>
                                                         <div class="card-tools">
                                                             <em class="card-hint icon ni ni-help-fill" data-bs-toggle="tooltip" data-bs-placement="left" title="All Users"></em>
@@ -112,11 +112,11 @@
                                     <div class="row g-gs">
 
                                         <div class="col-md-3">
-                                            <div class="card card-bordered card-full">
+                                            <div class="card card-bordered card-full bg-success">
                                                 <div class="card-inner">
                                                     <div class="card-title-group align-start mb-0">
                                                         <div class="card-title">
-                                                            <h6 class="subtitle">Total Employee List</h6>
+                                                            <h6 class="subtitle" style="color: #000000; font-size: 16px; font-weight: 700;" style="color: #000000; font-size: 16px; font-weight: 700;">Total Employee List</h6>
                                                         </div>
                                                         <div class="card-tools">
                                                             <em class="card-hint icon ni ni-help-fill" data-bs-toggle="tooltip" data-bs-placement="left" title="All Users"></em>
@@ -133,11 +133,11 @@
                                         </div><!-- .col -->
 
                                         <div class="col-md-3">
-                                            <div class="card card-bordered card-full">
+                                            <div class="card card-bordered card-full bg-danger">
                                                 <div class="card-inner">
                                                     <div class="card-title-group align-start mb-0">
                                                         <div class="card-title">
-                                                            <h6 class="subtitle">Total General Member</h6>
+                                                            <h6 class="subtitle" style="color: #000000; font-size: 16px; font-weight: 700;" style="color: #000000; font-size: 16px; font-weight: 700;">Total General Member</h6>
                                                         </div>
                                                         <div class="card-tools">
                                                             <em class="card-hint icon ni ni-help-fill" data-bs-toggle="tooltip" data-bs-placement="left" title="All Users"></em>
@@ -156,11 +156,11 @@
                                         
 
                                         <div class="col-md-3">
-                                            <div class="card card-bordered card-full">
+                                            <div class="card card-bordered card-full bg-warning">
                                                 <div class="card-inner">
                                                     <div class="card-title-group align-start mb-0">
                                                         <div class="card-title">
-                                                            <h6 class="subtitle">Total CNG Member</h6>
+                                                            <h6 class="subtitle" style="color: #000000; font-size: 16px; font-weight: 700;" style="color: #000000; font-size: 16px; font-weight: 700;">Total CNG Member</h6>
                                                         </div>
                                                         <div class="card-tools">
                                                             <em class="card-hint icon ni ni-help-fill" data-bs-toggle="tooltip" data-bs-placement="left" title="All Users"></em>
@@ -177,11 +177,11 @@
                                         </div><!-- .col -->
 
                                         <div class="col-md-3">
-                                            <div class="card card-bordered card-full">
+                                            <div class="card card-bordered card-full bg-success">
                                                 <div class="card-inner">
                                                     <div class="card-title-group align-start mb-0">
                                                         <div class="card-title">
-                                                            <h6 class="subtitle">Total Car Member</h6>
+                                                            <h6 class="subtitle" style="color: #000000; font-size: 16px; font-weight: 700;" style="color: #000000; font-size: 16px; font-weight: 700;">Total Car Member</h6>
                                                         </div>
                                                         <div class="card-tools">
                                                             <em class="card-hint icon ni ni-help-fill" data-bs-toggle="tooltip" data-bs-placement="left" title="All Users"></em>
@@ -207,11 +207,11 @@
                                     <div class="row g-gs">
 
                                         <div class="col-md-3">
-                                            <div class="card card-bordered card-full">
+                                            <div class="card card-bordered card-full bg-danger">
                                                 <div class="card-inner">
                                                     <div class="card-title-group align-start mb-0">
                                                         <div class="card-title">
-                                                            <h6 class="subtitle">Total Bike Members</h6>
+                                                            <h6 class="subtitle" style="color: #000000; font-size: 16px; font-weight: 700;" style="color: #000000; font-size: 16px; font-weight: 700;">Total Bike Members</h6>
                                                         </div>
                                                         <div class="card-tools">
                                                             <em class="card-hint icon ni ni-help-fill" data-bs-toggle="tooltip" data-bs-placement="left" title="All Users"></em>
@@ -228,11 +228,11 @@
                                         </div><!-- .col -->
 
                                         <div class="col-md-3">
-                                            <div class="card card-bordered card-full">
+                                            <div class="card card-bordered card-full bg-warning">
                                                 <div class="card-inner">
                                                     <div class="card-title-group align-start mb-0">
                                                         <div class="card-title">
-                                                            <h6 class="subtitle">Total Truck Member</h6>
+                                                            <h6 class="subtitle" style="color: #000000; font-size: 16px; font-weight: 700;" style="color: #000000; font-size: 16px; font-weight: 700;">Total Truck Member</h6>
                                                         </div>
                                                         <div class="card-tools">
                                                             <em class="card-hint icon ni ni-help-fill" data-bs-toggle="tooltip" data-bs-placement="left" title="All Users"></em>
@@ -251,11 +251,11 @@
                                         
 
                                         <div class="col-md-3">
-                                            <div class="card card-bordered card-full">
+                                            <div class="card card-bordered card-full bg-success">
                                                 <div class="card-inner">
                                                     <div class="card-title-group align-start mb-0">
                                                         <div class="card-title">
-                                                            <h6 class="subtitle">Total Bus Member</h6>
+                                                            <h6 class="subtitle" style="color: #000000; font-size: 16px; font-weight: 700;" style="color: #000000; font-size: 16px; font-weight: 700;">Total Bus Member</h6>
                                                         </div>
                                                         <div class="card-tools">
                                                             <em class="card-hint icon ni ni-help-fill" data-bs-toggle="tooltip" data-bs-placement="left" title="All Users"></em>
@@ -272,11 +272,11 @@
                                         </div><!-- .col -->
 
                                         <div class="col-md-3">
-                                            <div class="card card-bordered card-full">
+                                            <div class="card card-bordered card-full bg-danger">
                                                 <div class="card-inner">
                                                     <div class="card-title-group align-start mb-0">
                                                         <div class="card-title">
-                                                            <h6 class="subtitle">Total Request</h6>
+                                                            <h6 class="subtitle" style="color: #000000; font-size: 16px; font-weight: 700;" style="color: #000000; font-size: 16px; font-weight: 700;">Total Request</h6>
                                                         </div>
                                                         <div class="card-tools">
                                                             <em class="card-hint icon ni ni-help-fill" data-bs-toggle="tooltip" data-bs-placement="left" title="All Users"></em>
