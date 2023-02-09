@@ -101,7 +101,7 @@ label.textcolor {
 
 
 
-                                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                                        <button type="submit" class="btn btn-primary">Next></button>
                                                     </form>
                                                     <!-- forms end -->
                                                 </div>

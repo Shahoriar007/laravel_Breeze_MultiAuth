@@ -76,6 +76,7 @@ div.absolute {
   width: 200px;
   background-color: green;
   border-radius: 20px;
+  margin-left: 150px;
 }
 
  </style>
@@ -172,7 +173,7 @@ div.absolute {
             </div> 
         </div>
         <div class="absolute">
-            <p style="padding: 5px;font-weight: 700; color: white;">50% Paying Organization</p>
+            <p style="padding: 5px;font-weight: 700; color: white; padding-left: 10px;">50% Paying Organization</p>
         </div>
     </page>
     <page size="A4" style="padding: 100px;">
@@ -229,8 +230,7 @@ div.absolute {
                           </table>
                     </div>
             </div> 
-            <a onclick="window.print()" class="button" style="border-radius: 10px;margin-left: 120px;margin-top:200px;">Download</a>
-            <a onclick="window.print()" class="button" style="border-radius: 10px;margin-left: 20px;margin-top:200px;">Print</a>
+           
         </div>
     </page>
 	
