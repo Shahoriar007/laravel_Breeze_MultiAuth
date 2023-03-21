@@ -252,8 +252,6 @@ div.absolute {
       var invoice = 'INV12345';
       var callBackURL = 'http://127.0.0.1:8000/admin/payfirst';
       var bkashURL;
-      
-      
 
       $.ajaxSetup({
         headers: {
@@ -348,6 +346,11 @@ div.absolute {
 
       });
 
+    }
+    else if(status === 'failure' || status === 'cancel' ){
+        alert("Case submission failed! Try again.");
+
+        window.location.href = "http://127.0.0.1:8000/dashboard/casereport";
     }
 
   });
