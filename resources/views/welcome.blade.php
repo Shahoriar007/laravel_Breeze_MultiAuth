@@ -11,7 +11,7 @@
                     <div class="d-flex justify-content-between align-items-center breaking-news bg-white">
                         <!-- <div class="d-flex flex-row flex-grow-1 flex-fill justify-content-center bg-danger py-2 text-white px-1 news"><span class="d-flex align-items-center">&nbsp;CNN News</span></div> -->
                         <marquee class="news-scroll" behavior="scroll" direction="left" onmouseover="this.stop();" onmouseout="this.start();"> 
-                        <a href="#">Welcome to Nirapod Chalok!</a> 
+                        <a href="#">Welcome to Nirapod Chalok!</a>
                         <span class="dot"></span> <a href="#"> </a>
                         <span class="dot"></span> <a href="#"></a>
                         </marquee>

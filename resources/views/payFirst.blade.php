@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <title>Pay First</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     
 </head>
  <style>
@@ -133,7 +135,8 @@ div.absolute {
                     <img src="{{ asset('userFrontend/img/bkash_payment_logo.png')}}" alt="" style="height: 70px; float: right;" >
                 </div>
                 
-                <a href="#" class="button" style="margin-top:5px;  display: inline-block;color: white; font-weight: 900; background-color: darkgreen;padding: 10px; border-radius: 15px; float: right;">Pay With Bkash</a>
+                
+                <button id="pay-now-btn" class="button" style="margin-top:5px;  display: inline-block;color: white; font-weight: 900; background-color: darkgreen;padding: 10px; border-radius: 15px; float: right;">Pay With Bkash</button>
 
                     <div style="margin-top:180px; text-align: right;">
                         <h4>Pay To:</h4>
@@ -236,3 +239,117 @@ div.absolute {
 	
 </body>
 </html>
+
+<script>
+  $(document).ready(function() {
+
+    
+    var token_id = null;
+
+    $('#pay-now-btn').click(function() {
+
+      var price = 10;
+      var invoice = 'INV12345';
+      var callBackURL = 'http://127.0.0.1:8000/admin/payfirst';
+      var bkashURL;
+      
+      
+
+      $.ajaxSetup({
+        headers: {
+          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+      });
+
+      $.ajax({
+
+        type: 'POST',
+        url: "{{ route('getToken') }}",
+        data: {price: price, callBackURL: callBackURL, invoice: invoice},
+
+        success: function(data) {
+
+          //console.log(data.value1.bkashURL);
+
+          token_id = data.value2;
+
+          console.log(token_id);
+          sessionStorage.setItem('token_id', data.value2);
+
+         window.location.href = data.value1.bkashURL;
+
+        }
+
+      });
+
+    });
+
+    var urlParams = new URLSearchParams(window.location.search);
+
+    var urlPaymentID = urlParams.get('paymentID');
+    var status = urlParams.get('status');
+
+    console.log(urlPaymentID,status);
+
+    if (status == 'success') {
+
+      var paymentID = urlPaymentID;
+      token_id = sessionStorage.getItem('token_id');
+
+      sessionStorage.removeItem('token_id');
+
+      console.log("Token is here:" + token_id);
+      
+      $.ajaxSetup({
+        headers: {
+          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+      });
+
+      $.ajax({
+
+      type: 'POST',
+      url: "{{ route('executePayment') }}",
+      data: {paymentID: paymentID, token_id: token_id},
+
+      success: function(data) {
+
+        console.log(data.trxID);
+
+        var trId = data.trxID;
+
+        // save case start
+
+            $.ajaxSetup({
+            headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+        $.ajax({
+
+        type: 'POST',
+        url: "{{ route('postCaseAfterPay') }}",
+        data: {trId: trId, paidWith: "Bkash"},
+
+        success: function(data) {
+
+            console.log("done done");
+
+            window.location.href = "http://127.0.0.1:8000/dashboard";
+
+        }
+
+        });
+
+        // Save case end
+
+      }
+
+      });
+
+    }
+
+  });
+
+</script>

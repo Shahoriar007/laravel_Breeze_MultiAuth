@@ -14,6 +14,7 @@ use App\Http\Controllers\GenenralCaseMsgController;
 use App\Http\Controllers\UserPaymentHistoryController;
 use App\Http\Controllers\TermsConditionController;
 use App\Http\Controllers\TranningBranchController;
+use App\Http\Controllers\BkashPaymentController;
 
 use App\Http\Controllers\Auth\RegisteredUserController;
 
@@ -86,6 +87,11 @@ Route::get('/dashboard/generalMsg/{id}', [GeneralMsgController::class, 'userGene
 Route::get('generate-invoicepdf/{id}',[UserCaseController::class, 'downloadInvAdmin'])->middleware(['auth', 'verified'])->name('downloadInvoiceUser');
 
 Route::get('download-invoicepdf/{id}',[UserCaseController::class, 'downloadInvAdminPDF'])->middleware(['auth', 'verified'])->name('downloadInvoicePDFUser');
+
+// Bkash Payment For case
+Route::post('/getToken', [BkashPaymentController::class, 'getToken'])->name('getToken');
+
+Route::post('/executePayment', [BkashPaymentController::class, 'executePayment'])->name('executePayment');
 
 
 require __DIR__.'/auth.php';

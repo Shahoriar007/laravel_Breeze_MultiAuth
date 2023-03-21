@@ -82,7 +82,7 @@ class UserCaseController extends Controller
 
         $caseDetails = TempCasefine::where('userId','=',Auth::guard('web')->user()->id)->latest()->first();
 
-        $status = "done";
+        $status = "Pending";
 
          Casefine::create([
 
