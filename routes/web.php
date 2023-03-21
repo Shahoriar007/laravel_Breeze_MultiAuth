@@ -245,6 +245,8 @@ Route::prefix('admin')->group(function(){
 
     Route::post('postCaseAfterPay/',[UserCaseController::class, 'postCaseAfterpay'])->name('postCaseAfterPay');
 
+    Route::post('postCaseAfterpayWithBkash/',[UserCaseController::class, 'postCaseAfterpayWithBkash'])->name('postCaseAfterpayWithBkash');
+
     
     
 

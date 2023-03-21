@@ -77,7 +77,7 @@ class UserCaseController extends Controller
 
     }
 
-    // case submit form
+    // case submit form for other payment system
     public function postCaseAfterpay(Request $request ){
 
         $caseDetails = TempCasefine::where('userId','=',Auth::guard('web')->user()->id)->latest()->first();
@@ -100,6 +100,32 @@ class UserCaseController extends Controller
          TempCasefine::where('userId','=',Auth::guard('web')->user()->id)->latest()->first()->delete();
 
          return redirect()->route('dashboard');
+    
+    }
+
+    // For bkash payment system
+    public function postCaseAfterpayWithBkash(Request $request ){
+
+        $caseDetails = TempCasefine::where('userId','=',Auth::guard('web')->user()->id)->latest()->first();
+
+        $status = "Pending";
+
+         Casefine::create([
+
+            'userId' => $caseDetails->userId,
+            'caseId' => $caseDetails->caseId,
+            'caseCode' => $caseDetails->caseCode,
+            'fineAmmount' => $caseDetails->fineAmmount,
+            'casePhoto' =>  $caseDetails->casePhoto,
+            'caseStatus' => $status,
+            'paidWith' => $request->paidWith,
+            'trId' => $request->trId,
+   
+         ]);
+
+         TempCasefine::where('userId','=',Auth::guard('web')->user()->id)->latest()->first()->delete();
+
+         return Auth::guard('web')->user()->id;
     
     }
 

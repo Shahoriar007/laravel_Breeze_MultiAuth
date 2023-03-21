@@ -226,9 +226,9 @@ div.absolute {
                               <td>Due Customer</td>
                             </tr>
                             <tr>
-                              <td>{{$caseDetails->caseCode}}/-</td>
-                              <td>{{$dueAmmount}}/-</td>
-                              <td>{{$dueAmmount}}/-</td>
+                              <td>{{$caseDetails->caseCode}}</td>
+                              <td>{{$dueAmmount}}</td>
+                              <td id = "price"> {{$dueAmmount}} </td>
                             </tr>
                           </table>
                     </div>
@@ -248,7 +248,8 @@ div.absolute {
 
     $('#pay-now-btn').click(function() {
 
-      var price = 10;
+      var price = document.getElementById("price").textContent.trim();
+      console.log(price);
       var invoice = 'INV12345';
       var callBackURL = 'http://127.0.0.1:8000/admin/payfirst';
       var bkashURL;
@@ -327,14 +328,14 @@ div.absolute {
         $.ajax({
 
         type: 'POST',
-        url: "{{ route('postCaseAfterPay') }}",
+        url: "{{ route('postCaseAfterpayWithBkash') }}",
         data: {trId: trId, paidWith: "Bkash"},
 
         success: function(data) {
 
             console.log("done done");
 
-            window.location.href = "http://127.0.0.1:8000/dashboard";
+            window.location.href = "http://127.0.0.1:8000/dashboard/allcases/" + data;
 
         }
 
