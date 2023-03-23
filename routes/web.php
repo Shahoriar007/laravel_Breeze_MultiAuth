@@ -15,6 +15,7 @@ use App\Http\Controllers\UserPaymentHistoryController;
 use App\Http\Controllers\TermsConditionController;
 use App\Http\Controllers\TranningBranchController;
 use App\Http\Controllers\BkashPaymentController;
+use App\Http\Controllers\BkashPaymentforRegController;
 
 use App\Http\Controllers\Auth\RegisteredUserController;
 
@@ -92,6 +93,10 @@ Route::get('download-invoicepdf/{id}',[UserCaseController::class, 'downloadInvAd
 Route::post('/getToken', [BkashPaymentController::class, 'getToken'])->name('getToken');
 
 Route::post('/executePayment', [BkashPaymentController::class, 'executePayment'])->name('executePayment');
+
+// Bkash paymet for register
+Route::post('/getTokenReg', [BkashPaymentforRegController::class, 'getTokenReg'])->name('getTokenReg');
+Route::post('/executePaymentReg', [BkashPaymentforRegController::class, 'executePaymentReg'])->name('executePaymentReg');
 
 
 require __DIR__.'/auth.php';

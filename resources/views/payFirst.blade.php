@@ -268,7 +268,9 @@ div.absolute {
 
         success: function(data) {
 
-          //console.log(data.value1.bkashURL);
+          console.log(data);
+
+
 
           token_id = data.value2;
 
@@ -312,6 +314,8 @@ div.absolute {
       data: {paymentID: paymentID, token_id: token_id},
 
       success: function(data) {
+
+        console.log(data);
 
         console.log(data.trxID);
 
