@@ -315,8 +315,6 @@ div.absolute {
 
       success: function(data) {
 
-        console.log(data);
-
         console.log(data.trxID);
 
         var trId = data.trxID;

@@ -20,18 +20,18 @@
                                 <div class="nk-block">
                                     <div class="row g-gs">
                                         <div class="col-md-3">
-                                            <div class="card card-bordered card-full bg-warning">
+                                            <div class="card card-bordered card-full yellow">
                                                 <div class="card-inner">
                                                     <div class="card-title-group align-start mb-0">
                                                         <div class="card-title">
-                                                            <h6 class="subtitle" style="color: #000000; font-size: 16px; font-weight: 700;" style="color: #000000; font-size: 16px; font-weight: 700;" style="color: #000000; font-size: 16px; font-weight: 700;">All Users</h6>
+                                                            <h6 class="subtitle" style="color: #000000; font-size: 16px; font-weight: 700;">All Users</h6>
                                                         </div>
                                                         <div class="card-tools">
                                                             <em class="card-hint icon ni ni-help-fill" data-bs-toggle="tooltip" data-bs-placement="left" title="All Users"></em>
                                                         </div>
                                                     </div>
                                                     <div class="card-amount">
-                                                        <span class="amount"> {{$allUsers}} </span>
+                                                        <span class="amount" style="color:#000"> {{$allUsers}} </span>
                                                        
                                                         <span class="change up text-danger"></span>
                                                     </div>
@@ -41,7 +41,7 @@
                                         </div><!-- .col -->
 
                                         <div class="col-md-3">
-                                            <div class="card card-bordered card-full bg-success">
+                                            <div class="card card-bordered card-full green">
                                                 <div class="card-inner">
                                                     <div class="card-title-group align-start mb-0">
                                                         <div class="card-title">
@@ -62,7 +62,7 @@
                                         </div><!-- .col -->
 
                                         <div class="col-md-3">
-                                            <div class="card card-bordered card-full bg-danger">
+                                            <div class="card card-bordered card-full red">
                                                 <div class="card-inner">
                                                     <div class="card-title-group align-start mb-0">
                                                         <div class="card-title">
@@ -83,7 +83,7 @@
                                         </div><!-- .col -->
 
                                         <div class="col-md-3">
-                                            <div class="card card-bordered card-full bg-warning">
+                                            <div class="card card-bordered card-full yellow">
                                                 <div class="card-inner">
                                                     <div class="card-title-group align-start mb-0">
                                                         <div class="card-title">
@@ -112,7 +112,7 @@
                                     <div class="row g-gs">
 
                                         <div class="col-md-3">
-                                            <div class="card card-bordered card-full bg-success">
+                                            <div class="card card-bordered card-full green">
                                                 <div class="card-inner">
                                                     <div class="card-title-group align-start mb-0">
                                                         <div class="card-title">
@@ -133,7 +133,7 @@
                                         </div><!-- .col -->
 
                                         <div class="col-md-3">
-                                            <div class="card card-bordered card-full bg-danger">
+                                            <div class="card card-bordered card-full red">
                                                 <div class="card-inner">
                                                     <div class="card-title-group align-start mb-0">
                                                         <div class="card-title">
@@ -156,7 +156,7 @@
                                         
 
                                         <div class="col-md-3">
-                                            <div class="card card-bordered card-full bg-warning">
+                                            <div class="card card-bordered card-full yellow">
                                                 <div class="card-inner">
                                                     <div class="card-title-group align-start mb-0">
                                                         <div class="card-title">
@@ -177,7 +177,7 @@
                                         </div><!-- .col -->
 
                                         <div class="col-md-3">
-                                            <div class="card card-bordered card-full bg-success">
+                                            <div class="card card-bordered card-full green">
                                                 <div class="card-inner">
                                                     <div class="card-title-group align-start mb-0">
                                                         <div class="card-title">
@@ -207,7 +207,7 @@
                                     <div class="row g-gs">
 
                                         <div class="col-md-3">
-                                            <div class="card card-bordered card-full bg-danger">
+                                            <div class="card card-bordered card-full red">
                                                 <div class="card-inner">
                                                     <div class="card-title-group align-start mb-0">
                                                         <div class="card-title">
@@ -228,7 +228,7 @@
                                         </div><!-- .col -->
 
                                         <div class="col-md-3">
-                                            <div class="card card-bordered card-full bg-warning">
+                                            <div class="card card-bordered card-full yellow">
                                                 <div class="card-inner">
                                                     <div class="card-title-group align-start mb-0">
                                                         <div class="card-title">
@@ -251,7 +251,7 @@
                                         
 
                                         <div class="col-md-3">
-                                            <div class="card card-bordered card-full bg-success">
+                                            <div class="card card-bordered card-full green">
                                                 <div class="card-inner">
                                                     <div class="card-title-group align-start mb-0">
                                                         <div class="card-title">
@@ -272,7 +272,7 @@
                                         </div><!-- .col -->
 
                                         <div class="col-md-3">
-                                            <div class="card card-bordered card-full bg-danger">
+                                            <div class="card card-bordered card-full red">
                                                 <div class="card-inner">
                                                     <div class="card-title-group align-start mb-0">
                                                         <div class="card-title">
