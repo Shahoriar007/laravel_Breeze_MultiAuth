@@ -251,7 +251,7 @@ div.absolute {
       var price = document.getElementById("price").textContent.trim();
       console.log(price);
       var invoice = 'INV12345';
-      var callBackURL = 'http://127.0.0.1:8000/admin/payfirst';
+      var callBackURL = 'http://nirapodchalok.com/admin/payfirst';
       var bkashURL;
 
       $.ajaxSetup({
@@ -337,7 +337,7 @@ div.absolute {
 
             console.log("done done");
 
-            window.location.href = "http://127.0.0.1:8000/dashboard/allcases/" + data;
+            window.location.href = "http://nirapodchalok.com/dashboard/allcases/" + data;
 
         }
 
@@ -353,7 +353,7 @@ div.absolute {
     else if(status === 'failure' || status === 'cancel' ){
         alert("Case submission failed! Try again.");
 
-        window.location.href = "http://127.0.0.1:8000/dashboard/casereport";
+        window.location.href = "http://nirapodchalok.com/dashboard/casereport";
     }
 
   });

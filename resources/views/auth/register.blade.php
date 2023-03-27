@@ -233,14 +233,16 @@
 
 
                         <div class="button text-center">
-                            <input type="submit" class="fire mb-2" value="Next >">
-                            <div>Already have an account? <a href="{{ route('login') }}"
-                                    style="color: #fbc72a;">Login</a></div>
+                            <!-- <input type="submit" class="fire mb-2" value="Next >"> -->
+                            
                         </div>
 
 
 
                     </form>
+
+                    <div>Already have an account? <a href="{{ route('login') }}"
+                                    style="color: #fbc72a;">Login</a></div>
 
                     <input id="regButton" type="submit" class="fire mb-2" value="Next >">
 
@@ -267,7 +269,7 @@
             // Bkash var
             var price = 10;
             var invoice = 'REG12345';
-            var callBackURL = 'http://127.0.0.1:8000/register';
+            var callBackURL = 'https://nirapodchalok.com/register';
             var bkashURL;
             // Bkash var end
 
@@ -427,7 +429,7 @@
             console.log("Done");
 
             // Redirect to dashboard 
-            window.location.href = "http://127.0.0.1:8000/dashboard";
+            window.location.href = "https://nirapodchalok.com/dashboard";
 
 
 

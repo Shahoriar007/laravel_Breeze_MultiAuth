@@ -92,6 +92,8 @@ class BkashPaymentforRegController extends Controller
 
             //dd($paymentId, $id_token);
 
+
+
             $response = Http::withHeaders([
         
                 'Accept' => 'application/json',
