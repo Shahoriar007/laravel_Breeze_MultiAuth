@@ -269,7 +269,7 @@
             // Bkash var
             var price = 10;
             var invoice = 'REG12345';
-            var callBackURL = 'https://nirapodchalok.com/register';
+            var callBackURL = 'https://127.0.0.1:8000/register';
             var bkashURL;
             // Bkash var end
 
@@ -429,7 +429,7 @@
             console.log("Done");
 
             // Redirect to dashboard 
-            window.location.href = "https://nirapodchalok.com/dashboard";
+            window.location.href = "https://127.0.0.1:8000/dashboard";
 
 
 

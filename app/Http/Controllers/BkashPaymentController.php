@@ -12,12 +12,12 @@ class BkashPaymentController extends Controller
         $price = $request->price;
         $invoice = $request->invoice;
         $callBackURL = $request->callBackURL;
-        $phnNumber = "01770618576";
+        $phnNumber = "null";
 
-        $userName = "sandboxTokenizedUser02";
-        $password = "sandboxTokenizedUser02@12345";
-        $app_key = "4f6o0cjiki2rfm34kfdadl1eqq";
-        $app_secret = "2is7hdktrekvrbljjh44ll3d9l1dtjo4pasmjvs5vl5qr3fug4b";
+        $userName = "01712322027";
+        $password = "kOkFhfv&}&3";
+        $app_key = "v1dGD2IMPAvKbZ26QVYfSygCtc";
+        $app_secret = "QrIPQoYSoYaY1LbiqhXi6hKj1TdTc8Xpn4EfO1aDJRvlqgiSp0zT";
 
     $responseToken = Http::withHeaders([
 
@@ -27,7 +27,7 @@ class BkashPaymentController extends Controller
         'password' => $password,
 
 
-    ])->post('https://tokenized.sandbox.bka.sh/v1.2.0-beta/tokenized/checkout/token/grant', [
+    ])->post('https://tokenized.pay.bka.sh/v1.2.0-beta/tokenized/checkout/token/grant', [
 
         'app_key' => $app_key,
         'app_secret' => $app_secret,
@@ -64,7 +64,7 @@ class BkashPaymentController extends Controller
             'authorization' => $id_token,
             'x-app-key' => $app_key,
 
-        ])->post('https://tokenized.sandbox.bka.sh/v1.2.0-beta/tokenized/checkout/create', [
+        ])->post('https://tokenized.pay.bka.sh/v1.2.0-beta/tokenized/checkout/create', [
 
             'mode' => '0011',
             'payerReference' => $phnNumber,
@@ -88,15 +88,15 @@ class BkashPaymentController extends Controller
             $paymentId = $request->paymentID;
             $id_token = $request->token_id;
 
-            //dd($paymentId, $id_token);
+            
 
             $response = Http::withHeaders([
         
                 'Accept' => 'application/json',
                 'authorization' => $id_token,
-                'x-app-key' => '4f6o0cjiki2rfm34kfdadl1eqq',
+                'x-app-key' => 'v1dGD2IMPAvKbZ26QVYfSygCtc',
         
-            ])->post('https://tokenized.sandbox.bka.sh/v1.2.0-beta/tokenized/checkout/execute', [
+            ])->post('https://tokenized.pay.bka.sh/v1.2.0-beta/tokenized/checkout/execute', [
         
                 'paymentID' => $paymentId,
         
